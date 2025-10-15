@@ -1,0 +1,236 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Steps to the Sea | Sea OKI Collection">
+  <Navigation />
+  
+  <!-- Hero Section -->
+  <section class="position-relative" style="height: 50vh; background-image: url('https://placehold.co/1920x800/bde0fe/ffffff?text=Steps+to+the+Sea+Hero'); background-size: cover; background-position: center;">
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"></div>
+    <div class="position-relative h-100 d-flex flex-column justify-content-center align-items-center text-center text-white">
+      <h1 class="display-3 fw-bold mb-3">Steps to the Sea</h1>
+      <p class="fs-4">Your perfect beach getaway awaits</p>
+    </div>
+  </section>
+
+  <div class="container py-5">
+    
+    <!-- Property Overview -->
+    <div class="row mb-5">
+      <div class="col-lg-8">
+        <h2 class="h3 fw-bold mb-3">About Steps to the Sea</h2>
+        <p class="fs-5 mb-4">Our classic 3-bedroom, 2-bathroom beach house is perfectly located less than a 10-minute walk from Oak Island's pristine beaches. This charming home features an open living space that's perfect for family gatherings, a welcoming front porch for morning coffee, and all the amenities you need for a memorable coastal vacation.</p>
+        
+        <div class="row g-4 mb-4">
+          <div class="col-sm-6 col-md-3">
+            <div class="text-center p-3 bg-light rounded">
+              <div class="fw-bold fs-4 brand-text">3</div>
+              <small>Bedrooms</small>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="text-center p-3 bg-light rounded">
+              <div class="fw-bold fs-4 brand-text">2</div>
+              <small>Bathrooms</small>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="text-center p-3 bg-light rounded">
+              <div class="fw-bold fs-4 brand-text">8</div>
+              <small>Sleeps</small>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="text-center p-3 bg-light rounded">
+              <div class="fw-bold fs-4 brand-text">🐾</div>
+              <small>Pet Friendly</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4">
+        <div class="card shadow border-0">
+          <div class="card-header bg-brand text-white text-center">
+            <h4 class="mb-0">Book Your Stay</h4>
+          </div>
+          <div class="card-body text-center">
+            <p class="mb-3">Check availability and rates</p>
+            <a href="#" class="btn btn-brand btn-lg w-100 mb-3">Check Availability</a>
+            <p class="small text-muted">Best rates guaranteed when you book direct!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo Gallery -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h3 class="fw-bold mb-4">Photo Gallery</h3>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <img src="https://placehold.co/600x400/87CEEB/ffffff?text=Living+Room" class="img-fluid rounded shadow" alt="Living Room">
+          </div>
+          <div class="col-md-6">
+            <img src="https://placehold.co/600x400/98FB98/ffffff?text=Kitchen" class="img-fluid rounded shadow" alt="Kitchen">
+          </div>
+          <div class="col-md-4">
+            <img src="https://placehold.co/400x300/FFB6C1/ffffff?text=Master+Bedroom" class="img-fluid rounded shadow" alt="Master Bedroom">
+          </div>
+          <div class="col-md-4">
+            <img src="https://placehold.co/400x300/DDA0DD/ffffff?text=Guest+Bedroom" class="img-fluid rounded shadow" alt="Guest Bedroom">
+          </div>
+          <div class="col-md-4">
+            <img src="https://placehold.co/400x300/F0E68C/ffffff?text=Bathroom" class="img-fluid rounded shadow" alt="Bathroom">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amenities -->
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <h3 class="fw-bold mb-4">Amenities</h3>
+        
+        <div class="mb-4">
+          <h5 class="brand-text">🏠 Indoor Features</h5>
+          <ul class="list-unstyled ms-3">
+            <li>✅ Open concept living/dining/kitchen</li>
+            <li>✅ Central air conditioning & heating</li>
+            <li>✅ High-speed WiFi throughout</li>
+            <li>✅ Smart TV with streaming services</li>
+            <li>✅ Fully equipped kitchen with dishwasher</li>
+            <li>✅ Washer and dryer</li>
+            <li>✅ Iron and ironing board</li>
+            <li>✅ Hair dryer</li>
+          </ul>
+        </div>
+
+        <div class="mb-4">
+          <h5 class="brand-text">🏖️ Beach & Outdoor</h5>
+          <ul class="list-unstyled ms-3">
+            <li>✅ Beach chairs and umbrella</li>
+            <li>✅ Beach wagon for easy transport</li>
+            <li>✅ Outdoor shower</li>
+            <li>✅ Covered front porch with seating</li>
+            <li>✅ Charcoal grill</li>
+            <li>✅ Fenced backyard (perfect for pets!)</li>
+            <li>✅ Outdoor dining table</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <h3 class="fw-bold mb-4">Sleeping Arrangements</h3>
+        
+        <div class="mb-4">
+          <h5 class="brand-text">🛏️ Bedrooms</h5>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h6 class="card-title">Master Bedroom</h6>
+              <p class="card-text">King bed, en-suite bathroom, closet space</p>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h6 class="card-title">Guest Bedroom 1</h6>
+              <p class="card-text">Queen bed, shared bathroom access</p>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h6 class="card-title">Guest Bedroom 2</h6>
+              <p class="card-text">Two twin beds, shared bathroom access</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h6 class="card-title">Living Room</h6>
+              <p class="card-text">Sofa bed for additional guests</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Location & Area -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h3 class="fw-bold mb-4">Location & Getting Around</h3>
+        <div class="row">
+          <div class="col-lg-8">
+            <p class="fs-5 mb-3">Steps to the Sea is perfectly positioned for easy beach access and exploring Oak Island.</p>
+            
+            <div class="row g-4">
+              <div class="col-md-6">
+                <h5 class="brand-text">🚶‍♀️ Walking Distance</h5>
+                <ul class="list-unstyled">
+                  <li>• Beach: 10 minutes</li>
+                  <li>• Grocery store: 15 minutes</li>
+                  <li>• Restaurants: 5-10 minutes</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h5 class="brand-text">🚗 Short Drive</h5>
+                <ul class="list-unstyled">
+                  <li>• Oak Island Pier: 5 minutes</li>
+                  <li>• Southport: 10 minutes</li>
+                  <li>• Golf course: 8 minutes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="bg-light p-4 rounded">
+              <h5 class="brand-text mb-3">🅿️ Parking</h5>
+              <p>Driveway parking for 2 cars plus additional street parking available.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- House Rules -->
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <h3 class="fw-bold mb-4">House Rules</h3>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">✅ Check-in: 4:00 PM</li>
+          <li class="list-group-item">✅ Check-out: 10:00 AM</li>
+          <li class="list-group-item">✅ Maximum 8 guests</li>
+          <li class="list-group-item">✅ Pets welcome (2 max, $50 fee)</li>
+          <li class="list-group-item">✅ No smoking inside</li>
+          <li class="list-group-item">✅ No parties or events</li>
+          <li class="list-group-item">✅ Quiet hours: 10 PM - 8 AM</li>
+        </ul>
+      </div>
+      
+      <div class="col-lg-6">
+        <h3 class="fw-bold mb-4">Important Information</h3>
+        <div class="alert alert-info">
+          <h5>🐾 Pet Policy</h5>
+          <p class="mb-0">We love your furry family members! Please keep pets off furniture and clean up after them. The fenced backyard is perfect for letting dogs play safely.</p>
+        </div>
+        
+        <div class="alert alert-warning">
+          <h5>🏖️ Beach Safety</h5>
+          <p class="mb-0">Always supervise children near water. Check tide schedules and weather conditions. Beach equipment is provided but use at your own risk.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center">
+      <div class="bg-brand text-white p-5 rounded">
+        <h3 class="mb-3">Ready to Book Steps to the Sea?</h3>
+        <p class="fs-5 mb-4">Experience the perfect Oak Island getaway in our beautiful beach house</p>
+        <a href="#" class="btn btn-light btn-lg brand-text fw-bold">Check Availability & Book Now</a>
+      </div>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>

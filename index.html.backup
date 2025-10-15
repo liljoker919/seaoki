@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sea OKI Collection | Oak Island Vacation Rentals</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Discover the Sea OKI Collection - two beautiful, pet-friendly vacation homes in Oak Island, NC. Book 'Steps to the Sea' or 'Down by the Sea' directly and save!">
+    <meta name="keywords"
+        content="Oak Island vacation rentals, pet friendly Oak Island, direct booking vacation rental, Sea OKI Collection, Steps to the Sea, Down by the Sea, Oak Island beach house">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            /* light gray background */
+        }
+
+        .hero-gradient {
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%);
+        }
+
+        .brand-text {
+            color: #008c99;
+            /* A nice coastal teal */
+        }
+
+        .brand-bg {
+            background-color: #008c99;
+        }
+    </style>
+</head>
+
+<body class="text-gray-700">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold brand-text">The Sea OKI Collection</a>
+            <div>
+                <a href="#properties" class="text-gray-600 hover:text-brand-text px-4">Our Homes</a>
+                <a href="#about" class="text-gray-600 hover:text-brand-text px-4">About OKI</a>
+                <a href="#contact"
+                    class="brand-bg text-white font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-opacity">Book
+                    Direct</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[70vh] bg-cover bg-center"
+        style="background-image: url('https://placehold.co/1920x1080/a0c4ff/ffffff?text=Beautiful+Beach+Path');">
+        <!-- Using a placeholder for the beautiful beach path image -->
+        <div class="absolute inset-0 bg-black bg-opacity-40 hero-gradient"></div>
+        <div class="relative h-full flex flex-col justify-center items-center text-center text-white p-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Your Oak Island Getaway Awaits</h1>
+            <p class="text-lg md:text-xl max-w-2xl mb-8">Two charming, pet-friendly homes perfect for family vacations,
+                just moments from the shore.</p>
+            <a href="#properties"
+                class="bg-white brand-text font-bold text-lg py-3 px-8 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105">View
+                Our Homes</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- Introduction Section -->
+        <section class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome to the Sea OKI Collection</h2>
+            <p class="text-lg">We're a family-run business offering two distinct vacation homes in beautiful Oak Island,
+                North Carolina. Our goal is to provide a comfortable, memorable, and stress-free beach experience for
+                your entire family—including the furry members! By booking directly with us, you're guaranteed the best
+                price and personalized service.</p>
+        </section>
+
+        <!-- Properties Section -->
+        <section id="properties" class="mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+                <!-- Property 1: Steps to the Sea -->
+                <div
+                    class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://placehold.co/800x600/bde0fe/ffffff?text=Steps+to+the+Sea"
+                        alt="Exterior of Steps to the Sea, a beautiful blue beach house"
+                        class="w-full h-64 object-cover">
+                    <!-- Placeholder for the blue house with white fence image -->
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Steps to the Sea</h3>
+                        <p class="mb-4">Our classic 3-bed, 2-bath beach house located less than a 10-minute walk from
+                            the ocean. Perfect for families, with an open living space and a welcoming front porch.</p>
+                        <div class="flex justify-around border-t border-b py-4 my-4 text-center">
+                            <div><span class="font-bold text-lg">3</span><br><span class="text-sm">Bedrooms</span></div>
+                            <div><span class="font-bold text-lg">2</span><br><span class="text-sm">Baths</span></div>
+                            <div><span class="font-bold text-lg">8</span><br><span class="text-sm">Sleeps</span></div>
+                            <div><span class="font-bold text-lg">🐾</span><br><span class="text-sm">Pet Friendly</span>
+                            </div>
+                        </div>
+                        <a href="#"
+                            class="block w-full text-center brand-bg text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity">Check
+                            Availability</a>
+                    </div>
+                </div>
+
+                <!-- Property 2: Down by the Sea -->
+                <div
+                    class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="https://placehold.co/800x600/ffafcc/ffffff?text=Down+by+the+Sea"
+                        alt="Exterior of Down by the Sea, a cozy coastal home" class="w-full h-64 object-cover">
+                    <!-- Placeholder for one of the other property images -->
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Down by the Sea</h3>
+                        <p class="mb-4">A charming and cozy 3-bed, 2-bath home that offers comfort and value. Situated a
+                            short golf cart ride or drive from public beach access, it's your affordable coastal
+                            retreat.</p>
+                        <div class="flex justify-around border-t border-b py-4 my-4 text-center">
+                            <div><span class="font-bold text-lg">3</span><br><span class="text-sm">Bedrooms</span></div>
+                            <div><span class="font-bold text-lg">2</span><br><span class="text-sm">Baths</span></div>
+                            <div><span class="font-bold text-lg">7</span><br><span class="text-sm">Sleeps</span></div>
+                            <div><span class="font-bold text-lg">🐾</span><br><span class="text-sm">Pet Friendly</span>
+                            </div>
+                        </div>
+                        <a href="#"
+                            class="block w-full text-center brand-bg text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity">Check
+                            Availability</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Why Book Direct Section -->
+        <section class="bg-white rounded-lg p-8 md:p-12 shadow-md mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <h4 class="text-xl font-bold brand-text mb-2">Best Price Guaranteed</h4>
+                    <p>Booking on `seaoki.com` means you don't pay the extra service fees charged by platforms like VRBO
+                        and Airbnb. The best deal is always right here.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold brand-text mb-2">Personalized Service</h4>
+                    <p>Communicate directly with us, the owners. We can answer any specific questions about the
+                        properties or give you our local's guide to Oak Island.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold brand-text mb-2">Support Local</h4>
+                    <p>Your booking directly supports our family-owned business, allowing us to continue investing in
+                        our properties to make your stay perfect.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Oak Island Section -->
+        <section id="about" class="text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Experience Oak Island</h2>
+            <p class="text-lg mb-6">With over 10 miles of uncrowded, south-facing beaches, Oak Island is the perfect
+                destination for a relaxing family vacation. Enjoy breathtaking sunrises and sunsets, search for
+                seashells, fish from the pier, or explore the local shops and restaurants. It's a place to slow down,
+                reconnect, and make lasting memories.</p>
+            <img src="https://placehold.co/1200x600/caffbf/ffffff?text=Oak+Island+Pier"
+                alt="Sunny day at the Oak Island Pier" class="rounded-lg shadow-lg w-full">
+            <!-- Placeholder for a scenic Oak Island image -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="brand-bg text-white pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4">Ready for your beach vacation?</h3>
+            <p class="mb-6">Contact us with any questions or click to check our availability.</p>
+            <a href="#"
+                class="bg-white brand-text font-bold text-lg py-3 px-8 rounded-lg hover:bg-gray-100 transition-all mb-10 inline-block">Book
+                Your Stay</a>
+
+            <div
+                class="border-t border-white border-opacity-30 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2025 The Sea OKI Collection. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="https://facebook.com/totheseaoki/" target="_blank" class="hover:opacity-80">Facebook</a>
+                    <a href="https://www.instagram.com/bytheseaoki/" target="_blank"
+                        class="hover:opacity-80">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
