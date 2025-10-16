@@ -2,7 +2,7 @@
 title: 'Top 5 Restaurants on Oak Island'
 description: 'Discover the best dining experiences Oak Island has to offer, from fresh seafood to family-friendly favorites.'
 pubDate: 'Oct 10 2025'
-heroImage: '/blog-placeholder-1.jpg'
+heroImage: '../../assets/blog-placeholder-1.jpg'
 ---
 
 Oak Island offers a wonderful selection of restaurants, from casual beach eats to upscale dining experiences. Here are our top 5 recommendations for guests staying at the Sea OKI Collection:
