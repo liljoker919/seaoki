@@ -2,7 +2,7 @@
 title: 'Oak Island Activities: Beyond the Beach'
 description: 'Discover the many activities and attractions Oak Island offers beyond its beautiful beaches.'
 pubDate: 'Oct 8 2025'
-heroImage: '/blog-placeholder-3.jpg'
+heroImage: '../../assets/blog-placeholder-3.jpg'
 ---
 
 While Oak Island's pristine beaches are the main attraction, there's so much more to explore during your stay! Whether you're looking for adventure, relaxation, or family fun, Oak Island has something for everyone.
