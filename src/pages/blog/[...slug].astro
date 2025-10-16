@@ -46,18 +46,20 @@ function formatDate(date: Date) {
 			</div>
 		</header>
 
-		{post.data.heroImage && (
-			<div class="row mb-5">
-				<div class="col-12">
-					<img
-						src={post.data.heroImage.src}
-						alt={post.data.title}
-						class="img-fluid rounded shadow w-100"
-						style="height: 400px; object-fit: cover;"
-					/>
+		{
+			post.data.heroImage && (
+				<div class="row mb-5">
+					<div class="col-12">
+						<img
+							src={post.data.heroImage.src}
+							alt={post.data.title}
+							class="img-fluid rounded shadow w-100"
+							style="height: 400px; object-fit: cover;"
+						/>
+					</div>
 				</div>
-			</div>
-		)}
+			)
+		}
 
 		<div class="row">
 			<div class="col-lg-8 mx-auto">
