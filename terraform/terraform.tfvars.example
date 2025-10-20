@@ -1,0 +1,17 @@
+# Terraform Variables Example
+# Copy this file to terraform.tfvars and update with your values
+
+# Your domain name (required)
+domain_name = "seaoki.com"
+
+# AWS region (must be us-east-1 for CloudFront/ACM)
+aws_region = "us-east-1"
+
+# Project name for resource tagging
+project_name = "seaoki-collection"
+
+# Environment (production, staging, development)
+environment = "production"
+
+# S3 bucket name (optional, defaults to domain_name)
+# bucket_name = "seaoki.com"
