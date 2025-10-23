@@ -46,7 +46,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │   ├── content/
 │   ├── layouts/
 │   └── pages/
-├── terraform/          # AWS infrastructure as code
+
 ├── .github/
 │   └── workflows/      # GitHub Actions for deployment
 ├── astro.config.mjs
@@ -84,7 +84,6 @@ This project includes complete AWS deployment infrastructure using:
 - **AWS CloudFront**: Global CDN with HTTPS
 - **AWS Certificate Manager**: Free SSL/TLS certificates
 - **AWS Route 53**: DNS management
-- **Terraform**: Infrastructure as Code
 - **GitHub Actions**: Automated CI/CD
 
 ### Deployment Setup
@@ -94,15 +93,10 @@ For complete deployment instructions, see **[DEPLOYMENT.md](./DEPLOYMENT.md)**
 Quick overview:
 1. Set up AWS credentials and GitHub secrets
 2. Configure your domain in Route 53
-3. Deploy infrastructure with Terraform
+3. Manually set up AWS infrastructure (S3, CloudFront, ACM, Route 53)
 4. Push to main branch for automated deployment
 
 ```bash
-# Deploy AWS infrastructure
-cd terraform
-terraform init
-terraform apply
-
 # Automatic deployment happens on push to main
 git push origin main
 ```
@@ -110,7 +104,6 @@ git push origin main
 ## 📁 Project Documentation
 
 - **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Complete AWS deployment guide
-- **[terraform/README.md](./terraform/README.md)** - Terraform configuration guide
 - **[.github/SECRETS.md](./.github/SECRETS.md)** - GitHub Actions secrets setup
 
 ## 🌐 Live Website
@@ -123,7 +116,7 @@ Once deployed, the website will be available at:
 
 - [Astro Documentation](https://docs.astro.build)
 - [Bootstrap Documentation](https://getbootstrap.com/docs/5.3/)
-- [Terraform AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [AWS Console Documentation](https://docs.aws.amazon.com/console/)
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 
 ## Credit

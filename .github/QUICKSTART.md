@@ -6,7 +6,6 @@ This is a condensed version of the deployment guide. For complete details, see [
 
 - [ ] AWS Account created
 - [ ] Domain name registered (can use Route 53)
-- [ ] Terraform installed (v1.0+)
 - [ ] Node.js 18+ installed
 - [ ] GitHub repository access
 
@@ -34,51 +33,45 @@ AWS_REGION=us-east-1
 S3_BUCKET=seaoki.com
 ```
 
-### 3. Configure Terraform (2 minutes)
+### 3. Set Up AWS Infrastructure (30-45 minutes)
+
+**Manual setup required through AWS Console:**
+
+1. **Create S3 Bucket**: 
+   - Name: your domain (e.g., `seaoki.com`)
+   - Enable static website hosting
+   - Configure bucket policy
+
+2. **Request SSL Certificate** (Certificate Manager):
+   - Request for your domain and `*.yourdomain.com`
+   - Use DNS validation
+
+3. **Create CloudFront Distribution**:
+   - Origin: your S3 bucket
+   - Configure custom domain names
+   - Set SSL certificate
+
+4. **Configure Route 53**:
+   - Create A records pointing to CloudFront
+   - Set up both root and www subdomains
+
+### 4. Add CloudFront ID to GitHub (1 minute)
 
 ```bash
-cd terraform
-cp terraform.tfvars.example terraform.tfvars
-# Edit terraform.tfvars with your domain name
-nano terraform.tfvars
-```
-
-### 4. Deploy Infrastructure (20-30 minutes)
-
-```bash
-# Initialize Terraform
-terraform init
-
-# Preview changes
-terraform plan
-
-# Deploy (confirm with 'yes')
-terraform apply
-```
-
-**Important**: Save the CloudFront Distribution ID from the output!
-
-### 5. Add CloudFront ID to GitHub (1 minute)
-
-```bash
-# Copy the distribution ID from terraform output
-terraform output cloudfront_distribution_id
-
+# Copy the Distribution ID from CloudFront Console
 # Add to GitHub Secrets as:
 # CLOUDFRONT_DISTRIBUTION_ID=E1234ABCDEFGH
 ```
 
-### 6. Update Nameservers (5 minutes)
+### 5. Update Nameservers (5 minutes)
 
 ```bash
-# Get nameservers
-terraform output route53_name_servers
-
+# Get nameservers from Route 53 Hosted Zone
 # Update at your domain registrar with these nameservers
 # Wait for DNS propagation (usually < 1 hour, can take up to 48 hours)
 ```
 
-### 7. Deploy Website (automatic)
+### 6. Deploy Website (automatic)
 
 ```bash
 # Simply push to main branch
@@ -132,7 +125,6 @@ aws cloudfront create-invalidation --distribution-id E1234ABCDEFGH --paths "/*"
 ## Support Resources
 
 - Full guide: [DEPLOYMENT.md](../DEPLOYMENT.md)
-- Terraform guide: [terraform/README.md](../terraform/README.md)
 - GitHub secrets: [.github/SECRETS.md](./SECRETS.md)
 
 ---

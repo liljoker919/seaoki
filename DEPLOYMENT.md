@@ -10,7 +10,6 @@ This project is a static website built with Astro and Bootstrap that showcases t
 - **AWS CloudFront**: Global CDN for fast content delivery and HTTPS support
 - **AWS Certificate Manager (ACM)**: Free SSL/TLS certificate
 - **AWS Route 53**: DNS management for custom domain
-- **Terraform**: Infrastructure as Code (IaC) for AWS resources
 - **GitHub Actions**: Automated CI/CD pipeline
 
 ## Prerequisites
@@ -20,9 +19,8 @@ Before you begin, ensure you have:
 1. **AWS Account**: [Sign up for AWS](https://aws.amazon.com/) if you don't have an account
 2. **Domain Name**: A registered domain name (can be registered through Route 53 or transferred)
 3. **GitHub Account**: Access to this repository with admin permissions
-4. **Terraform Installed**: [Download Terraform](https://www.terraform.io/downloads.html) (version 1.0+)
-5. **AWS CLI Installed**: [Install AWS CLI](https://aws.amazon.com/cli/) (optional but recommended)
-6. **Node.js**: Version 18+ for local development and testing
+4. **AWS CLI Installed**: [Install AWS CLI](https://aws.amazon.com/cli/) (optional but recommended)
+5. **Node.js**: Version 18+ for local development and testing
 
 ## Setup Instructions
 
@@ -101,12 +99,12 @@ Add the following secrets to your GitHub repository:
    - `AWS_SECRET_ACCESS_KEY`: Your AWS Secret Access Key
    - `AWS_REGION`: `us-east-1` (required for CloudFront/ACM)
    - `S3_BUCKET`: Your S3 bucket name (e.g., `seaoki.com`)
-   - `CLOUDFRONT_DISTRIBUTION_ID`: Will be added after Terraform deployment
+   - `CLOUDFRONT_DISTRIBUTION_ID`: Will be added after AWS infrastructure setup
 
 ### Step 4: Configure Route 53 Domain
 
 If your domain is already in Route 53:
-1. Note your **Hosted Zone ID** - you'll need this for Terraform
+1. Note your **Hosted Zone ID** for future reference
 
 If you need to transfer or register a domain:
 1. Go to **Route 53** → **Registered domains**
@@ -114,60 +112,39 @@ If you need to transfer or register a domain:
 3. Wait for the domain to be active (can take up to 48 hours for transfers)
 4. Note the **Hosted Zone ID** created automatically
 
-### Step 5: Configure Terraform Variables
+### Step 5: Set Up AWS Infrastructure Manually
 
-1. Navigate to the `terraform` directory:
-   ```bash
-   cd terraform
-   ```
+**Important**: You'll need to manually create the AWS infrastructure through the AWS Console:
 
-2. Update `variables.tf` with your domain name and preferences:
-   ```hcl
-   variable "domain_name" {
-     description = "The domain name for the website"
-     type        = string
-     default     = "seaoki.com"  # Change this to your domain
-   }
-   ```
+1. **Create S3 Bucket**:
+   - Go to S3 Console and create a bucket with your domain name (e.g., `seaoki.com`)
+   - Enable static website hosting
+   - Set index document to `index.html`
+   - Configure bucket policy for CloudFront access
 
-3. Optionally create a `terraform.tfvars` file for custom values:
-   ```hcl
-   domain_name = "seaoki.com"
-   aws_region  = "us-east-1"
-   ```
+2. **Request SSL Certificate**:
+   - Go to Certificate Manager in `us-east-1` region
+   - Request a public certificate for your domain and `*.yourdomain.com`
+   - Use DNS validation
+   - Add the CNAME records to Route 53 for validation
 
-### Step 6: Deploy AWS Infrastructure with Terraform
+3. **Create CloudFront Distribution**:
+   - Create a new distribution with your S3 bucket as origin
+   - Configure custom domain names
+   - Set the SSL certificate
+   - Configure caching behaviors
 
-**Important**: CloudFront distributions can take 15-30 minutes to deploy.
+4. **Configure Route 53**:
+   - Create A records (alias) pointing to your CloudFront distribution
+   - Set up both root domain and www subdomain
 
-1. Initialize Terraform:
-   ```bash
-   cd terraform
-   terraform init
-   ```
+5. **Get CloudFront Distribution ID**:
+   - Copy the Distribution ID from the CloudFront console
+   - Add it to your GitHub Secrets as `CLOUDFRONT_DISTRIBUTION_ID`
 
-2. Review the planned infrastructure changes:
-   ```bash
-   terraform plan
-   ```
+### Step 6: Verify DNS Configuration
 
-3. Apply the Terraform configuration:
-   ```bash
-   terraform apply
-   ```
-   Type `yes` when prompted to confirm.
-
-4. Wait for the deployment to complete. Terraform will output:
-   - S3 bucket name
-   - CloudFront distribution ID
-   - CloudFront distribution domain name
-   - Website URL
-
-5. **Important**: Copy the CloudFront Distribution ID and add it to your GitHub Secrets as `CLOUDFRONT_DISTRIBUTION_ID`
-
-### Step 7: Verify DNS Configuration
-
-1. After Terraform completes, verify the Route 53 records:
+1. After setting up the infrastructure, verify the Route 53 records:
    ```bash
    dig seaoki.com
    dig www.seaoki.com
@@ -177,7 +154,7 @@ If you need to transfer or register a domain:
 
 3. **Note**: DNS propagation can take up to 48 hours, but typically completes within minutes
 
-### Step 8: Test Automated Deployment
+### Step 7: Test Automated Deployment
 
 1. Make a small change to the website (e.g., edit `src/pages/index.astro`)
 2. Commit and push to the `main` branch:
@@ -217,7 +194,7 @@ If you need to transfer or register a domain:
 - **Purpose**: Provides free SSL/TLS certificates for HTTPS
 - **Configuration**:
   - Certificate for `seaoki.com` and `*.seaoki.com`
-  - DNS validation (automated via Terraform)
+  - DNS validation (manual setup required)
   - Auto-renewal enabled
 - **Cost**: Free for public certificates used with AWS services
 
@@ -300,11 +277,12 @@ aws cloudfront create-invalidation \
 
 ### Issue: SSL Certificate Validation Pending
 
-**Symptom**: Terraform hangs during certificate validation
+**Symptom**: SSL Certificate validation is pending
 
 **Solution**: 
 - Ensure your domain's nameservers are pointing to Route 53
 - Check Route 53 hosted zone for validation CNAME records
+- Manually add validation CNAME records if not automatically added
 - Wait up to 30 minutes for validation to complete
 
 ### Issue: CloudFront Returns 403 Forbidden
@@ -378,54 +356,37 @@ Based on moderate traffic (10,000 visitors/month):
 
 ### Backup
 
-Terraform state is stored locally. To back it up:
-
-```bash
-cd terraform
-# Backup state file
-cp terraform.tfstate terraform.tfstate.backup
-
-# Consider using S3 backend for state (advanced)
-```
+- **Regular Backups**: Consider backing up your S3 bucket content regularly
+- **Infrastructure Documentation**: Keep records of your AWS resource configurations
+- **GitHub Repository**: Your code is automatically backed up in GitHub
 
 ## Advanced Configuration
 
 ### Custom Error Pages
 
-Add custom 404 page in `terraform/main.tf`:
+Add custom 404 page in CloudFront console:
 
-```hcl
-resource "aws_cloudfront_distribution" "website" {
-  # ... existing config ...
-  
-  custom_error_response {
-    error_code         = 404
-    response_code      = 404
-    response_page_path = "/404.html"
-  }
-}
-```
+1. Go to CloudFront → Your Distribution → Error Pages
+2. Create Custom Error Response:
+   - HTTP Error Code: 404
+   - Response Page Path: `/404.html`
+   - HTTP Response Code: 404
 
 ### Multiple Environments
 
-Create separate Terraform workspaces:
+For multiple environments (staging, production):
 
-```bash
-# Create staging environment
-terraform workspace new staging
-terraform apply
-
-# Switch to production
-terraform workspace select default
-terraform apply
-```
+1. Create separate S3 buckets for each environment
+2. Create separate CloudFront distributions
+3. Use different GitHub repository secrets for each environment
+4. Consider using separate GitHub repositories or branches
 
 ## Additional Resources
 
 - [Astro Documentation](https://docs.astro.build/)
 - [AWS S3 Static Website Hosting](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html)
 - [CloudFront Documentation](https://docs.aws.amazon.com/cloudfront/)
-- [Terraform AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [AWS Console Documentation](https://docs.aws.amazon.com/console/)
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 
 ## Support

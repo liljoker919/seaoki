@@ -24,17 +24,17 @@ The following secrets must be added to your GitHub repository before the deploym
 ### 4. S3_BUCKET
 - **Description**: Name of your S3 bucket
 - **Value**: `seaoki.com` (or your domain name)
-- **Note**: This is created by Terraform
+- **Note**: This is the bucket you create manually in AWS Console
 
 ### 5. CLOUDFRONT_DISTRIBUTION_ID
 - **Description**: CloudFront distribution ID
-- **How to get**: Run `terraform output cloudfront_distribution_id`
+- **How to get**: Copy from CloudFront Console → Distributions
 - **Format**: Looks like `E1234ABCDEFGH`
-- **Note**: Added after Terraform deployment
+- **Note**: Added after AWS infrastructure setup
 
 ## Step-by-Step Setup
 
-### Before Terraform Deployment
+### Before AWS Infrastructure Setup
 
 1. Go to your GitHub repository
 2. Click **Settings** → **Secrets and variables** → **Actions**
@@ -45,10 +45,10 @@ The following secrets must be added to your GitHub repository before the deploym
    - `AWS_REGION` = `us-east-1`
    - `S3_BUCKET` = `seaoki.com` (or your domain)
 
-### After Terraform Deployment
+### After AWS Infrastructure Setup
 
-1. Run Terraform: `cd terraform && terraform apply`
-2. Copy the CloudFront Distribution ID from the output
+1. Set up your AWS infrastructure manually through the console
+2. Copy the CloudFront Distribution ID from AWS Console
 3. Add the final secret:
    - `CLOUDFRONT_DISTRIBUTION_ID` = `E1234ABCDEFGH` (your actual ID)
 
