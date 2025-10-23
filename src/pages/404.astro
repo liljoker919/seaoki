@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Page Not Found | Sea OKI Collection">
+	<Navigation />
+
+	<main class="container py-5">
+		<div class="row justify-content-center">
+			<div class="col-lg-8 text-center">
+				<h1 class="display-1 fw-bold brand-text mb-4">404</h1>
+				<h2 class="h3 mb-4">Page Not Found</h2>
+				<p class="lead mb-5">
+					Sorry, the page you're looking for doesn't exist. It might
+					have been moved or deleted.
+				</p>
+				<div class="d-flex gap-3 justify-content-center">
+					<a href="/" class="btn btn-brand btn-lg">
+						Go to Homepage
+					</a>
+					<a href="/properties" class="btn btn-outline-secondary btn-lg">
+						View Properties
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-center mt-5">
+			<div class="col-lg-8">
+				<div class="card shadow-sm">
+					<div class="card-body p-4">
+						<h3 class="h5 mb-3">Popular Pages</h3>
+						<ul class="list-unstyled mb-0">
+							<li class="mb-2">
+								<a href="/properties/steps-to-the-sea" class="text-decoration-none">
+									Steps to the Sea Property
+								</a>
+							</li>
+							<li class="mb-2">
+								<a href="/properties/down-by-the-sea" class="text-decoration-none">
+									Down by the Sea Property
+								</a>
+							</li>
+							<li class="mb-2">
+								<a href="/blog" class="text-decoration-none">
+									Oak Island Blog
+								</a>
+							</li>
+							<li class="mb-2">
+								<a href="/contact" class="text-decoration-none">
+									Contact Us
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>
