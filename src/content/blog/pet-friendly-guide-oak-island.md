@@ -1,6 +1,6 @@
 ---
-title: 'Pet-Friendly Guide to Oak Island'
-description: 'Everything you need to know about bringing your furry family members to Oak Island for the perfect pet-friendly vacation.'
+title: 'Complete Pet-Friendly Guide to Oak Island, NC - Dog-Friendly Beaches & Vacation Rentals'
+description: 'Everything you need for a perfect pet-friendly vacation in Oak Island, NC. Dog beach rules, pet-friendly restaurants, packing tips, and the best dog-friendly vacation rentals. Bring your furry family members!'
 pubDate: 'Oct 12 2025'
 heroImage: '../../assets/blog-placeholder-2.jpg'
 ---

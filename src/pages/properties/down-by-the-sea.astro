@@ -4,6 +4,7 @@ import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
 import PropertySchema from "../../components/PropertySchema.astro";
 import FAQ from "../../components/FAQ.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 
 const propertyData = {
     name: "Down by the Sea - Affordable Pet Friendly Oak Island Rental",
@@ -67,6 +68,12 @@ const faqs = [
         answer: "When you book directly through our website, you avoid the hefty service fees charged by platforms like Airbnb and VRBO—saving you money. You also get direct communication with us, the owners, for personalized service and local recommendations.",
     },
 ];
+
+const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Properties", url: "/properties" },
+    { name: "Down by the Sea", url: "/properties/down-by-the-sea" },
+];
 ---
 
 <Layout 
@@ -75,6 +82,10 @@ const faqs = [
 >
     <PropertySchema {...propertyData} />
     <Navigation />
+
+    <div class="container pt-4">
+        <Breadcrumb items={breadcrumbItems} />
+    </div>
 
     <!-- Hero Section -->
     <section
