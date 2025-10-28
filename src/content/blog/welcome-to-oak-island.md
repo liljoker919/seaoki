@@ -1,6 +1,6 @@
 ---
-title: "Welcome to Oak Island: Your Perfect Beach Getaway"
-description: "Discover why Oak Island is the ideal destination for your next family vacation, with beautiful beaches, great restaurants, and endless activities."
+title: "Welcome to Oak Island: Your Perfect Beach Getaway in North Carolina"
+description: "Discover why Oak Island, NC is the ideal destination for your next family vacation. Uncrowded beaches, family-friendly atmosphere, and excellent fishing await. Plan your Oak Island getaway with Sea OKI Collection."
 pubDate: 2024-01-15
 heroImage: "https://placehold.co/800x400/4ade80/ffffff?text=Oak+Island+Beach"
 ---

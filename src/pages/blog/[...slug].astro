@@ -3,6 +3,8 @@ import { type CollectionEntry, getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
+import ArticleSchema from "../../components/ArticleSchema.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
@@ -24,12 +26,27 @@ function formatDate(date: Date) {
 		day: "numeric",
 	});
 }
+
+const breadcrumbItems = [
+	{ name: "Home", url: "/" },
+	{ name: "Blog", url: "/blog" },
+	{ name: post.data.title, url: `/blog/${post.id}` },
+];
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
+	<ArticleSchema
+		title={post.data.title}
+		description={post.data.description}
+		datePublished={post.data.pubDate}
+		dateModified={post.data.updatedDate}
+		image={post.data.heroImage?.src}
+	/>
 	<Navigation />
 
 	<article class="container py-5">
+		<Breadcrumb items={breadcrumbItems} />
+		
 		<header class="row mb-5">
 			<div class="col-lg-8 mx-auto text-center">
 				<h1 class="display-4 fw-bold brand-text mb-3">

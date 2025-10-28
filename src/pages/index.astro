@@ -6,7 +6,10 @@ import Hero from "../components/Hero.astro";
 import PropertyCard from "../components/PropertyCard.astro";
 ---
 
-<Layout title="The Sea OKI Collection | Oak Island Vacation Rentals">
+<Layout 
+    title="Oak Island Pet-Friendly Vacation Rentals | Sea OKI Collection - Book Direct & Save"
+    description="Pet-friendly Oak Island vacation rentals. Two beautiful beach houses perfect for families and dog owners. Walk to the beach, fenced yards, full kitchens. Book direct for the best rates on kid-friendly beach rentals in Oak Island, NC."
+>
 	<Navigation />
 
 	<Hero />
@@ -15,14 +18,16 @@ import PropertyCard from "../components/PropertyCard.astro";
 	<main class="container py-5">
 		<!-- Introduction Section -->
 		<section class="text-center mx-auto mb-5" style="max-width: 800px;">
-			<h2 class="display-4 fw-bold text-dark mb-4">
-				Welcome to the Sea OKI Collection
-			</h2>
+			<h1 class="display-4 fw-bold text-dark mb-4">
+				Pet-Friendly Oak Island Vacation Rentals
+			</h1>
+			<h2 class="h5 text-muted mb-4">Book Direct & Save on Your Next Beach Vacation</h2>
 			<p class="fs-5">
-				We're a family-run business offering two distinct vacation homes
+				We're a family-run business offering two distinct pet-friendly vacation homes
 				in beautiful Oak Island, North Carolina. Our goal is to provide
 				a comfortable, memorable, and stress-free beach experience for
-				your entire family—including the furry members! By booking
+				your entire family—including the furry members! Perfect for families looking for 
+				kid-friendly beach rentals with fenced yards, beach equipment, and full kitchens. By booking
 				directly with us, you're guaranteed the best price and
 				personalized service.
 			</p>
@@ -34,7 +39,7 @@ import PropertyCard from "../components/PropertyCard.astro";
 				<PropertyCard
 					image="https://placehold.co/800x600/bde0fe/ffffff?text=Steps+to+the+Sea"
 					title="Steps to the Sea"
-					description="Our classic 3-bed, 2-bath beach house located less than a 10-minute walk from the ocean. Perfect for families, with an open living space and a welcoming front porch."
+					description="Classic 3-bed, 2-bath pet-friendly beach house located less than a 10-minute walk from Oak Island beach. Perfect for families with kids and dogs, featuring an open living space, welcoming front porch, and fenced yard. Beach equipment included."
 					bedrooms={3}
 					baths={2}
 					sleeps={8}
@@ -45,7 +50,7 @@ import PropertyCard from "../components/PropertyCard.astro";
 				<PropertyCard
 					image="https://placehold.co/800x600/ffafcc/ffffff?text=Down+by+the+Sea"
 					title="Down by the Sea"
-					description="A charming and cozy 3-bed, 2-bath home that offers comfort and value. Situated a short golf cart ride or drive from public beach access, it's your affordable coastal retreat."
+					description="Charming and cozy 3-bed, 2-bath pet-friendly home offering comfort and exceptional value. A short golf cart ride or drive to beach access, this affordable coastal retreat is perfect for budget-conscious families with kids and pets. Fenced yard and beach gear included."
 					bedrooms={3}
 					baths={2}
 					sleeps={7}
@@ -95,20 +100,21 @@ import PropertyCard from "../components/PropertyCard.astro";
 			class="text-center mx-auto"
 			style="max-width: 800px;"
 		>
-			<h2 class="display-4 fw-bold text-dark mb-4">
-				Experience Oak Island
+			<h2 class="display-5 fw-bold text-dark mb-4">
+				Experience Oak Island, North Carolina
 			</h2>
 			<p class="fs-5 mb-4">
 				With over 10 miles of uncrowded, south-facing beaches, Oak
 				Island is the perfect destination for a relaxing family
-				vacation. Enjoy breathtaking sunrises and sunsets, search for
-				seashells, fish from the pier, or explore the local shops and
-				restaurants. It's a place to slow down, reconnect, and make
-				lasting memories.
+				vacation in North Carolina. Enjoy breathtaking sunrises and sunsets, search for
+				seashells, fish from the Oak Island Pier, or explore the local shops and
+				restaurants in nearby Southport. It's a place to slow down, reconnect, and make
+				lasting memories with your family and pets. Oak Island offers excellent fishing, 
+				golf courses, nature trails, and water sports—all within minutes of our vacation rentals.
 			</p>
 			<img
 				src="https://placehold.co/1200x600/caffbf/ffffff?text=Oak+Island+Pier"
-				alt="Sunny day at the Oak Island Pier"
+				alt="Oak Island Pier at sunset - popular fishing spot and beach landmark in Oak Island NC"
 				class="img-fluid rounded shadow-lg"
 			/>
 		</section>

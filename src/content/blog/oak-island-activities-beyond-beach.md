@@ -1,6 +1,6 @@
 ---
-title: 'Oak Island Activities: Beyond the Beach'
-description: 'Discover the many activities and attractions Oak Island offers beyond its beautiful beaches.'
+title: 'Oak Island Activities: Things to Do Beyond the Beach in Oak Island, NC'
+description: 'Discover fun activities and attractions in Oak Island, NC beyond the beach. Family-friendly activities, historic sites, fishing, golf, nature trails, and more. Plan your perfect Oak Island vacation itinerary.'
 pubDate: 'Oct 8 2025'
 heroImage: '../../assets/blog-placeholder-3.jpg'
 ---

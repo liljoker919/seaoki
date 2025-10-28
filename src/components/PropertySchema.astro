@@ -1,0 +1,115 @@
+---
+export interface Props {
+    name: string;
+    description: string;
+    address: {
+        streetAddress: string;
+        city: string;
+        state: string;
+        postalCode: string;
+    };
+    bedrooms: number;
+    bathrooms: number;
+    maxOccupancy: number;
+    petsAllowed: boolean;
+    amenities?: string[];
+    image?: string;
+    priceRange?: string;
+}
+
+const {
+    name,
+    description,
+    address,
+    bedrooms,
+    bathrooms,
+    maxOccupancy,
+    petsAllowed,
+    amenities = [],
+    image,
+    priceRange,
+} = Astro.props;
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "VacationRental",
+    name: name,
+    description: description,
+    address: {
+        "@type": "PostalAddress",
+        streetAddress: address.streetAddress,
+        addressLocality: address.city,
+        addressRegion: address.state,
+        postalCode: address.postalCode,
+        addressCountry: "US",
+    },
+    geo: {
+        "@type": "GeoCoordinates",
+        latitude: address.city === "Oak Island" ? "33.9157" : "33.9157",
+        longitude: address.city === "Oak Island" ? "-78.1103" : "-78.1103",
+    },
+    numberOfRooms: bedrooms,
+    numberOfBedrooms: bedrooms,
+    numberOfBathroomsTotal: bathrooms,
+    occupancy: {
+        "@type": "QuantitativeValue",
+        maxValue: maxOccupancy,
+    },
+    petsAllowed: petsAllowed ? "Yes" : "No",
+    amenityFeature: amenities.map((amenity) => ({
+        "@type": "LocationFeatureSpecification",
+        name: amenity,
+    })),
+    ...(image && { image: image }),
+    ...(priceRange && { priceRange: priceRange }),
+    provider: {
+        "@type": "Organization",
+        name: "Sea OKI Collection",
+        url: "https://seaoki.com",
+        telephone: "+1-XXX-XXX-XXXX", // Replace with actual phone number
+    },
+    url: Astro.url.href,
+};
+
+const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    name: "Sea OKI Collection",
+    description:
+        "Pet-friendly vacation rental homes in Oak Island, NC. Two beautiful beach houses perfect for family vacations.",
+    address: {
+        "@type": "PostalAddress",
+        addressLocality: "Oak Island",
+        addressRegion: "NC",
+        addressCountry: "US",
+    },
+    geo: {
+        "@type": "GeoCoordinates",
+        latitude: "33.9157",
+        longitude: "-78.1103",
+    },
+    url: "https://seaoki.com",
+    priceRange: "$$",
+    paymentAccepted: "Credit Card, Debit Card",
+    amenityFeature: [
+        {
+            "@type": "LocationFeatureSpecification",
+            name: "Pet Friendly",
+        },
+        {
+            "@type": "LocationFeatureSpecification",
+            name: "Beach Access",
+        },
+        {
+            "@type": "LocationFeatureSpecification",
+            name: "WiFi",
+        },
+    ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<script
+    type="application/ld+json"
+    set:html={JSON.stringify(localBusinessSchema)}
+/>
