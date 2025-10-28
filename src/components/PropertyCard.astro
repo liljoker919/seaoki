@@ -31,6 +31,9 @@ const {
             class="card-img-top"
             alt={`Exterior of ${title}`}
             style="height: 250px; object-fit: cover;"
+            loading="lazy"
+            width="600"
+            height="250"
         />
         <div class="card-body d-flex flex-column">
             <h3 class="card-title h4 fw-bold">{title}</h3>
@@ -66,7 +69,7 @@ const {
                         </a>
                     )
                 }
-                <a href={bookingLink} class="btn btn-brand btn-lg w-100"
+                <a href={bookingLink} class="btn btn-brand btn-lg w-100" target="_blank" rel="noopener noreferrer"
                     >Check Availability</a
                 >
             </div>
