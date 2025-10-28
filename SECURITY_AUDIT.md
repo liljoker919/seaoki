@@ -22,7 +22,7 @@ This report details a comprehensive security and best practices audit performed 
 #### 1. Dependency Vulnerability - Vite Path Traversal (CVE-2024-93m4-6634-74q7)
 **Status:** ✅ FIXED  
 **Severity:** Moderate (CWE-22)  
-**Impact:** Path traversal vulnerability in vite 6.0.0-6.4.0  
+**Impact:** Path traversal vulnerability in vite 6.0.0-6.4.0 (GitHub Advisory GHSA-93m4-6634-74q7)  
 
 **Remediation:**
 - Ran `npm audit fix` to update vite to patched version
@@ -43,6 +43,11 @@ This report details a comprehensive security and best practices audit performed 
 - Created `public/_headers` file with comprehensive CSP
 - Whitelisted necessary external domains (Google Analytics, Houfy, Bootstrap CDN)
 - Restricted unsafe-inline where possible (required for some third-party widgets)
+- **Note:** This implementation uses Netlify-style `_headers` file. For other hosting providers:
+  - **Vercel:** Use `vercel.json` with headers configuration
+  - **Cloudflare Pages:** Use `_headers` file (same format)
+  - **Apache:** Use `.htaccess` with Header directives
+  - **Nginx:** Configure in server block with `add_header` directives
 
 **CSP Configuration:**
 ```
@@ -288,4 +293,4 @@ The website is now significantly more secure, performant, and maintainable. Regu
 ---
 
 **Audit Completed:** October 28, 2025  
-**Next Audit Due:** January 28, 2026
+**Next Audit Due:** January 28, 2026 (Quarterly recommended)
