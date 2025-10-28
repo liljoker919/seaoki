@@ -17,7 +17,7 @@ const schema = {
         "@type": "ListItem",
         position: index + 1,
         name: item.name,
-        item: item.url,
+        item: new URL(item.url, Astro.site).href,
     })),
 };
 ---
