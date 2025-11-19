@@ -1,0 +1,44 @@
+---
+export interface BreadcrumbItem {
+    name: string;
+    url: string;
+}
+
+export interface Props {
+    items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        item: new URL(item.url, Astro.site).href,
+    })),
+};
+---
+
+<nav aria-label="breadcrumb" class="mb-4">
+    <ol class="breadcrumb">
+        {
+            items.map((item, index) => (
+                <li
+                    class={`breadcrumb-item ${index === items.length - 1 ? "active" : ""}`}
+                    aria-current={index === items.length - 1 ? "page" : undefined}
+                >
+                    {index === items.length - 1 ? (
+                        item.name
+                    ) : (
+                        <a href={item.url}>{item.name}</a>
+                    )}
+                </li>
+            ))
+        }
+    </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

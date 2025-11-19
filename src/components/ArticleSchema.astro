@@ -1,0 +1,52 @@
+---
+export interface Props {
+    title: string;
+    description: string;
+    author?: string;
+    datePublished: Date;
+    dateModified?: Date;
+    image?: string;
+}
+
+const {
+    title,
+    description,
+    author = "Sea OKI Collection",
+    datePublished,
+    dateModified,
+    image,
+} = Astro.props;
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description,
+    author: {
+        "@type": "Organization",
+        name: author,
+        url: "https://seaoki.com",
+    },
+    publisher: {
+        "@type": "Organization",
+        name: "Sea OKI Collection",
+        url: "https://seaoki.com",
+    },
+    datePublished: datePublished.toISOString(),
+    ...(dateModified && { dateModified: dateModified.toISOString() }),
+    ...(image && {
+        image: {
+            "@type": "ImageObject",
+            url: new URL(image, Astro.site).href,
+            width: 800,
+            height: 400,
+        },
+    }),
+    mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": Astro.url.href,
+    },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
