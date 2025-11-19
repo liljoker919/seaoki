@@ -1,6 +1,6 @@
 ---
-title: "Best Restaurants on Oak Island"
-description: "Discover the top dining spots on Oak Island, from fresh seafood to family-friendly restaurants that will make your vacation even more delicious."
+title: "Best Restaurants on Oak Island, NC - Where to Eat During Your Beach Vacation"
+description: "Discover the top restaurants and dining spots on Oak Island, NC. From fresh seafood to family-friendly restaurants, find the best places to eat during your Oak Island vacation. Local favorites and hidden gems included."
 pubDate: 2024-01-20
 heroImage: "https://placehold.co/800x400/06b6d4/ffffff?text=Oak+Island+Dining"
 ---

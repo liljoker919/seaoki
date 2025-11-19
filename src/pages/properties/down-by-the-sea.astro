@@ -2,10 +2,90 @@
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
+import PropertySchema from "../../components/PropertySchema.astro";
+import FAQ from "../../components/FAQ.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+
+const propertyData = {
+    name: "Down by the Sea - Affordable Pet Friendly Oak Island Rental",
+    description: "3-bedroom, 2-bathroom pet-friendly vacation home in Oak Island, NC. Sleeps 7. Family-friendly beach rental with fenced yard, full kitchen, and beach equipment. Excellent value for budget-conscious families.",
+    address: {
+        streetAddress: "111 SE 1st St",
+        city: "Oak Island",
+        state: "NC",
+        postalCode: "28465",
+    },
+    bedrooms: 3,
+    bathrooms: 2,
+    maxOccupancy: 7,
+    petsAllowed: true,
+    amenities: [
+        "WiFi",
+        "Air Conditioning",
+        "Beach Chairs",
+        "Washer & Dryer",
+        "Full Kitchen",
+        "Outdoor Shower",
+        "Fenced Yard",
+        "Parking",
+        "Smart TV",
+        "Gas Grill",
+    ],
+    priceRange: "$$",
+};
+
+const faqs = [
+    {
+        question: "How far is Down by the Sea from Oak Island beach?",
+        answer: "Down by the Sea is a short 5-minute drive or golf cart ride to the nearest beach access. Many guests enjoy renting a golf cart to enhance their island experience and make beach trips easy and fun.",
+    },
+    {
+        question: "Is this Oak Island rental pet-friendly?",
+        answer: "Yes! We welcome up to 2 pets with a $50 pet fee per stay. The property features a fenced yard that provides a safe space for dogs to play. Please keep pets off furniture and clean up after them.",
+    },
+    {
+        question: "What makes Down by the Sea a good value?",
+        answer: "Down by the Sea offers all the amenities of higher-priced rentals—3 bedrooms, 2 bathrooms, full kitchen, beach equipment, fenced yard, and comfortable furnishings—at a more affordable rate. It's perfect for budget-conscious families who don't want to compromise on comfort.",
+    },
+    {
+        question: "How many guests can this vacation rental accommodate?",
+        answer: "Down by the Sea sleeps up to 7 guests with 3 bedrooms (2 queens and 1 twin) plus a sofa bed in the living room.",
+    },
+    {
+        question: "What amenities are included?",
+        answer: "The rental includes WiFi, central air conditioning, full kitchen with modern appliances, washer/dryer, Smart TV, beach chairs and umbrella, beach wagon, outdoor shower, gas grill, fenced yard, and parking for 2+ cars.",
+    },
+    {
+        question: "Should I rent a golf cart for my Oak Island vacation?",
+        answer: "Many of our guests find that renting a golf cart adds to the fun of their Oak Island vacation! It makes beach trips easier and is a great way to explore the island. We have parking space for golf carts.",
+    },
+    {
+        question: "What are the check-in and check-out times?",
+        answer: "Check-in is at 4:00 PM and check-out is at 10:00 AM. This gives us adequate time to thoroughly clean and prepare the home for each guest.",
+    },
+    {
+        question: "Why book direct instead of using vacation rental platforms?",
+        answer: "When you book directly through our website, you avoid the hefty service fees charged by platforms like Airbnb and VRBO—saving you money. You also get direct communication with us, the owners, for personalized service and local recommendations.",
+    },
+];
+
+const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Properties", url: "/properties" },
+    { name: "Down by the Sea", url: "/properties/down-by-the-sea" },
+];
 ---
 
-<Layout title="Down by the Sea | Sea OKI Collection">
+<Layout 
+    title="Down by the Sea - Affordable Pet Friendly Oak Island Rental | Sea OKI Collection"
+    description="Book Down by the Sea, an affordable 3BR/2BA pet-friendly Oak Island vacation rental. Sleeps 7, fenced yard, beach equipment included. Great value for families. Book direct and save!"
+>
+    <PropertySchema {...propertyData} />
     <Navigation />
+
+    <div class="container pt-4">
+        <Breadcrumb items={breadcrumbItems} />
+    </div>
 
     <!-- Hero Section -->
     <section
@@ -19,8 +99,8 @@ import Footer from "../../components/Footer.astro";
         <div
             class="position-relative h-100 d-flex flex-column justify-content-center align-items-center text-center text-white"
         >
-            <h1 class="display-3 fw-bold mb-3">Down by the Sea</h1>
-            <p class="fs-4">Cozy comfort meets coastal charm</p>
+            <h1 class="display-3 fw-bold mb-3">Down by the Sea - Oak Island</h1>
+            <p class="fs-4">Affordable Pet-Friendly Beach House • Sleeps 7 • Family Value</p>
         </div>
     </section>
 
@@ -28,13 +108,14 @@ import Footer from "../../components/Footer.astro";
         <!-- Property Overview -->
         <div class="row mb-5">
             <div class="col-lg-8">
-                <h2 class="h3 fw-bold mb-3">About Down by the Sea</h2>
+                <h2 class="h3 fw-bold mb-3">Affordable Pet-Friendly Oak Island Beach Vacation Rental</h2>
                 <p class="fs-5 mb-4">
-                    A charming and cozy 3-bedroom, 2-bathroom home that offers
-                    exceptional comfort and value. While situated a short golf
-                    cart ride or drive from public beach access, this property
-                    provides your perfect affordable coastal retreat with all
-                    the amenities needed for a memorable Oak Island vacation.
+                    Down by the Sea is a charming and cozy 3-bedroom, 2-bathroom pet-friendly vacation rental in Oak Island, NC 
+                    that offers exceptional comfort and value for families. Perfect for budget-conscious travelers seeking 
+                    kid-friendly beach rentals, this Oak Island vacation home is a short golf cart ride or drive from public 
+                    beach access. Your affordable coastal retreat includes all the amenities needed for a memorable Oak Island 
+                    vacation: fenced yard for dogs and kids, fully equipped kitchen, beach equipment, and comfortable sleeping 
+                    for up to 7 guests.
                 </p>
 
                 <div class="row g-4 mb-4">
@@ -112,50 +193,35 @@ import Footer from "../../components/Footer.astro";
                         <img
                             src="https://placehold.co/600x400/FFE4E1/ffffff?text=Cozy+Living+Room"
                             class="img-fluid rounded shadow"
-                            alt="Cozy Living Room"
-                            loading="lazy"
-                            width="600"
-                            height="400"
+                            alt="Cozy living room at Down by the Sea affordable Oak Island rental"
                         />
                     </div>
                     <div class="col-md-6">
                         <img
                             src="https://placehold.co/600x400/E6E6FA/ffffff?text=Updated+Kitchen"
                             class="img-fluid rounded shadow"
-                            alt="Updated Kitchen"
-                            loading="lazy"
-                            width="600"
-                            height="400"
+                            alt="Updated kitchen with modern appliances in pet-friendly Oak Island vacation home"
                         />
                     </div>
                     <div class="col-md-4">
                         <img
                             src="https://placehold.co/400x300/F5DEB3/ffffff?text=Master+Suite"
                             class="img-fluid rounded shadow"
-                            alt="Master Suite"
-                            loading="lazy"
-                            width="400"
-                            height="300"
+                            alt="Master bedroom suite in family-friendly Oak Island beach house"
                         />
                     </div>
                     <div class="col-md-4">
                         <img
                             src="https://placehold.co/400x300/FFEFD5/ffffff?text=Guest+Room"
                             class="img-fluid rounded shadow"
-                            alt="Guest Room"
-                            loading="lazy"
-                            width="400"
-                            height="300"
+                            alt="Guest room perfect for kids in affordable Oak Island vacation rental"
                         />
                     </div>
                     <div class="col-md-4">
                         <img
                             src="https://placehold.co/400x300/F0FFFF/ffffff?text=Back+Patio"
                             class="img-fluid rounded shadow"
-                            alt="Back Patio"
-                            loading="lazy"
-                            width="400"
-                            height="300"
+                            alt="Private back patio with fenced yard at Down by the Sea"
                         />
                     </div>
                 </div>
@@ -242,6 +308,19 @@ import Footer from "../../components/Footer.astro";
                 <h3 class="fw-bold mb-4">Location & Getting Around</h3>
                 <div class="row">
                     <div class="col-lg-8">
+                        <div class="mb-4">
+                            <h4 class="h5 brand-text mb-3">📍 Property Address</h4>
+                            <p class="fs-5">
+                                <strong>Down by the Sea</strong><br/>
+                                111 SE 1st St<br/>
+                                Oak Island, NC 28465
+                            </p>
+                            <p class="text-muted">
+                                Situated in a peaceful Oak Island neighborhood, offering easy access to beach, shopping, and dining. 
+                                Ideal location for families seeking an affordable Oak Island beach vacation in North Carolina.
+                            </p>
+                        </div>
+                        
                         <p class="fs-5 mb-3">
                             Down by the Sea offers a peaceful location while
                             keeping you close to all Oak Island attractions.
@@ -269,6 +348,21 @@ import Footer from "../../components/Footer.astro";
                         </div>
                     </div>
                     <div class="col-lg-4">
+                        <div class="bg-light p-4 rounded mb-3">
+                            <h5 class="brand-text mb-3">🗺️ View on Map</h5>
+                            <p class="small mb-3">
+                                Find us at 111 SE 1st St, Oak Island, NC 28465
+                            </p>
+                            <a 
+                                href="https://www.google.com/maps/search/?api=1&query=111+SE+1st+St+Oak+Island+NC+28465" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-brand btn-sm w-100"
+                            >
+                                Open in Google Maps
+                            </a>
+                        </div>
+                        
                         <div class="bg-light p-4 rounded">
                             <h5 class="brand-text mb-3">🅿️ Parking</h5>
                             <p>
@@ -318,6 +412,9 @@ import Footer from "../../components/Footer.astro";
                 </div>
             </div>
         </div>
+
+        <!-- FAQ Section -->
+        <FAQ faqs={faqs} />
 
         <!-- House Rules -->
         <div class="row mb-5">

@@ -2,10 +2,90 @@
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
+import PropertySchema from "../../components/PropertySchema.astro";
+import FAQ from "../../components/FAQ.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+
+const propertyData = {
+    name: "Steps to the Sea - Pet Friendly Oak Island Vacation Rental",
+    description: "3-bedroom, 2-bathroom pet-friendly beach house in Oak Island, NC. Less than 10-minute walk to the beach. Sleeps 8. Perfect for families seeking kid-friendly beach rentals with fenced yard, full kitchen, and beach equipment.",
+    address: {
+        streetAddress: "1307 West Oak Island Dr",
+        city: "Oak Island",
+        state: "NC",
+        postalCode: "28465",
+    },
+    bedrooms: 3,
+    bathrooms: 2,
+    maxOccupancy: 8,
+    petsAllowed: true,
+    amenities: [
+        "WiFi",
+        "Air Conditioning",
+        "Beach Chairs",
+        "Washer & Dryer",
+        "Full Kitchen",
+        "Outdoor Shower",
+        "Fenced Yard",
+        "Parking",
+        "Smart TV",
+        "Grill",
+    ],
+    priceRange: "$$",
+};
+
+const faqs = [
+    {
+        question: "How far is Steps to the Sea from the beach?",
+        answer: "Steps to the Sea is located less than a 10-minute walk from Oak Island's beautiful beaches. The easy beach access makes it perfect for families with kids and beach equipment.",
+    },
+    {
+        question: "Is this vacation rental pet-friendly?",
+        answer: "Yes! We welcome up to 2 pets with a $50 pet fee per stay. The property features a fenced backyard that's perfect for dogs to play safely. Pets must be kept off furniture and cleaned up after.",
+    },
+    {
+        question: "What amenities are included at this Oak Island rental?",
+        answer: "Steps to the Sea includes WiFi, central air conditioning, full kitchen with dishwasher, washer/dryer, Smart TV, beach chairs and umbrella, beach wagon, outdoor shower, charcoal grill, and parking for 2 cars.",
+    },
+    {
+        question: "How many people can stay at Steps to the Sea?",
+        answer: "This vacation rental sleeps up to 8 guests comfortably with 3 bedrooms (king, queen, and two twins) plus a sofa bed in the living room.",
+    },
+    {
+        question: "What are the check-in and check-out times?",
+        answer: "Check-in is at 4:00 PM and check-out is at 10:00 AM. This allows us time to thoroughly clean and prepare the home for your arrival.",
+    },
+    {
+        question: "Is there parking available?",
+        answer: "Yes, the property has driveway parking for 2 cars, plus additional street parking is available for guests with extra vehicles.",
+    },
+    {
+        question: "What attractions are near Steps to the Sea?",
+        answer: "You're close to Oak Island Pier (5 min drive), the charming town of Southport (10 min), golf courses (8 min), restaurants (5-10 min walk), and grocery stores (15 min walk).",
+    },
+    {
+        question: "Why should I book direct instead of using Airbnb or VRBO?",
+        answer: "Booking directly through our website saves you money—you don't pay the extra service fees charged by platforms like VRBO and Airbnb. Plus, you get personalized service by communicating directly with us, the owners.",
+    },
+];
+
+const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Properties", url: "/properties" },
+    { name: "Steps to the Sea", url: "/properties/steps-to-the-sea" },
+];
 ---
 
-<Layout title="Steps to the Sea | Sea OKI Collection">
+<Layout 
+    title="Steps to the Sea - Pet Friendly Oak Island Beach House | Sea OKI Collection"
+    description="Book Steps to the Sea, a pet-friendly 3BR/2BA Oak Island vacation rental. Walk to the beach in 10 minutes. Sleeps 8, fenced yard, full kitchen. Best rates guaranteed when you book direct!"
+>
+    <PropertySchema {...propertyData} />
     <Navigation />
+
+    <div class="container pt-4">
+        <Breadcrumb items={breadcrumbItems} />
+    </div>
 
     <!-- Hero Section -->
     <section
@@ -19,8 +99,8 @@ import Footer from "../../components/Footer.astro";
         <div
             class="position-relative h-100 d-flex flex-column justify-content-center align-items-center text-center text-white"
         >
-            <h1 class="display-3 fw-bold mb-3">Steps to the Sea</h1>
-            <p class="fs-4">Your perfect beach getaway awaits</p>
+            <h1 class="display-3 fw-bold mb-3">Steps to the Sea - Oak Island</h1>
+            <p class="fs-4">Pet-Friendly Beach House • Sleeps 8 • Walk to Beach</p>
         </div>
     </section>
 
@@ -28,14 +108,14 @@ import Footer from "../../components/Footer.astro";
         <!-- Property Overview -->
         <div class="row mb-5">
             <div class="col-lg-8">
-                <h2 class="h3 fw-bold mb-3">About Steps to the Sea</h2>
+                <h2 class="h3 fw-bold mb-3">Pet-Friendly Oak Island Vacation Rental Near Beach</h2>
                 <p class="fs-5 mb-4">
-                    Our classic 3-bedroom, 2-bathroom beach house is perfectly
-                    located less than a 10-minute walk from Oak Island's
-                    pristine beaches. This charming home features an open living
-                    space that's perfect for family gatherings, a welcoming
-                    front porch for morning coffee, and all the amenities you
-                    need for a memorable coastal vacation.
+                    Steps to the Sea is a classic 3-bedroom, 2-bathroom pet-friendly beach house located in Oak Island, NC. 
+                    Perfect for families looking for kid-friendly beach rentals, our vacation home is less than a 10-minute 
+                    walk from Oak Island's pristine beaches. This charming coastal rental features an open living space 
+                    ideal for family gatherings, a welcoming front porch for morning coffee, and all the amenities you 
+                    need for a memorable Oak Island vacation including beach equipment, a fenced yard for dogs, and a 
+                    fully equipped kitchen.
                 </p>
 
                 <div class="row g-4 mb-4">
@@ -112,50 +192,35 @@ import Footer from "../../components/Footer.astro";
                         <img
                             src="https://placehold.co/600x400/87CEEB/ffffff?text=Living+Room"
                             class="img-fluid rounded shadow"
-                            alt="Living Room"
-                            loading="lazy"
-                            width="600"
-                            height="400"
+                            alt="Spacious living room at Steps to the Sea vacation rental in Oak Island NC"
                         />
                     </div>
                     <div class="col-md-6">
                         <img
                             src="https://placehold.co/600x400/98FB98/ffffff?text=Kitchen"
                             class="img-fluid rounded shadow"
-                            alt="Kitchen"
-                            loading="lazy"
-                            width="600"
-                            height="400"
+                            alt="Fully equipped kitchen with modern appliances at Oak Island beach house"
                         />
                     </div>
                     <div class="col-md-4">
                         <img
                             src="https://placehold.co/400x300/FFB6C1/ffffff?text=Master+Bedroom"
                             class="img-fluid rounded shadow"
-                            alt="Master Bedroom"
-                            loading="lazy"
-                            width="400"
-                            height="300"
+                            alt="Master bedroom with king bed in pet-friendly Oak Island rental"
                         />
                     </div>
                     <div class="col-md-4">
                         <img
                             src="https://placehold.co/400x300/DDA0DD/ffffff?text=Guest+Bedroom"
                             class="img-fluid rounded shadow"
-                            alt="Guest Bedroom"
-                            loading="lazy"
-                            width="400"
-                            height="300"
+                            alt="Guest bedroom perfect for families at Steps to the Sea"
                         />
                     </div>
                     <div class="col-md-4">
                         <img
                             src="https://placehold.co/400x300/F0E68C/ffffff?text=Bathroom"
                             class="img-fluid rounded shadow"
-                            alt="Bathroom"
-                            loading="lazy"
-                            width="400"
-                            height="300"
+                            alt="Clean modern bathroom in Oak Island vacation home"
                         />
                     </div>
                 </div>
@@ -242,6 +307,19 @@ import Footer from "../../components/Footer.astro";
                 <h3 class="fw-bold mb-4">Location & Getting Around</h3>
                 <div class="row">
                     <div class="col-lg-8">
+                        <div class="mb-4">
+                            <h4 class="h5 brand-text mb-3">📍 Property Address</h4>
+                            <p class="fs-5">
+                                <strong>Steps to the Sea</strong><br/>
+                                1307 West Oak Island Dr<br/>
+                                Oak Island, NC 28465
+                            </p>
+                            <p class="text-muted">
+                                Located on Oak Island's West Beach, offering easy beach access and proximity to local attractions, 
+                                restaurants, and shopping. Perfect location for a relaxing family beach vacation in Oak Island, North Carolina.
+                            </p>
+                        </div>
+                        
                         <p class="fs-5 mb-3">
                             Steps to the Sea is perfectly positioned for easy
                             beach access and exploring Oak Island.
@@ -267,6 +345,21 @@ import Footer from "../../components/Footer.astro";
                         </div>
                     </div>
                     <div class="col-lg-4">
+                        <div class="bg-light p-4 rounded mb-3">
+                            <h5 class="brand-text mb-3">🗺️ View on Map</h5>
+                            <p class="small mb-3">
+                                Find us at 1307 West Oak Island Dr, Oak Island, NC 28465
+                            </p>
+                            <a 
+                                href="https://www.google.com/maps/search/?api=1&query=1307+West+Oak+Island+Dr+Oak+Island+NC+28465" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-brand btn-sm w-100"
+                            >
+                                Open in Google Maps
+                            </a>
+                        </div>
+                        
                         <div class="bg-light p-4 rounded">
                             <h5 class="brand-text mb-3">🅿️ Parking</h5>
                             <p>
@@ -278,6 +371,9 @@ import Footer from "../../components/Footer.astro";
                 </div>
             </div>
         </div>
+
+        <!-- FAQ Section -->
+        <FAQ faqs={faqs} />
 
         <!-- House Rules -->
         <div class="row mb-5">

@@ -1,4 +1,4 @@
-# Allow all search engines to index the site
+# Allow all crawlers
 User-agent: *
 Allow: /
 
