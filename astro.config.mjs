@@ -7,5 +7,11 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://seaoki.com',
-	integrations: [mdx(), sitemap()],
+	integrations: [
+		mdx(),
+		sitemap({
+			// Exclude pages that shouldn't be indexed by search engines
+			filter: (page) => !page.includes('/404'),
+		}),
+	],
 });
