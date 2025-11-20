@@ -80,8 +80,9 @@ Severity: high
 **Recommendation:**
 ```bash
 npm audit fix
-# Or manually update
-npm install astro@latest
+# Or manually update to a specific patched version
+npm install astro@5.16.0
+# Always verify the latest secure version: https://github.com/withastro/astro/releases
 ```
 
 **Risk Level:** HIGH - These vulnerabilities could allow:
