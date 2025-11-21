@@ -74,6 +74,8 @@ const breadcrumbItems = [
     { name: "Properties", url: "/properties" },
     { name: "Steps to the Sea", url: "/properties/steps-to-the-sea" },
 ];
+
+const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
 ---
 
 <Layout 
@@ -158,7 +160,7 @@ const breadcrumbItems = [
                             data-widgettype="pricing"
                             data-listingid="79833"
                             data-color2="FFFFFF"
-                            data-accessToken="rgrksxiilsbfus279551"
+                            data-accessToken={houfyAccessToken}
                             data-pr_text1="Book Direct"
                             data-pr_text2="Contact Owner"
                             data-pr_text3="Enter dates and number of guests to view the total trip price, including additional fees and any taxes."
