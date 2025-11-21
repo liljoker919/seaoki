@@ -29,14 +29,14 @@ These have been moved to environment variables for better security practices.
 
 ### ⚠️ CRITICAL: Rotate Compromised Tokens
 
-The Houfy Access Token (`rgrksxiilsbfus279551`) that was previously hardcoded in the source code is **COMPROMISED** and must be rotated immediately.
+The Houfy Access Token that was previously hardcoded in the source code is **COMPROMISED** and must be rotated immediately.
 
 ### Steps to Rotate Houfy Access Token:
 
 1. Log in to your Houfy dashboard at https://www.houfy.com/dashboard
 2. Navigate to the API/Widget settings section
 3. Generate a new Access Token
-4. **Immediately invalidate/revoke the old token** (`rgrksxiilsbfus279551`)
+4. **Immediately invalidate/revoke the old token** (the one that was previously hardcoded)
 5. Update the new token in your production environment variables (see below)
 
 ### Setting Environment Variables in Production
