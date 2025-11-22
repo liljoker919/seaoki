@@ -15,8 +15,6 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = FallbackImage } = Astro.props;
-
-const googleAnalyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
 ---
 
 <!-- Global Metadata -->
@@ -35,26 +33,6 @@ const googleAnalyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
 	name="google-site-verification"
 	content="Olnn-USH2gid9950dCd5GN8jhsAcqC-Ph6lc5fXgWaM"
 />
-
-{
-	googleAnalyticsId && (
-		<>
-			<!-- Google tag (gtag.js) -->
-			<script
-				async
-				src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-			></script>
-			<script is:inline define:vars={{ googleAnalyticsId }}>
-				window.dataLayer = window.dataLayer || [];
-				function gtag() {
-					dataLayer.push(arguments);
-				}
-				gtag("js", new Date());
-				gtag("config", googleAnalyticsId);
-			</script>
-		</>
-	)
-}
 
 <!-- Font preloads -->
 <link
