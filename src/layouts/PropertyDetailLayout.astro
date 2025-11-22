@@ -1,0 +1,360 @@
+---
+import Layout from "./Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import PropertySchema from "../components/PropertySchema.astro";
+import FAQ from "../components/FAQ.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+
+export interface Props {
+    property: any;
+}
+
+const { property } = Astro.props;
+
+const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Properties", url: "/properties" },
+    { name: property.name.split(' - ')[0], url: `/properties/${property.slug}` },
+];
+
+const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
+---
+
+<Layout title={property.title} description={property.metaDescription}>
+    <PropertySchema {...property.propertyData} />
+    <Navigation />
+
+    <div class="container pt-4">
+        <Breadcrumb items={breadcrumbItems} />
+    </div>
+
+    <!-- Hero Section -->
+    <section
+        class="position-relative"
+        style={`height: 50vh; background-image: url('${property.heroImage}'); background-size: cover; background-position: center;`}
+    >
+        <div
+            class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"
+        >
+        </div>
+        <div
+            class="position-relative h-100 d-flex flex-column justify-content-center align-items-center text-center text-white"
+        >
+            <h1 class="display-3 fw-bold mb-3">{property.heroTitle}</h1>
+            <p class="fs-4">{property.heroSubtitle}</p>
+        </div>
+    </section>
+
+    <div class="container py-5">
+        <!-- Property Overview -->
+        <div class="row mb-5">
+            <div class="col-lg-8">
+                <h2 class="h3 fw-bold mb-3">{property.overviewTitle}</h2>
+                <p class="fs-5 mb-4">
+                    {property.overviewDescription}
+                </p>
+
+                <div class="row g-4 mb-4">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="text-center p-3 bg-light rounded">
+                            <div class="fw-bold fs-4 brand-text">{property.propertyData.bedrooms}</div>
+                            <small>Bedrooms</small>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="text-center p-3 bg-light rounded">
+                            <div class="fw-bold fs-4 brand-text">{property.propertyData.bathrooms}</div>
+                            <small>Bathrooms</small>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="text-center p-3 bg-light rounded">
+                            <div class="fw-bold fs-4 brand-text">{property.propertyData.maxOccupancy}</div>
+                            <small>Sleeps</small>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="text-center p-3 bg-light rounded">
+                            <div class="fw-bold fs-4 brand-text">🐾</div>
+                            <small>Pet Friendly</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4" id="book-your-stay">
+                <div class="card shadow border-0">
+                    <div class="card-header bg-brand text-white text-center">
+                        <h4 class="mb-0">Book Your Stay</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Houfy Booking Widget -->
+                        <div
+                            class="houfy_widget"
+                            data-widgettype="pricing"
+                            data-listingid={property.houfyListingId}
+                            data-color2="FFFFFF"
+                            data-accessToken={houfyAccessToken}
+                            data-pr_text1="Book Direct"
+                            data-pr_text2="Contact Owner"
+                            data-pr_text3="Enter dates and number of guests to view the total trip price, including additional fees and any taxes."
+                            data-show_calendarname="Y"
+                            data-button_color="008c99"
+                            data-contact_owner="Y"
+                            data-compare="N"
+                            data-contact_owner_email=""
+                            data-book_direct_button="Y"
+                            data-type="alllistings"
+                            data-show_listing="Y"
+                        >
+                        </div>
+
+                        <p class="small text-muted mt-3">
+                            Best rates guaranteed when you book direct!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3 class="fw-bold mb-4">Photo Gallery</h3>
+                {property.houfyGalleryId ? (
+                    <!-- Houfy Photo Gallery Widget -->
+                    <div class="p-3">
+                        <div
+                            class="houfy_widget"
+                            data-widgettype="gallery"
+                            data-listingid={property.houfyListingId}
+                            data-accessToken={property.houfyGalleryId}
+                        >
+                        </div>
+                    </div>
+                ) : property.photoGallery ? (
+                    <div class="row g-3">
+                        {property.photoGallery.map((photo: any, index: number) => (
+                            <div class={index < 2 ? "col-md-6" : "col-md-4"}>
+                                <img
+                                    src={photo.src}
+                                    class="img-fluid rounded shadow"
+                                    alt={photo.alt}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                ) : null}
+            </div>
+        </div>
+
+        <!-- Amenities -->
+        <div class="row mb-5">
+            <div class="col-lg-6">
+                <h3 class="fw-bold mb-4">Amenities</h3>
+
+                <div class="mb-4">
+                    <h5 class="brand-text">🏠 Indoor Features</h5>
+                    <ul class="list-unstyled ms-3">
+                        {property.amenities.indoor.map((amenity: string) => (
+                            <li>✅ {amenity}</li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <h5 class="brand-text">🏖️ Beach & Outdoor</h5>
+                    <ul class="list-unstyled ms-3">
+                        {property.amenities.outdoor.map((amenity: string) => (
+                            <li>✅ {amenity}</li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <h3 class="fw-bold mb-4">Sleeping Arrangements</h3>
+
+                <div class="mb-4">
+                    <h5 class="brand-text">🛏️ Bedrooms</h5>
+                    {property.bedrooms.map((bedroom: any) => (
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h6 class="card-title">{bedroom.name}</h6>
+                                <p class="card-text">
+                                    {bedroom.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+
+        <!-- Location & Area -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3 class="fw-bold mb-4">Location & Getting Around</h3>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="mb-4">
+                            <h4 class="h5 brand-text mb-3">📍 Property Address</h4>
+                            <p class="fs-5">
+                                <strong>{property.location.address.name}</strong><br/>
+                                {property.location.address.street}<br/>
+                                {property.location.address.city}, {property.location.address.state} {property.location.address.zip}
+                            </p>
+                            <p class="text-muted">
+                                {property.location.description}
+                            </p>
+                        </div>
+                        
+                        <p class="fs-5 mb-3">
+                            {property.location.locationDescription}
+                        </p>
+
+                        <div class="row g-4">
+                            {property.location.walkingDistance && (
+                                <div class="col-md-6">
+                                    <h5 class="brand-text">🚶‍♀️ Walking Distance</h5>
+                                    <ul class="list-unstyled">
+                                        {property.location.walkingDistance.map((item: string) => (
+                                            <li>• {item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                            {property.location.shortDrive && (
+                                <div class="col-md-6">
+                                    <h5 class="brand-text">🚗 Short Drive</h5>
+                                    <ul class="list-unstyled">
+                                        {property.location.shortDrive.map((item: string) => (
+                                            <li>• {item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                            {property.location.shortDriveGolfCart && (
+                                <div class="col-md-6">
+                                    <h5 class="brand-text">
+                                        🚗 Short Drive/Golf Cart
+                                    </h5>
+                                    <ul class="list-unstyled">
+                                        {property.location.shortDriveGolfCart.map((item: string) => (
+                                            <li>• {item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                            {property.location.byCar && (
+                                <div class="col-md-6">
+                                    <h5 class="brand-text">🚗 By Car</h5>
+                                    <ul class="list-unstyled">
+                                        {property.location.byCar.map((item: string) => (
+                                            <li>• {item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="bg-light p-4 rounded mb-3">
+                            <h5 class="brand-text mb-3">🗺️ View on Map</h5>
+                            <p class="small mb-3">
+                                Find us at {property.location.address.street}, {property.location.address.city}, {property.location.address.state} {property.location.address.zip}
+                            </p>
+                            <a 
+                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(property.location.address.street + ' ' + property.location.address.city + ' ' + property.location.address.state + ' ' + property.location.address.zip)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-brand btn-sm w-100"
+                            >
+                                Open in Google Maps
+                            </a>
+                        </div>
+                        
+                        <div class="bg-light p-4 rounded">
+                            <h5 class="brand-text mb-3">🅿️ Parking</h5>
+                            <p>
+                                {property.location.parking}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Value Proposition (conditional for Down by the Sea) -->
+        {property.valueProposition && (
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="bg-light p-5 rounded">
+                        <h3 class="fw-bold mb-4 text-center">
+                            Why Choose {property.location.address.name}?
+                        </h3>
+                        <div class="row g-4">
+                            {property.valueProposition.map((item: any) => (
+                                <div class="col-md-4 text-center">
+                                    <div class="brand-text fs-1 mb-3">{item.icon}</div>
+                                    <h5>{item.title}</h5>
+                                    <p>
+                                        {item.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )}
+
+        <!-- FAQ Section -->
+        <FAQ faqs={property.faqs} />
+
+        <!-- House Rules -->
+        <div class="row mb-5">
+            <div class="col-lg-6">
+                <h3 class="fw-bold mb-4">House Rules</h3>
+                <ul class="list-group list-group-flush">
+                    {property.houseRules.map((rule: string) => (
+                        <li class="list-group-item">✅ {rule}</li>
+                    ))}
+                </ul>
+            </div>
+
+            <div class="col-lg-6">
+                <h3 class="fw-bold mb-4">Important Information</h3>
+                {property.importantInfo.map((info: any) => (
+                    <div class={`alert alert-${info.type}`}>
+                        <h5>{info.icon} {info.title}</h5>
+                        <p class="mb-0">
+                            {info.description}
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="text-center">
+            <div class="bg-brand text-white p-5 rounded">
+                <h3 class="mb-3">{property.ctaTitle}</h3>
+                <p class="fs-5 mb-4">
+                    {property.ctaSubtitle}
+                </p>
+                <a
+                    href="#book-your-stay"
+                    class="btn btn-light btn-lg brand-text fw-bold"
+                    >Check Availability & Book Now</a
+                >
+            </div>
+        </div>
+    </div>
+
+    <!-- Houfy Widget Script - loads once for all widgets on the page -->
+    <script src="https://widgets.houfy.com/js/main.js" defer crossorigin="anonymous"></script>
+
+    <Footer />
+</Layout>
