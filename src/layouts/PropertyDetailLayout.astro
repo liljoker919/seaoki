@@ -230,7 +230,7 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
                     </div>
                 ) : property.photoGallery ? (
                     <div class="row g-3">
-                        {property.photoGallery.map((photo: any, index: number) => (
+                        {property.photoGallery.map((photo: PhotoGalleryItem, index: number) => (
                             <div class={index < 2 ? "col-md-6" : "col-md-4"}>
                                 <img
                                     src={photo.src}
@@ -273,7 +273,7 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
 
                 <div class="mb-4">
                     <h5 class="brand-text">🛏️ Bedrooms</h5>
-                    {property.bedrooms.map((bedroom: any) => (
+                    {property.bedrooms.map((bedroom: Bedroom) => (
                         <div class="card mb-3">
                             <div class="card-body">
                                 <h6 class="card-title">{bedroom.name}</h6>
@@ -390,7 +390,7 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
                             Why Choose {property.location.address.name}?
                         </h3>
                         <div class="row g-4">
-                            {property.valueProposition.map((item: any) => (
+                            {property.valueProposition.map((item: ValueProposition) => (
                                 <div class="col-md-4 text-center">
                                     <div class="brand-text fs-1 mb-3">{item.icon}</div>
                                     <h5>{item.title}</h5>
@@ -421,7 +421,7 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
 
             <div class="col-lg-6">
                 <h3 class="fw-bold mb-4">Important Information</h3>
-                {property.importantInfo.map((info: any) => (
+                {property.importantInfo.map((info: ImportantInfo) => (
                     <div class={`alert alert-${info.type}`}>
                         <h5>{info.icon} {info.title}</h5>
                         <p class="mb-0">
