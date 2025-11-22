@@ -6,8 +6,103 @@ import PropertySchema from "../components/PropertySchema.astro";
 import FAQ from "../components/FAQ.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 
+interface PropertyAddress {
+    name: string;
+    street: string;
+    city: string;
+    state: string;
+    zip: string;
+}
+
+interface PropertyLocation {
+    address: PropertyAddress;
+    description: string;
+    locationDescription: string;
+    walkingDistance?: string[];
+    shortDrive?: string[];
+    shortDriveGolfCart?: string[];
+    byCar?: string[];
+    parking: string;
+}
+
+interface Bedroom {
+    name: string;
+    description: string;
+}
+
+interface Amenities {
+    indoor: string[];
+    outdoor: string[];
+}
+
+interface PropertyDataSchema {
+    name: string;
+    description: string;
+    address: {
+        streetAddress: string;
+        city: string;
+        state: string;
+        postalCode: string;
+    };
+    bedrooms: number;
+    bathrooms: number;
+    maxOccupancy: number;
+    petsAllowed: boolean;
+    amenities: string[];
+    priceRange: string;
+}
+
+interface FAQItem {
+    question: string;
+    answer: string;
+}
+
+interface ImportantInfo {
+    type: string;
+    icon: string;
+    title: string;
+    description: string;
+}
+
+interface PhotoGalleryItem {
+    src: string;
+    alt: string;
+}
+
+interface ValueProposition {
+    icon: string;
+    title: string;
+    description: string;
+}
+
+interface Property {
+    id: string;
+    name: string;
+    slug: string;
+    title: string;
+    metaDescription: string;
+    heroTitle: string;
+    heroSubtitle: string;
+    heroImage: string;
+    overviewTitle: string;
+    overviewDescription: string;
+    propertyData: PropertyDataSchema;
+    houfyListingId: string;
+    houfyGalleryId?: string;
+    photoGallery?: PhotoGalleryItem[];
+    amenities: Amenities;
+    bedrooms: Bedroom[];
+    location: PropertyLocation;
+    valueProposition?: ValueProposition[];
+    faqs: FAQItem[];
+    houseRules: string[];
+    importantInfo: ImportantInfo[];
+    ctaTitle: string;
+    ctaSubtitle: string;
+}
+
 export interface Props {
-    property: any;
+    property: Property;
 }
 
 const { property } = Astro.props;
