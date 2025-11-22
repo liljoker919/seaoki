@@ -74,6 +74,8 @@ const breadcrumbItems = [
     { name: "Properties", url: "/properties" },
     { name: "Steps to the Sea", url: "/properties/steps-to-the-sea" },
 ];
+
+const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
 ---
 
 <Layout 
@@ -158,7 +160,7 @@ const breadcrumbItems = [
                             data-widgettype="pricing"
                             data-listingid="79833"
                             data-color2="FFFFFF"
-                            data-accessToken="rgrksxiilsbfus279551"
+                            data-accessToken={houfyAccessToken}
                             data-pr_text1="Book Direct"
                             data-pr_text2="Contact Owner"
                             data-pr_text3="Enter dates and number of guests to view the total trip price, including additional fees and any taxes."
@@ -172,8 +174,6 @@ const breadcrumbItems = [
                             data-show_listing="Y"
                         >
                         </div>
-                        <script src="https://widgets.houfy.com/js/main.js" async crossorigin="anonymous"
-                        ></script>
 
                         <p class="small text-muted mt-3">
                             Best rates guaranteed when you book direct!
@@ -187,41 +187,14 @@ const breadcrumbItems = [
         <div class="row mb-5">
             <div class="col-12">
                 <h3 class="fw-bold mb-4">Photo Gallery</h3>
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <img
-                            src="https://placehold.co/600x400/87CEEB/ffffff?text=Living+Room"
-                            class="img-fluid rounded shadow"
-                            alt="Spacious living room at Steps to the Sea vacation rental in Oak Island NC"
-                        />
-                    </div>
-                    <div class="col-md-6">
-                        <img
-                            src="https://placehold.co/600x400/98FB98/ffffff?text=Kitchen"
-                            class="img-fluid rounded shadow"
-                            alt="Fully equipped kitchen with modern appliances at Oak Island beach house"
-                        />
-                    </div>
-                    <div class="col-md-4">
-                        <img
-                            src="https://placehold.co/400x300/FFB6C1/ffffff?text=Master+Bedroom"
-                            class="img-fluid rounded shadow"
-                            alt="Master bedroom with king bed in pet-friendly Oak Island rental"
-                        />
-                    </div>
-                    <div class="col-md-4">
-                        <img
-                            src="https://placehold.co/400x300/DDA0DD/ffffff?text=Guest+Bedroom"
-                            class="img-fluid rounded shadow"
-                            alt="Guest bedroom perfect for families at Steps to the Sea"
-                        />
-                    </div>
-                    <div class="col-md-4">
-                        <img
-                            src="https://placehold.co/400x300/F0E68C/ffffff?text=Bathroom"
-                            class="img-fluid rounded shadow"
-                            alt="Clean modern bathroom in Oak Island vacation home"
-                        />
+                <!-- Houfy Photo Gallery Widget -->
+                <div class="p-3">
+                    <div
+                        class="houfy_widget"
+                        data-widgettype="gallery"
+                        data-listingid="79833"
+                        data-accessToken="rgrksxiilsbfus279551"
+                    >
                     </div>
                 </div>
             </div>
@@ -432,6 +405,9 @@ const breadcrumbItems = [
             </div>
         </div>
     </div>
+
+    <!-- Houfy Widget Script - loads once for all widgets on the page -->
+    <script src="https://widgets.houfy.com/js/main.js" defer crossorigin="anonymous"></script>
 
     <Footer />
 </Layout>

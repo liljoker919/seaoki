@@ -8,6 +8,8 @@ const {
     title,
     description = "Discover the Sea OKI Collection - two beautiful, pet-friendly vacation homes in Oak Island, NC. Book directly and save!",
 } = Astro.props;
+
+const googleAnalyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
 ---
 
 <!doctype html>
@@ -25,19 +27,25 @@ const {
             content="Olnn-USH2gid9950dCd5GN8jhsAcqC-Ph6lc5fXgWaM"
         />
 
-        <!-- Google tag (gtag.js) -->
-        <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-C9W0RLWLJX"
-        ></script>
-        <script is:inline>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-            gtag("config", "G-C9W0RLWLJX");
-        </script>
+        {
+            googleAnalyticsId && (
+                <>
+                    <!-- Google tag (gtag.js) -->
+                    <script
+                        async
+                        src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+                    ></script>
+                    <script is:inline define:vars={{ googleAnalyticsId }}>
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag() {
+                            dataLayer.push(arguments);
+                        }
+                        gtag("js", new Date());
+                        gtag("config", googleAnalyticsId);
+                    </script>
+                </>
+            )
+        }
 
         <!-- Bootstrap CSS -->
         <link
