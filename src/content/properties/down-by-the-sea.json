@@ -1,17 +1,17 @@
 {
   "id": "down-by-the-sea",
-  "name": "Down by the Sea - Affordable Pet Friendly Oak Island Rental",
+  "name": "Down by the Sea - Long Term Pet Friendly Oak Island Rental",
   "slug": "down-by-the-sea",
-  "title": "Down by the Sea - Affordable Pet Friendly Oak Island Rental | Sea OKI Collection",
-  "metaDescription": "Book Down by the Sea, an affordable 3BR/2BA pet-friendly Oak Island vacation rental. Sleeps 6, fenced yard, beach equipment included. Great value for families. Book direct and save!",
+  "title": "Down by the Sea - Long Term Pet Friendly Oak Island Rental | Sea OKI Collection",
+  "metaDescription": "Down by the Sea is currently rented. 3BR/2BA pet-friendly Oak Island home. Sleeps 6, fenced yard. Contact us for future availability.",
   "heroTitle": "Down by the Sea - Oak Island",
-  "heroSubtitle": "Affordable Pet-Friendly Beach House • Sleeps 6 • Family Value",
+  "heroSubtitle": "Currently Rented • Long Term Pet-Friendly Rental",
   "heroImage": "https://placehold.co/1920x800/ffafcc/ffffff?text=Down+by+the+Sea+Hero",
-  "overviewTitle": "Affordable Pet-Friendly Oak Island Beach Vacation Rental",
-  "overviewDescription": "Down by the Sea is a charming and cozy 3-bedroom, 2-bathroom pet-friendly vacation rental in Oak Island, NC that offers exceptional comfort and value for families. Perfect for budget-conscious travelers seeking kid-friendly beach rentals, this Oak Island vacation home is a short golf cart ride or drive from public beach access. Your affordable coastal retreat includes all the amenities needed for a memorable Oak Island vacation: fenced yard for dogs and kids, fully equipped kitchen, beach equipment, and comfortable sleeping for up to 6 guests.",
+  "overviewTitle": "Currently Rented - Long Term Pet-Friendly Oak Island Rental",
+  "overviewDescription": "Down by the Sea is a charming and cozy 3-bedroom, 2-bathroom pet-friendly home in Oak Island, NC. It is currently rented and not available for new inquiries at this time. Perfect for families or individuals seeking a comfortable extended stay, this home is a short golf cart ride or drive from public beach access. Your coastal retreat includes all the amenities needed for a comfortable stay: fenced yard for dogs and kids, fully equipped kitchen, and comfortable sleeping for up to 6 guests.",
   "propertyData": {
-    "name": "Down by the Sea - Affordable Pet Friendly Oak Island Rental",
-    "description": "3-bedroom, 2-bathroom pet-friendly vacation home in Oak Island, NC. Sleeps 6. Family-friendly beach rental with fenced yard, full kitchen, and beach equipment. Excellent value for budget-conscious families.",
+    "name": "Down by the Sea - Currently Rented",
+    "description": "3-bedroom, 2-bathroom pet-friendly home in Oak Island, NC. Currently rented. Fenced yard, full kitchen.",
     "address": {
       "streetAddress": "111 SE 1st St",
       "city": "Oak Island",
@@ -36,29 +36,6 @@
     ],
     "priceRange": "$$"
   },
-  "houfyListingId": "REPLACE_WITH_ACTUAL_LISTING_ID",
-  "photoGallery": [
-    {
-      "src": "https://placehold.co/600x400/FFE4E1/ffffff?text=Cozy+Living+Room",
-      "alt": "Cozy living room at Down by the Sea affordable Oak Island rental"
-    },
-    {
-      "src": "https://placehold.co/600x400/E6E6FA/ffffff?text=Updated+Kitchen",
-      "alt": "Updated kitchen with modern appliances in pet-friendly Oak Island vacation home"
-    },
-    {
-      "src": "https://placehold.co/400x300/F5DEB3/ffffff?text=Master+Suite",
-      "alt": "Master bedroom suite in family-friendly Oak Island beach house"
-    },
-    {
-      "src": "https://placehold.co/400x300/FFEFD5/ffffff?text=Guest+Room",
-      "alt": "Guest room perfect for kids in affordable Oak Island vacation rental"
-    },
-    {
-      "src": "https://placehold.co/400x300/F0FFFF/ffffff?text=Back+Patio",
-      "alt": "Private back patio with fenced yard at Down by the Sea"
-    }
-  ],
   "amenities": {
     "indoor": [
       "Comfortable living area with seating for all",
@@ -194,6 +171,6 @@
       "description": "Consider renting a golf cart for easy beach access and exploring Oak Island! Many guests find this adds to the fun island experience."
     }
   ],
-  "ctaTitle": "Ready to Book Down by the Sea?",
-  "ctaSubtitle": "Discover comfort and value at our charming coastal retreat"
+  "ctaTitle": "Currently Rented",
+  "ctaSubtitle": "This property is currently occupied. Please check back later for availability."
 }

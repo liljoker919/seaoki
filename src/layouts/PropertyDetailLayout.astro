@@ -87,7 +87,7 @@ interface Property {
     overviewTitle: string;
     overviewDescription: string;
     propertyData: PropertyDataSchema;
-    houfyListingId: string;
+    houfyListingId?: string;
     houfyGalleryId?: string;
     photoGallery?: PhotoGalleryItem[];
     amenities: Amenities;
@@ -144,7 +144,7 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
     <div class="container py-5">
         <!-- Property Overview -->
         <div class="row mb-5">
-            <div class="col-lg-8">
+            <div class={property.houfyListingId ? "col-lg-8" : "col-12"}>
                 <h2 class="h3 fw-bold mb-3">{property.overviewTitle}</h2>
                 <p class="fs-5 mb-4">
                     {property.overviewDescription}
@@ -178,6 +178,7 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
                 </div>
             </div>
 
+            {property.houfyListingId && (
             <div class="col-lg-4" id="book-your-stay">
                 <div class="card shadow border-0">
                     <div class="card-header bg-brand text-white text-center">
@@ -211,9 +212,11 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
                     </div>
                 </div>
             </div>
+            )}
         </div>
 
         <!-- Photo Gallery -->
+        {(property.houfyGalleryId || (property.photoGallery && property.photoGallery.length > 0)) && (
         <div class="row mb-5">
             <div class="col-12">
                 <h3 class="fw-bold mb-4">Photo Gallery</h3>
@@ -243,6 +246,7 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
                 ) : null}
             </div>
         </div>
+        )}
 
         <!-- Amenities -->
         <div class="row mb-5">
@@ -439,11 +443,19 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
                 <p class="fs-5 mb-4">
                     {property.ctaSubtitle}
                 </p>
+                {property.houfyListingId ? (
                 <a
                     href="#book-your-stay"
                     class="btn btn-light btn-lg brand-text fw-bold"
                     >Check Availability & Book Now</a
                 >
+                ) : (
+                <a
+                    href="/contact"
+                    class="btn btn-light btn-lg brand-text fw-bold"
+                    >Contact Us</a
+                >
+                )}
             </div>
         </div>
     </div>
