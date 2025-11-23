@@ -100,6 +100,8 @@ Add the following secrets to your GitHub repository:
    - `AWS_REGION`: `us-east-1` (required for CloudFront/ACM)
    - `S3_BUCKET`: Your S3 bucket name (e.g., `seaoki.com`)
    - `CLOUDFRONT_DISTRIBUTION_ID`: Will be added after AWS infrastructure setup
+   - `PUBLIC_GOOGLE_ANALYTICS_ID`: Your Google Analytics Measurement ID (e.g., `G-XXXXXXXXXX`)
+   - `PUBLIC_HOUFY_ACCESS_TOKEN`: Your Houfy widget access token
 
 ### Step 4: Configure Route 53 Domain
 

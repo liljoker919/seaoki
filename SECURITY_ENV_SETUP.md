@@ -67,6 +67,20 @@ Or use the Netlify Dashboard:
 3. Add `PUBLIC_HOUFY_ACCESS_TOKEN` with your **NEW** Houfy token
 4. Trigger a new deploy
 
+#### GitHub Actions (AWS S3/CloudFront Deployment)
+
+If deploying via GitHub Actions (as in `.github/workflows/deploy.yml`):
+
+1. Go to your repository on GitHub
+2. Navigate to **Settings** → **Secrets and variables** → **Actions**
+3. Click **New repository secret** and add:
+   - `PUBLIC_GOOGLE_ANALYTICS_ID`: Your Google Analytics Measurement ID
+   - `PUBLIC_HOUFY_ACCESS_TOKEN`: Your **NEW** Houfy token
+4. The workflow file is already configured to expose these secrets during the build step
+5. Push to the `main` branch to trigger a deployment
+
+**Note**: The secrets are injected into the build environment and become part of the static site bundle, as these are PUBLIC_ prefixed variables intended for client-side use.
+
 #### Other Platforms
 Refer to your hosting platform's documentation for setting environment variables. The variables must be available at build time since Astro is a static site generator.
 
