@@ -1,0 +1,161 @@
+{
+  "id": "steps-to-the-sea",
+  "name": "Steps to the Sea - Pet Friendly Oak Island Vacation Rental",
+  "slug": "steps-to-the-sea",
+  "title": "Steps to the Sea - Pet Friendly Oak Island Beach House | Sea OKI Collection",
+  "metaDescription": "Book Steps to the Sea, a pet-friendly 3BR/2BA Oak Island vacation rental. Walk to the beach in 10 minutes. Sleeps 6, fenced yard, full kitchen. Best rates guaranteed when you book direct!",
+  "heroTitle": "Steps to the Sea - Oak Island",
+  "heroSubtitle": "Pet-Friendly Beach House • Sleeps 6 • Walk to Beach",
+  "heroImage": "https://placehold.co/1920x800/bde0fe/ffffff?text=Steps+to+the+Sea+Hero",
+  "overviewTitle": "Pet-Friendly Oak Island Vacation Rental Near Beach",
+  "overviewDescription": "Steps to the Sea is a classic 3-bedroom, 2-bathroom pet-friendly beach house located in Oak Island, NC. Perfect for families looking for kid-friendly beach rentals, our vacation home is less than a 10-minute walk from Oak Island's pristine beaches. This charming coastal rental features an open living space ideal for family gatherings, a welcoming front porch for morning coffee, and all the amenities you need for a memorable Oak Island vacation including beach equipment, a fenced yard for dogs, and a fully equipped kitchen.",
+  "propertyData": {
+    "name": "Steps to the Sea - Pet Friendly Oak Island Vacation Rental",
+    "description": "3-bedroom, 2-bathroom pet-friendly beach house in Oak Island, NC. Less than 10-minute walk to the beach. Sleeps 6. Perfect for families seeking kid-friendly beach rentals with fenced yard, full kitchen, and beach equipment.",
+    "address": {
+      "streetAddress": "1307 West Oak Island Dr",
+      "city": "Oak Island",
+      "state": "NC",
+      "postalCode": "28465"
+    },
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "maxOccupancy": 6,
+    "petsAllowed": true,
+    "amenities": [
+      "WiFi",
+      "Air Conditioning",
+      "Beach Chairs",
+      "Washer & Dryer",
+      "Full Kitchen",
+      "Outdoor Shower",
+      "Fenced Yard",
+      "Parking",
+      "Smart TV",
+      "Grill"
+    ],
+    "priceRange": "$$"
+  },
+  "houfyListingId": "79833",
+  "houfyGalleryId": "rgrksxiilsbfus279551",
+  "amenities": {
+    "indoor": [
+      "Open concept living/dining/kitchen",
+      "Central air conditioning & heating",
+      "High-speed WiFi throughout",
+      "Smart TV with streaming services",
+      "Fully equipped kitchen with dishwasher",
+      "Washer and dryer",
+      "Iron and ironing board",
+      "Hair dryer"
+    ],
+    "outdoor": [
+      "Beach chairs and umbrella",
+      "Beach wagon for easy transport",
+      "Outdoor shower",
+      "Covered front porch with seating",
+      "Charcoal grill",
+      "Fenced backyard (perfect for pets!)",
+      "Outdoor dining table"
+    ]
+  },
+  "bedrooms": [
+    {
+      "name": "Master Bedroom",
+      "description": "King bed, en-suite bathroom, closet space"
+    },
+    {
+      "name": "Guest Bedroom 1",
+      "description": "Queen bed, shared bathroom access"
+    },
+    {
+      "name": "Guest Bedroom 2",
+      "description": "Two twin beds, shared bathroom access"
+    },
+    {
+      "name": "Living Room",
+      "description": "Sofa bed for additional guests"
+    }
+  ],
+  "location": {
+    "address": {
+      "name": "Steps to the Sea",
+      "street": "1307 West Oak Island Dr",
+      "city": "Oak Island",
+      "state": "NC",
+      "zip": "28465"
+    },
+    "description": "Located on Oak Island's West Beach, offering easy beach access and proximity to local attractions, restaurants, and shopping. Perfect location for a relaxing family beach vacation in Oak Island, North Carolina.",
+    "locationDescription": "Steps to the Sea is perfectly positioned for easy beach access and exploring Oak Island.",
+    "walkingDistance": [
+      "Beach: 10 minutes",
+      "Grocery store: 15 minutes",
+      "Restaurants: 5-10 minutes"
+    ],
+    "shortDrive": [
+      "Oak Island Pier: 5 minutes",
+      "Southport: 10 minutes",
+      "Golf course: 8 minutes"
+    ],
+    "parking": "Driveway parking for 2 cars plus additional street parking available."
+  },
+  "faqs": [
+    {
+      "question": "How far is Steps to the Sea from the beach?",
+      "answer": "Steps to the Sea is located less than a 10-minute walk from Oak Island's beautiful beaches. The easy beach access makes it perfect for families with kids and beach equipment."
+    },
+    {
+      "question": "Is this vacation rental pet-friendly?",
+      "answer": "Yes! We welcome up to 2 pets with a $50 pet fee per stay. The property features a fenced backyard that's perfect for dogs to play safely. Pets must be kept off furniture and cleaned up after."
+    },
+    {
+      "question": "What amenities are included at this Oak Island rental?",
+      "answer": "Steps to the Sea includes WiFi, central air conditioning, full kitchen with dishwasher, washer/dryer, Smart TV, beach chairs and umbrella, beach wagon, outdoor shower, charcoal grill, and parking for 2 cars."
+    },
+    {
+      "question": "How many people can stay at Steps to the Sea?",
+      "answer": "This vacation rental sleeps up to 6 guests comfortably with 3 bedrooms (king, queen, and two twins)."
+    },
+    {
+      "question": "What are the check-in and check-out times?",
+      "answer": "Check-in is at 4:00 PM and check-out is at 10:00 AM. This allows us time to thoroughly clean and prepare the home for your arrival."
+    },
+    {
+      "question": "Is there parking available?",
+      "answer": "Yes, the property has driveway parking for 2 cars, plus additional street parking is available for guests with extra vehicles."
+    },
+    {
+      "question": "What attractions are near Steps to the Sea?",
+      "answer": "You're close to Oak Island Pier (5 min drive), the charming town of Southport (10 min), golf courses (8 min), restaurants (5-10 min walk), and grocery stores (15 min walk)."
+    },
+    {
+      "question": "Why should I book direct instead of using Airbnb or VRBO?",
+      "answer": "Booking directly through our website saves you money—you don't pay the extra service fees charged by platforms like VRBO and Airbnb. Plus, you get personalized service by communicating directly with us, the owners."
+    }
+  ],
+  "houseRules": [
+    "Check-in: 4:00 PM",
+    "Check-out: 10:00 AM",
+    "Maximum 6 guests",
+    "Pets welcome (2 max, $50 fee)",
+    "No smoking inside",
+    "No parties or events",
+    "Quiet hours: 10 PM - 8 AM"
+  ],
+  "importantInfo": [
+    {
+      "type": "info",
+      "icon": "🐾",
+      "title": "Pet Policy",
+      "description": "We love your furry family members! Please keep pets off furniture and clean up after them. The fenced backyard is perfect for letting dogs play safely."
+    },
+    {
+      "type": "warning",
+      "icon": "🏖️",
+      "title": "Beach Safety",
+      "description": "Always supervise children near water. Check tide schedules and weather conditions. Beach equipment is provided but use at your own risk."
+    }
+  ],
+  "ctaTitle": "Ready to Book Steps to the Sea?",
+  "ctaSubtitle": "Experience the perfect Oak Island getaway in our beautiful beach house"
+}
