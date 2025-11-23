@@ -8,7 +8,8 @@ import Breadcrumb from "../../components/Breadcrumb.astro";
 
 const propertyData = {
     name: "Steps to the Sea - Pet Friendly Oak Island Vacation Rental",
-    description: "3-bedroom, 2-bathroom pet-friendly beach house in Oak Island, NC. Less than 10-minute walk to the beach. Sleeps 6. Perfect for families seeking kid-friendly beach rentals with fenced yard, full kitchen, and beach equipment.",
+    description:
+        "3-bedroom, 2-bathroom pet-friendly beach house in Oak Island, NC. Less than 10-minute walk to the beach. Sleeps 6. Perfect for families seeking kid-friendly beach rentals with fenced yard, full kitchen, and beach equipment.",
     address: {
         streetAddress: "1307 West Oak Island Dr",
         city: "Oak Island",
@@ -78,7 +79,7 @@ const breadcrumbItems = [
 const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
 ---
 
-<Layout 
+<Layout
     title="Steps to the Sea - Pet Friendly Oak Island Beach House | Sea OKI Collection"
     description="Book Steps to the Sea, a pet-friendly 3BR/2BA Oak Island vacation rental. Walk to the beach in 10 minutes. Sleeps 6, fenced yard, full kitchen. Best rates guaranteed when you book direct!"
 >
@@ -101,8 +102,12 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
         <div
             class="position-relative h-100 d-flex flex-column justify-content-center align-items-center text-center text-white"
         >
-            <h1 class="display-3 fw-bold mb-3">Steps to the Sea - Oak Island</h1>
-            <p class="fs-4">Pet-Friendly Beach House • Sleeps 6 • Walk to Beach</p>
+            <h1 class="display-3 fw-bold mb-3">
+                Steps to the Sea - Oak Island
+            </h1>
+            <p class="fs-4">
+                Pet-Friendly Beach House • Sleeps 6 • Walk to Beach
+            </p>
         </div>
     </section>
 
@@ -110,13 +115,19 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
         <!-- Property Overview -->
         <div class="row mb-5">
             <div class="col-lg-8">
-                <h2 class="h3 fw-bold mb-3">Pet-Friendly Oak Island Vacation Rental Near Beach</h2>
+                <h2 class="h3 fw-bold mb-3">
+                    Pet-Friendly Oak Island Vacation Rental Near Beach
+                </h2>
                 <p class="fs-5 mb-4">
-                    Steps to the Sea is a classic 3-bedroom, 2-bathroom pet-friendly beach house located in Oak Island, NC. 
-                    Perfect for families looking for kid-friendly beach rentals, our vacation home is less than a 10-minute 
-                    walk from Oak Island's pristine beaches. This charming coastal rental features an open living space 
-                    ideal for family gatherings, a welcoming front porch for morning coffee, and all the amenities you 
-                    need for a memorable Oak Island vacation including beach equipment, a fenced yard for dogs, and a 
+                    Steps to the Sea is a classic 3-bedroom, 2-bathroom
+                    pet-friendly beach house located in Oak Island, NC. Perfect
+                    for families looking for kid-friendly beach rentals, our
+                    vacation home is less than a 10-minute walk from Oak
+                    Island's pristine beaches. This charming coastal rental
+                    features an open living space ideal for family gatherings, a
+                    welcoming front porch for morning coffee, and all the
+                    amenities you need for a memorable Oak Island vacation
+                    including beach equipment, a fenced yard for dogs, and a
                     fully equipped kitchen.
                 </p>
 
@@ -281,18 +292,23 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="mb-4">
-                            <h4 class="h5 brand-text mb-3">📍 Property Address</h4>
+                            <h4 class="h5 brand-text mb-3">
+                                📍 Property Address
+                            </h4>
                             <p class="fs-5">
-                                <strong>Steps to the Sea</strong><br/>
-                                1307 West Oak Island Dr<br/>
+                                <strong>Steps to the Sea</strong><br />
+                                1307 West Oak Island Dr<br />
                                 Oak Island, NC 28465
                             </p>
                             <p class="text-muted">
-                                Located on Oak Island's West Beach, offering easy beach access and proximity to local attractions, 
-                                restaurants, and shopping. Perfect location for a relaxing family beach vacation in Oak Island, North Carolina.
+                                Located on Oak Island's West Beach, offering
+                                easy beach access and proximity to local
+                                attractions, restaurants, and shopping. Perfect
+                                location for a relaxing family beach vacation in
+                                Oak Island, North Carolina.
                             </p>
                         </div>
-                        
+
                         <p class="fs-5 mb-3">
                             Steps to the Sea is perfectly positioned for easy
                             beach access and exploring Oak Island.
@@ -321,10 +337,11 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
                         <div class="bg-light p-4 rounded mb-3">
                             <h5 class="brand-text mb-3">🗺️ View on Map</h5>
                             <p class="small mb-3">
-                                Find us at 1307 West Oak Island Dr, Oak Island, NC 28465
+                                Find us at 1307 West Oak Island Dr, Oak Island,
+                                NC 28465
                             </p>
-                            <a 
-                                href="https://www.google.com/maps/search/?api=1&query=1307+West+Oak+Island+Dr+Oak+Island+NC+28465" 
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=1307+West+Oak+Island+Dr+Oak+Island+NC+28465"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="btn btn-brand btn-sm w-100"
@@ -332,7 +349,7 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
                                 Open in Google Maps
                             </a>
                         </div>
-                        
+
                         <div class="bg-light p-4 rounded">
                             <h5 class="brand-text mb-3">🅿️ Parking</h5>
                             <p>
@@ -407,7 +424,10 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
     </div>
 
     <!-- Houfy Widget Script - loads once for all widgets on the page -->
-    <script src="https://widgets.houfy.com/js/main.js" defer crossorigin="anonymous"></script>
+    <script
+        src="https://widgets.houfy.com/js/main.js"
+        defer
+        crossorigin="anonymous"></script>
 
     <Footer />
 </Layout>
