@@ -2,7 +2,7 @@
 title: 'Complete Pet-Friendly Guide to Oak Island, NC - Dog-Friendly Beaches & Vacation Rentals'
 description: 'Everything you need for a perfect pet-friendly vacation in Oak Island, NC. Dog beach rules, pet-friendly restaurants, packing tips, and the best dog-friendly vacation rentals. Bring your furry family members!'
 pubDate: 'Oct 12 2025'
-heroImage: '../../assets/blog-placeholder-2.jpg'
+heroImage: '../../assets/dog_beach.jpg'
 ---
 
 Oak Island is one of the most pet-friendly beach destinations on the North Carolina coast! Both of our Sea OKI Collection properties welcome your four-legged family members. Here's everything you need to know for a perfect pet-friendly vacation:
