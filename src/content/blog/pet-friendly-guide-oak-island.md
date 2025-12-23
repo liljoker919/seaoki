@@ -1,8 +1,8 @@
 ---
-title: 'Complete Pet-Friendly Guide to Oak Island, NC - Dog-Friendly Beaches & Vacation Rentals'
-description: 'Everything you need for a perfect pet-friendly vacation in Oak Island, NC. Dog beach rules, pet-friendly restaurants, packing tips, and the best dog-friendly vacation rentals. Bring your furry family members!'
-pubDate: 'Oct 12 2025'
-heroImage: '../../assets/dog_beach.jpg'
+title: "Complete Pet-Friendly Guide to Oak Island, NC - Dog-Friendly Beaches & Vacation Rentals"
+description: "Everything you need for a perfect pet-friendly vacation in Oak Island, NC. Dog beach rules, pet-friendly restaurants, packing tips, and the best dog-friendly vacation rentals. Bring your furry family members!"
+pubDate: "Oct 12 2025"
+heroImage: "../../assets/dog_beach.jpg"
 ---
 
 Oak Island is one of the most pet-friendly beach destinations on the North Carolina coast! Both of our Sea OKI Collection properties welcome your four-legged family members. Here's everything you need to know for a perfect pet-friendly vacation:
@@ -12,6 +12,7 @@ Oak Island is one of the most pet-friendly beach destinations on the North Carol
 **Good News:** Dogs are allowed on Oak Island beaches year-round!
 
 **Important Rules:**
+
 - Dogs must be on a leash at all times on the beach
 - Clean up after your pet (bring waste bags!)
 - Be mindful of wildlife and nesting areas
@@ -20,11 +21,13 @@ Oak Island is one of the most pet-friendly beach destinations on the North Carol
 ## Best Beach Areas for Dogs
 
 ### East Beach
+
 - Less crowded, perfect for dogs who need space
 - Great for morning walks when it's cooler
 - Closer to our "Steps to the Sea" property
 
 ### West Beach
+
 - Wide sandy areas for playing fetch
 - Good access points near our "Down by the Sea" property
 - Beautiful sunset views for evening walks
@@ -32,17 +35,20 @@ Oak Island is one of the most pet-friendly beach destinations on the North Carol
 ## Pet-Friendly Restaurants & Businesses
 
 ### Outdoor Dining Welcome
+
 - **Flying Fish Café** - Outdoor seating welcomes well-behaved dogs
 - **The Provision Company** - Pet-friendly patio with water views
 - **Oak Island Pier** - Outdoor areas allow leashed pets
 
 ### Pet Supplies & Services
+
 - **Oak Island Pet Supply** - Everything you might have forgotten
 - **Coastal Veterinary Clinic** - Emergency vet services (just in case)
 
 ## What to Pack for Your Pet
 
 ### Beach Essentials
+
 - Collapsible water bowl
 - Plenty of fresh water
 - Dog-safe sunscreen (for light-colored or thin-haired dogs)
@@ -51,6 +57,7 @@ Oak Island is one of the most pet-friendly beach destinations on the North Carol
 - Floating toys for water-loving dogs
 
 ### Comfort Items
+
 - Favorite bed or blanket
 - Regular food and treats
 - Leash and waste bags
@@ -70,10 +77,12 @@ We want your pets to be as comfortable as you are! Here are our simple guideline
 ## Local Pet Activities
 
 ### Dog Beach Walks
+
 - Early morning (6-8 AM) - coolest and least crowded
 - Late evening (6-8 PM) - beautiful sunset time
 
 ### Pet-Friendly Attractions
+
 - **Oak Island Nature Center** - Leashed pets welcome on trails
 - **Oak Island Lighthouse** - Pets allowed in outdoor areas
 - **Caswell Beach** - Adjacent beach, also pet-friendly
@@ -81,6 +90,7 @@ We want your pets to be as comfortable as you are! Here are our simple guideline
 ## Emergency Information
 
 **24-Hour Veterinary Care:**
+
 - Brunswick Animal Hospital: (910) 457-6329
 - After Hours Animal Emergency: (910) 791-7387
 
