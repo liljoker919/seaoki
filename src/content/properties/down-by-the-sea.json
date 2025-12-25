@@ -9,6 +9,7 @@
   "heroImage": "https://placehold.co/1920x800/ffafcc/ffffff?text=Down+by+the+Sea+Hero",
   "overviewTitle": "Currently Rented - Long Term Pet-Friendly Oak Island Rental",
   "overviewDescription": "Down by the Sea is a charming and cozy 3-bedroom, 2-bathroom pet-friendly home in Oak Island, NC. It is currently rented and not available for new inquiries at this time. Perfect for families or individuals seeking a comfortable extended stay, this home is a short golf cart ride or drive from public beach access. Your coastal retreat includes all the amenities needed for a comfortable stay: fenced yard for dogs and kids, fully equipped kitchen, and comfortable sleeping for up to 6 guests.",
+  "isRented": true,
   "propertyData": {
     "name": "Down by the Sea - Currently Rented",
     "description": "3-bedroom, 2-bathroom pet-friendly home in Oak Island, NC. Currently rented. Fenced yard, full kitchen.",
