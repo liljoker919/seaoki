@@ -30,38 +30,12 @@ import Footer from "../components/Footer.astro";
                 <div class="row g-4">
                     <div class="col-12">
                         <div class="d-flex align-items-center mb-3">
-                            <div class="brand-text fs-3 me-3">📧</div>
+                            <div class="brand-text fs-3 me-3">💬</div>
                             <div>
-                                <h5 class="mb-1">Email</h5>
-                                <a
-                                    href="mailto:info@seaokicollection.com"
-                                    class="brand-text text-decoration-none"
-                                    >info@seaokicollection.com</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="brand-text fs-3 me-3">📞</div>
-                            <div>
-                                <h5 class="mb-1">Phone</h5>
-                                <a
-                                    href="tel:+19105550123"
-                                    class="brand-text text-decoration-none"
-                                    >(910) 555-0123</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="brand-text fs-3 me-3">📍</div>
-                            <div>
-                                <h5 class="mb-1">Location</h5>
-                                <p class="mb-0">Oak Island, NC</p>
+                                <h5 class="mb-1">Send a Message</h5>
+                                <p class="mb-0">
+                                    Use the message buttons on the right to contact us through Houfy
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -102,144 +76,50 @@ import Footer from "../components/Footer.astro";
                 </div>
             </div>
 
-            <!-- Contact Form -->
+            <!-- Message Host Buttons -->
             <div class="col-lg-6">
                 <div class="card shadow border-0">
                     <div class="card-header bg-brand text-white">
-                        <h4 class="mb-0">Send us a Message</h4>
+                        <h4 class="mb-0">Message Your Host</h4>
                     </div>
                     <div class="card-body">
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="firstName" class="form-label"
-                                        >First Name *</label
-                                    >
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="firstName"
-                                        required
-                                    />
+                        <p class="fs-5 mb-4">
+                            Send us a message through Houfy to inquire about availability, 
+                            ask questions, or discuss your upcoming stay. We typically respond 
+                            within 2-4 hours during business hours.
+                        </p>
+                        
+                        <div class="d-grid gap-3">
+                            <a
+                                href="https://www.houfy.com/listing/79833/steps-to-the-sea-pet-friendly-oak-island-vacation-rental"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-brand btn-lg py-3"
+                            >
+                                <div class="d-flex flex-column align-items-center">
+                                    <strong class="fs-5">Message Host: Steps to the Sea</strong>
+                                    <small class="mt-1">3BR • Sleeps 6 • Walk to Beach</small>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="lastName" class="form-label"
-                                        >Last Name *</label
-                                    >
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="lastName"
-                                        required
-                                    />
+                            </a>
+                            
+                            <a
+                                href="https://www.houfy.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-outline-primary btn-lg py-3"
+                            >
+                                <div class="d-flex flex-column align-items-center">
+                                    <strong class="fs-5">Message Host: Down by the Sea</strong>
+                                    <small class="mt-1">3BR • Sleeps 6 • Currently Rented</small>
                                 </div>
-                                <div class="col-12">
-                                    <label for="email" class="form-label"
-                                        >Email *</label
-                                    >
-                                    <input
-                                        type="email"
-                                        class="form-control"
-                                        id="email"
-                                        required
-                                    />
-                                </div>
-                                <div class="col-12">
-                                    <label for="phone" class="form-label"
-                                        >Phone</label
-                                    >
-                                    <input
-                                        type="tel"
-                                        class="form-control"
-                                        id="phone"
-                                    />
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="property" class="form-label"
-                                        >Interested Property</label
-                                    >
-                                    <select class="form-select" id="property">
-                                        <option value=""
-                                            >Select a property</option
-                                        >
-                                        <option value="steps-to-the-sea"
-                                            >Steps to the Sea</option
-                                        >
-                                        <option value="down-by-the-sea"
-                                            >Down by the Sea</option
-                                        >
-                                        <option value="either"
-                                            >Either Property</option
-                                        >
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="guests" class="form-label"
-                                        >Number of Guests</label
-                                    >
-                                    <select class="form-select" id="guests">
-                                        <option value="">Select guests</option>
-                                        <option value="1-2">1-2 guests</option>
-                                        <option value="3-4">3-4 guests</option>
-                                        <option value="5-6">5-6 guests</option>
-                                        <option value="7-8">7-8 guests</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="checkin" class="form-label"
-                                        >Check-in Date</label
-                                    >
-                                    <input
-                                        type="date"
-                                        class="form-control"
-                                        id="checkin"
-                                    />
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="checkout" class="form-label"
-                                        >Check-out Date</label
-                                    >
-                                    <input
-                                        type="date"
-                                        class="form-control"
-                                        id="checkout"
-                                    />
-                                </div>
-                                <div class="col-12">
-                                    <label for="message" class="form-label"
-                                        >Message *</label
-                                    >
-                                    <textarea
-                                        class="form-control"
-                                        id="message"
-                                        rows="4"
-                                        placeholder="Tell us about your planned stay, any questions you have, or special requests..."
-                                        required></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-check">
-                                        <input
-                                            class="form-check-input"
-                                            type="checkbox"
-                                            id="pets"
-                                        />
-                                        <label
-                                            class="form-check-label"
-                                            for="pets"
-                                        >
-                                            I will be traveling with pets
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button
-                                        type="submit"
-                                        class="btn btn-brand btn-lg w-100"
-                                        >Send Message</button
-                                    >
-                                </div>
-                            </div>
-                        </form>
+                            </a>
+                        </div>
+                        
+                        <p class="small text-muted mt-4 mb-0">
+                            💡 <strong>Tip:</strong> Click the button above to go directly to 
+                            the property listing on Houfy, then click "Contact Owner" to send 
+                            us a message. You can also book directly through Houfy.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -250,14 +130,14 @@ import Footer from "../components/Footer.astro";
             <div class="bg-light p-5 rounded">
                 <h3 class="fw-bold mb-3">Ready to Book?</h3>
                 <p class="fs-5 mb-4">
-                    Skip the back-and-forth and check availability directly
+                    Check availability and book directly through our property pages
                 </p>
                 <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <a href="#" class="btn btn-brand btn-lg"
+                    <a href="/properties/steps-to-the-sea#book-your-stay" class="btn btn-brand btn-lg"
                         >Steps to the Sea - Check Availability</a
                     >
-                    <a href="#" class="btn btn-outline-primary btn-lg"
-                        >Down by the Sea - Check Availability</a
+                    <a href="/properties/down-by-the-sea" class="btn btn-outline-primary btn-lg"
+                        >Down by the Sea - View Property</a
                     >
                 </div>
             </div>
