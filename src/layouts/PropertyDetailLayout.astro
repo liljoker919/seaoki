@@ -99,6 +99,7 @@ interface Property {
     importantInfo: ImportantInfo[];
     ctaTitle: string;
     ctaSubtitle: string;
+    isRented?: boolean;
 }
 
 export interface Props {
@@ -136,7 +137,7 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
         <div
             class="position-relative h-100 d-flex flex-column justify-content-center align-items-center text-center text-white"
         >
-            {!property.houfyListingId && (
+            {property.isRented && (
                 <div class="badge bg-danger fs-5 mb-3 px-4 py-2">
                     🏠 Currently Rented - Not Available
                 </div>

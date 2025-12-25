@@ -4,6 +4,8 @@ import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import PropertyCard from "../components/PropertyCard.astro";
+import stepsToTheSeaData from "../content/properties/steps-to-the-sea.json";
+import downByTheSeaData from "../content/properties/down-by-the-sea.json";
 ---
 
 <Layout
@@ -60,7 +62,7 @@ import PropertyCard from "../components/PropertyCard.astro";
 					bookingLink="/contact"
 					bookingLabel="Contact Us"
 					detailsLink="/properties/down-by-the-sea"
-					isRented={true}
+					isRented={downByTheSeaData.isRented}
 				/>
 			</div>
 		</section>
