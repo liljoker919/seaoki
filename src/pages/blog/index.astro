@@ -1,102 +1,98 @@
 ﻿---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
 
 const posts = (await getCollection("blog")).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
 function formatDate(date: Date) {
-	return date.toLocaleDateString("en-US", {
-		year: "numeric",
-		month: "long",
-		day: "numeric",
-	});
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 ---
 
 <Layout
-	title="Blog | Sea OKI Collection"
-	description="Discover Oak Island through our local guides, tips, and insights for the perfect vacation experience."
+  title="Blog | Sea OKI Collection"
+  description="Discover Oak Island through our local guides, tips, and insights for the perfect vacation experience."
 >
-	<Navigation />
+  <Navigation />
 
-	<div class="container py-5">
-		<div class="text-center mb-5">
-			<h1 class="display-3 fw-bold brand-text">Oak Island Blog</h1>
-			<p class="lead">
-				Local insights, tips, and guides for your perfect Oak Island
-				getaway
-			</p>
-		</div>
+  <div class="container py-5">
+    <div class="text-center mb-5">
+      <h1 class="display-3 fw-bold brand-text">Oak Island Blog</h1>
+      <p class="lead">
+        Local insights, tips, and guides for your perfect Oak Island getaway
+      </p>
+    </div>
 
-		<div class="row g-4">
-			{
-				posts.map((post, index) => (
-					<div class={index === 0 ? "col-12" : "col-lg-6"}>
-						<article class="card h-100 shadow border-0">
-							{post.data.heroImage && (
-								<img
-									src={post.data.heroImage.src}
-									alt={post.data.title}
-									class="card-img-top"
-									style={
-										index === 0
-											? "height: 300px; object-fit: cover;"
-											: "height: 200px; object-fit: cover;"
-									}
-									loading="lazy"
-									width={index === 0 ? "1200" : "600"}
-									height={index === 0 ? "300" : "200"}
-								/>
-							)}
-							<div class="card-body d-flex flex-column">
-								<div class="mb-2">
-									<small class="text-muted">
-										{formatDate(post.data.pubDate)}
-									</small>
-								</div>
-								<h2
-									class={
-										index === 0
-											? "card-title h3 fw-bold"
-											: "card-title h5 fw-bold"
-									}
-								>
-									<a
-										href={`/blog/${post.id}/`}
-										class="text-decoration-none text-dark"
-									>
-										{post.data.title}
-									</a>
-								</h2>
-								<p class="card-text">{post.data.description}</p>
-								<a
-									href={`/blog/${post.id}/`}
-									class="btn btn-brand mt-auto"
-								>
-									Read More
-								</a>
-							</div>
-						</article>
-					</div>
-				))
-			}
-		</div>
+    <div class="row g-4">
+      {
+        posts.map((post, index) => (
+          <div class={index === 0 ? "col-12" : "col-lg-6"}>
+            <article class="card h-100 shadow border-0">
+              {post.data.heroImage && (
+                <Image
+                  src={post.data.heroImage}
+                  alt={post.data.title}
+                  class="card-img-top"
+                  style={
+                    index === 0
+                      ? "height: 300px; object-fit: cover;"
+                      : "height: 200px; object-fit: cover;"
+                  }
+                  width={index === 0 ? 1200 : 600}
+                  height={index === 0 ? 300 : 200}
+                />
+              )}
+              <div class="card-body d-flex flex-column">
+                <div class="mb-2">
+                  <small class="text-muted">
+                    {formatDate(post.data.pubDate)}
+                  </small>
+                </div>
+                <h2
+                  class={
+                    index === 0
+                      ? "card-title h3 fw-bold"
+                      : "card-title h5 fw-bold"
+                  }
+                >
+                  <a
+                    href={`/blog/${post.id}/`}
+                    class="text-decoration-none text-dark"
+                  >
+                    {post.data.title}
+                  </a>
+                </h2>
+                <p class="card-text">{post.data.description}</p>
+                <a href={`/blog/${post.id}/`} class="btn btn-brand mt-auto">
+                  Read More
+                </a>
+              </div>
+            </article>
+          </div>
+        ))
+      }
+    </div>
 
-		{
-			posts.length === 0 && (
-				<div class="text-center py-5">
-					<h3>No blog posts yet</h3>
-					<p class="text-muted">
-						Check back soon for Oak Island tips and guides!
-					</p>
-				</div>
-			)
-		}
-	</div>
+    {
+      posts.length === 0 && (
+        <div class="text-center py-5">
+          <h3>No blog posts yet</h3>
+          <p class="text-muted">
+            Check back soon for Oak Island tips and guides!
+          </p>
+        </div>
+      )
+    }
+  </div>
 
-	<Footer />
+  <Footer />
 </Layout>

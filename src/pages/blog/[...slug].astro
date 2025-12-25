@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
@@ -7,11 +8,11 @@ import ArticleSchema from "../../components/ArticleSchema.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection("blog");
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: post,
-	}));
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: post,
+  }));
 }
 
 type Props = CollectionEntry<"blog">;
@@ -20,83 +21,80 @@ const post = Astro.props;
 const { Content } = await render(post);
 
 function formatDate(date: Date) {
-	return date.toLocaleDateString("en-US", {
-		year: "numeric",
-		month: "long",
-		day: "numeric",
-	});
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 
 const breadcrumbItems = [
-	{ name: "Home", url: "/" },
-	{ name: "Blog", url: "/blog" },
-	{ name: post.data.title, url: `/blog/${post.id}` },
+  { name: "Home", url: "/" },
+  { name: "Blog", url: "/blog" },
+  { name: post.data.title, url: `/blog/${post.id}` },
 ];
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
-	<ArticleSchema
-		title={post.data.title}
-		description={post.data.description}
-		datePublished={post.data.pubDate}
-		dateModified={post.data.updatedDate}
-		image={post.data.heroImage?.src}
-	/>
-	<Navigation />
+  <ArticleSchema
+    title={post.data.title}
+    description={post.data.description}
+    datePublished={post.data.pubDate}
+    dateModified={post.data.updatedDate}
+    image={post.data.heroImage?.src}
+  />
+  <Navigation />
 
-	<article class="container py-5">
-		<Breadcrumb items={breadcrumbItems} />
-		
-		<header class="row mb-5">
-			<div class="col-lg-8 mx-auto text-center">
-				<h1 class="display-4 fw-bold brand-text mb-3">
-					{post.data.title}
-				</h1>
-				<p class="lead text-muted mb-4">{post.data.description}</p>
-				<div
-					class="d-flex justify-content-center align-items-center gap-3 text-muted"
-				>
-					<time datetime={post.data.pubDate.toISOString()}>
-						{formatDate(post.data.pubDate)}
-					</time>
-				</div>
-			</div>
-		</header>
+  <article class="container py-5">
+    <Breadcrumb items={breadcrumbItems} />
 
-		{
-			post.data.heroImage && (
-				<div class="row mb-5">
-					<div class="col-12">
-						<img
-							src={post.data.heroImage.src}
-							alt={post.data.title}
-							class="img-fluid rounded shadow w-100"
-							style="height: 400px; object-fit: cover;"
-							loading="lazy"
-							width="1200"
-							height="400"
-						/>
-					</div>
-				</div>
-			)
-		}
+    <header class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h1 class="display-4 fw-bold brand-text mb-3">
+          {post.data.title}
+        </h1>
+        <p class="lead text-muted mb-4">{post.data.description}</p>
+        <div
+          class="d-flex justify-content-center align-items-center gap-3 text-muted"
+        >
+          <time datetime={post.data.pubDate.toISOString()}>
+            {formatDate(post.data.pubDate)}
+          </time>
+        </div>
+      </div>
+    </header>
 
-		<div class="row">
-			<div class="col-lg-8 mx-auto">
-				<div class="prose prose-lg">
-					<Content />
-				</div>
-			</div>
-		</div>
+    {
+      post.data.heroImage && (
+        <div class="row mb-5">
+          <div class="col-12">
+            <Image
+              src={post.data.heroImage}
+              alt={post.data.title}
+              class="img-fluid rounded shadow w-100"
+              style="height: 400px; object-fit: cover;"
+              width={1200}
+              height={400}
+            />
+          </div>
+        </div>
+      )
+    }
 
-		<div class="row mt-5">
-			<div class="col-lg-8 mx-auto text-center">
-				<a href="/blog" class="btn btn-outline-primary">
-					← Back to Blog
-				</a>
-			</div>
-		</div>
-	</article>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="prose prose-lg">
+          <Content />
+        </div>
+      </div>
+    </div>
 
-	<Footer />
+    <div class="row mt-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <a href="/blog" class="btn btn-outline-primary"> ← Back to Blog </a>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
 </Layout>
