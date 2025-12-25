@@ -12,12 +12,15 @@ Oak Island, North Carolina, is a hidden gem on the state's beautiful coastline. 
 ## Why Choose Oak Island?
 
 ### Uncrowded Beaches
+
 Unlike some of the more touristy beach destinations, Oak Island offers miles of uncrowded beaches where you can actually relax and enjoy the sound of the waves without fighting for space.
 
 ### Family-Friendly Atmosphere
+
 Oak Island maintains a small-town feel that's perfect for families. You'll find safe neighborhoods, friendly locals, and activities suitable for all ages.
 
 ### Excellent Fishing
+
 Whether you prefer surf fishing, pier fishing, or charter boat excursions, Oak Island offers some of the best fishing opportunities on the East Coast.
 
 ## Getting Started
