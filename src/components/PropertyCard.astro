@@ -10,6 +10,7 @@ export interface Props {
     detailsLink?: string;
     petFriendly?: boolean;
     bookingLabel?: string;
+    isRented?: boolean;
 }
 
 const {
@@ -23,11 +24,17 @@ const {
     detailsLink,
     petFriendly = true,
     bookingLabel = "Check Availability",
+    isRented = false,
 } = Astro.props;
 ---
 
 <div class="col-lg-6">
     <div class="card h-100 shadow-lg border-0">
+        {isRented && (
+            <div class="position-absolute top-0 start-0 m-3 badge bg-danger fs-6 px-3 py-2" style="z-index: 10;">
+                🏠 Currently Rented
+            </div>
+        )}
         <img
             src={image}
             class="card-img-top"
