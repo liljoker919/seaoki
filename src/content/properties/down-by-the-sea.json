@@ -37,6 +37,26 @@
     ],
     "priceRange": "$$"
   },
+  "photoGallery": [
+    {
+      "src": "/111_main.jpg",
+      "alt": "Down by the Sea - Charming Oak Island home",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "src": "/hero-bg.jpg",
+      "alt": "Oak Island beach view",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "src": "/oak-island-pier.jpg",
+      "alt": "Oak Island Pier at sunset",
+      "width": 1200,
+      "height": 800
+    }
+  ],
   "amenities": {
     "indoor": [
       "Comfortable living area with seating for all",

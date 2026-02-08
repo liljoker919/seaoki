@@ -39,6 +39,26 @@
   },
   "houfyListingId": "79833",
   "houfyGalleryId": "rgrksxiilsbfus279551",
+  "photoGallery": [
+    {
+      "src": "/111_main.jpg",
+      "alt": "Steps to the Sea - Front exterior view of charming Oak Island beach house",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "src": "/hero-bg.jpg",
+      "alt": "Beautiful Oak Island beach at sunset",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "src": "/oak-island-pier.jpg",
+      "alt": "Oak Island Pier - nearby attraction",
+      "width": 1200,
+      "height": 800
+    }
+  ],
   "amenities": {
     "indoor": [
       "Open concept living/dining/kitchen",
