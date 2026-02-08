@@ -1,5 +1,6 @@
 ---
-// Header component for Sea OKI Collection
+// Navigation component for Sea OKI Collection
+// Implements unified font hierarchy and high-visibility Book Now CTA
 ---
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
@@ -19,7 +20,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto align-items-center">
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
@@ -35,10 +36,71 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="btn btn-brand ms-2" href="https://www.houfy.com/lodging/steps-to-the-sea-walk-to-the-beach-oak-island/79833?guests=1&adults=1&children=0" target="_blank" rel="noopener noreferrer">Book Now</a>
+                <li class="nav-item ms-lg-3">
+                    <a class="btn btn-book-now" href="https://www.houfy.com/lodging/steps-to-the-sea-walk-to-the-beach-oak-island/79833?guests=1&adults=1&children=0" target="_blank" rel="noopener noreferrer">Book Now</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+<style>
+    /* Navigation specific styles with unified font hierarchy */
+    .navbar-brand {
+        font-family: var(--font-header);
+        font-weight: 700;
+        font-size: 1.75rem;
+        color: var(--color-primary) !important;
+        letter-spacing: 0.02em;
+    }
+
+    .nav-link {
+        font-family: var(--font-subheader);
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--color-primary) !important;
+        padding: 0.5rem 1rem !important;
+        transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+        color: var(--color-secondary) !important;
+    }
+
+    /* High-visibility Book Now CTA */
+    .btn-book-now {
+        font-family: var(--font-subheader);
+        font-size: 1.1rem;
+        font-weight: 500;
+        background-color: var(--color-accent);
+        border: 2px solid var(--color-accent);
+        color: white;
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(240, 153, 121, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .btn-book-now:hover {
+        background-color: var(--color-primary);
+        border-color: var(--color-primary);
+        color: white;
+        box-shadow: 0 6px 16px rgba(23, 35, 56, 0.4);
+        transform: translateY(-2px);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991.98px) {
+        .btn-book-now {
+            display: block;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .nav-item.ms-lg-3 {
+            margin-left: 0 !important;
+        }
+    }
+</style>
