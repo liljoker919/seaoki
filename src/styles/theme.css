@@ -1,0 +1,44 @@
+/*
+  Sea OKI Collection Design System
+  Global theme file with CSS Custom Properties for colors and typography
+*/
+
+/* Import Google Fonts for custom typography */
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Aboreto&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  /* Color Palette */
+  --color-primary: #172338;      /* Dark Blue */
+  --color-secondary: #9EDBDB;    /* Light Teal */
+  --color-accent: #F09979;       /* Coral */
+  --color-warm: #FFD643;         /* Sand/Yellow */
+  
+  /* Typography System */
+  --font-header: 'Oleo Script', cursive;
+  --font-subheader: 'Aboreto', display;
+  --font-body: 'Cormorant Garamond', serif;
+}
+
+/* Apply typography to base elements */
+body {
+  font-family: var(--font-body), serif;
+  color: var(--color-primary);
+}
+
+h1 {
+  font-family: var(--font-header), cursive;
+  color: var(--color-primary);
+}
+
+h2 {
+  font-family: var(--font-subheader), display;
+  color: var(--color-primary);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-body), serif;
+  color: var(--color-primary);
+}
