@@ -15,15 +15,19 @@ export interface Props {
 }
 
 const { photos, propertyName, eagerLoadCount = 2 } = Astro.props;
+
+// Generate unique ID for this gallery instance
+const galleryId = `gallery-${Math.random().toString(36).substring(2, 11)}`;
 ---
 
-<div class="photo-gallery" data-gallery={propertyName}>
+<div class="photo-gallery" data-gallery={propertyName} data-gallery-id={galleryId}>
     <div class="row g-3">
         {photos.map((photo: PhotoGalleryItem, index: number) => (
             <div class={index < 2 ? "col-md-6" : "col-md-4 col-sm-6"}>
                 <button 
                     type="button"
                     class="gallery-item"
+                    data-gallery-id={galleryId}
                     data-index={index}
                     aria-label={`View ${photo.alt} in fullscreen`}
                 >
