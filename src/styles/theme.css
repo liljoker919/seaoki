@@ -15,7 +15,7 @@
   
   /* Typography System */
   --font-header: 'Oleo Script', cursive;
-  --font-subheader: 'Aboreto', display;
+  --font-subheader: 'Aboreto', sans-serif;
   --font-body: 'Cormorant Garamond', serif;
 }
 
@@ -31,7 +31,7 @@ h1 {
 }
 
 h2 {
-  font-family: var(--font-subheader), display;
+  font-family: var(--font-subheader), sans-serif;
   color: var(--color-primary);
 }
 
