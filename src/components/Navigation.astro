@@ -45,7 +45,12 @@
 </nav>
 
 <style>
-    /* Navigation specific styles with unified font hierarchy */
+    /* 
+     * Navigation specific styles with unified font hierarchy
+     * CSS custom properties are defined in src/styles/theme.css:
+     * --font-header, --font-subheader, --font-body
+     * --color-primary, --color-secondary, --color-accent, --color-warm
+     */
     .navbar-brand {
         font-family: var(--font-header);
         font-weight: 700;
@@ -78,7 +83,8 @@
         padding: 0.75rem 2rem;
         border-radius: 50px;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(240, 153, 121, 0.3);
+        /* Shadow color matches accent color (#F09979) with 30% opacity */
+        box-shadow: 0 4px 12px color-mix(in srgb, var(--color-accent) 30%, transparent);
         text-transform: uppercase;
         letter-spacing: 0.05em;
     }
@@ -87,7 +93,8 @@
         background-color: var(--color-primary);
         border-color: var(--color-primary);
         color: white;
-        box-shadow: 0 6px 16px rgba(23, 35, 56, 0.4);
+        /* Shadow color matches primary color (#172338) with 40% opacity */
+        box-shadow: 0 6px 16px color-mix(in srgb, var(--color-primary) 40%, transparent);
         transform: translateY(-2px);
     }
 
