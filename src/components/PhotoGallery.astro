@@ -11,9 +11,10 @@ interface PhotoGalleryItem {
 export interface Props {
     photos: PhotoGalleryItem[];
     propertyName: string;
+    eagerLoadCount?: number;
 }
 
-const { photos, propertyName } = Astro.props;
+const { photos, propertyName, eagerLoadCount = 2 } = Astro.props;
 ---
 
 <div class="photo-gallery" data-gallery={propertyName}>
@@ -30,7 +31,7 @@ const { photos, propertyName } = Astro.props;
                         src={photo.src}
                         alt={photo.alt}
                         class="img-fluid rounded shadow"
-                        loading={index < 2 ? "eager" : "lazy"}
+                        loading={index < eagerLoadCount ? "eager" : "lazy"}
                         width={photo.width || 800}
                         height={photo.height || 600}
                     />
@@ -298,6 +299,8 @@ const { photos, propertyName } = Astro.props;
         private lightboxImage: HTMLImageElement | null = null;
         private lightboxCaption: HTMLElement | null = null;
         private lightboxCounter: HTMLElement | null = null;
+        private lastFocusedElement: HTMLElement | null = null;
+        private focusableElements: HTMLElement[] = [];
 
         constructor() {
             this.init();
@@ -349,6 +352,10 @@ const { photos, propertyName } = Astro.props;
                     case 'ArrowRight':
                         this.nextImage();
                         break;
+                    case 'Tab':
+                        // Trap focus within lightbox
+                        this.trapFocus(e);
+                        break;
                 }
             });
 
@@ -360,18 +367,56 @@ const { photos, propertyName } = Astro.props;
             });
         }
 
+        trapFocus(e: KeyboardEvent) {
+            if (this.focusableElements.length === 0) return;
+            
+            const firstElement = this.focusableElements[0];
+            const lastElement = this.focusableElements[this.focusableElements.length - 1];
+            
+            if (e.shiftKey) {
+                // Shift + Tab
+                if (document.activeElement === firstElement) {
+                    lastElement.focus();
+                    e.preventDefault();
+                }
+            } else {
+                // Tab
+                if (document.activeElement === lastElement) {
+                    firstElement.focus();
+                    e.preventDefault();
+                }
+            }
+        }
+
         openLightbox(index: number) {
             this.currentIndex = index;
             this.showImage();
+            
+            // Store the currently focused element to return focus later
+            this.lastFocusedElement = document.activeElement as HTMLElement;
+            
+            // Get all focusable elements in lightbox
+            this.focusableElements = Array.from(
+                this.lightbox?.querySelectorAll('button') || []
+            );
+            
             this.lightbox?.classList.add('active');
             this.lightbox?.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden'; // Prevent scrolling
+            
+            // Focus the close button for keyboard users
+            (document.getElementById('lightbox-close') as HTMLElement)?.focus();
         }
 
         closeLightbox() {
             this.lightbox?.classList.remove('active');
             this.lightbox?.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = ''; // Restore scrolling
+            
+            // Return focus to the element that opened the lightbox
+            if (this.lastFocusedElement) {
+                this.lastFocusedElement.focus();
+            }
         }
 
         showImage() {
