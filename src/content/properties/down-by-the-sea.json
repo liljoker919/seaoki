@@ -6,7 +6,7 @@
   "metaDescription": "Down by the Sea is currently rented. 3BR/2BA pet-friendly Oak Island home. Sleeps 6, fenced yard. Contact us for future availability.",
   "heroTitle": "Down by the Sea - Oak Island",
   "heroSubtitle": "Currently Rented • Long Term Pet-Friendly Rental",
-  "heroImage": "https://placehold.co/1920x800/ffafcc/ffffff?text=Down+by+the+Sea+Hero",
+  "heroImage": "/properties/down-by-the-sea/down_by_the_sea_001.jpg",
   "overviewTitle": "Currently Rented - Long Term Pet-Friendly Oak Island Rental",
   "overviewDescription": "Down by the Sea is a charming and cozy 3-bedroom, 2-bathroom pet-friendly home in Oak Island, NC. It is currently rented and not available for new inquiries at this time. Perfect for families or individuals seeking a comfortable extended stay, this home is a short golf cart ride or drive from public beach access. Your coastal retreat includes all the amenities needed for a comfortable stay: fenced yard for dogs and kids, fully equipped kitchen, and comfortable sleeping for up to 6 guests.",
   "isRented": true,
@@ -39,22 +39,34 @@
   },
   "photoGallery": [
     {
-      "src": "/111_main.jpg",
-      "alt": "Down by the Sea - Charming Oak Island home",
+      "src": "/properties/down-by-the-sea/down_by_the_sea_001.jpg",
+      "alt": "Down by the Sea - Front exterior",
       "width": 1200,
       "height": 900
     },
     {
-      "src": "/hero-bg.jpg",
-      "alt": "Oak Island beach view",
-      "width": 1920,
-      "height": 1080
+      "src": "/properties/down-by-the-sea/down_by_the_sea_002.jpg",
+      "alt": "Interior view",
+      "width": 1200,
+      "height": 900
     },
     {
-      "src": "/oak-island-pier.jpg",
-      "alt": "Oak Island Pier at sunset",
+      "src": "/properties/down-by-the-sea/down_by_the_sea_004.jpg",
+      "alt": "Living area",
       "width": 1200,
-      "height": 800
+      "height": 900
+    },
+    {
+      "src": "/properties/down-by-the-sea/down_by_the_sea_005.jpg",
+      "alt": "Kitchen",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "src": "/properties/down-by-the-sea/down_by_the_sea_006.jpg",
+      "alt": "Dining area",
+      "width": 1200,
+      "height": 900
     }
   ],
   "amenities": {
