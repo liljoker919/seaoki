@@ -8,128 +8,118 @@ import downByTheSeaData from "../content/properties/down-by-the-sea.json";
 ---
 
 <Layout
-	title="Oak Island Pet-Friendly Vacation Rentals | Sea OKI Collection - Book Direct & Save"
-	description="Pet-friendly Oak Island vacation rentals. Two beautiful beach houses perfect for families and dog owners. Walk to the beach, fenced yards, full kitchens. Book direct for the best rates on kid-friendly beach rentals in Oak Island, NC."
+  title="Oak Island Pet-Friendly Vacation Rentals | Sea OKI Collection - Book Direct & Save"
+  description="Pet-friendly Oak Island vacation rentals. Two beautiful beach houses perfect for families and dog owners. Walk to the beach, fenced yards, full kitchens. Book direct for the best rates on kid-friendly beach rentals in Oak Island, NC."
 >
-	<Navigation />
+  <Navigation />
 
-	<Hero backgroundImage="/hero-bg.jpg" />
+  <Hero backgroundImage="/hero-bg.jpg" />
 
-	<!-- Main Content -->
-	<main class="container py-5">
-		<!-- Introduction Section -->
-		<section class="text-center mx-auto mb-5" style="max-width: 800px;">
-			<h1 class="display-4 fw-bold text-dark mb-4">
-				Pet-Friendly Oak Island Vacation Rentals
-			</h1>
-			<h2 class="h5 text-muted mb-4">
-				Book Direct & Save on Your Next Beach Vacation
-			</h2>
-			<p class="fs-5">
-				We're a family-run business offering two distinct pet-friendly
-				vacation homes in beautiful Oak Island, North Carolina. Our goal
-				is to provide a comfortable, memorable, and stress-free beach
-				experience for your entire family—including the furry members!
-				Perfect for families looking for kid-friendly beach rentals with
-				fenced yards, beach equipment, and full kitchens. By booking
-				directly with us, you're guaranteed the best price and
-				personalized service.
-			</p>
-		</section>
+  <!-- Main Content -->
+  <main class="container py-5">
+    <!-- Introduction Section -->
+    <section class="text-center mx-auto mb-5" style="max-width: 800px;">
+      <h1 class="display-4 fw-bold text-dark mb-4">
+        Pet-Friendly Oak Island Vacation Rentals
+      </h1>
+      <h2 class="h5 text-muted mb-4">
+        Book Direct & Save on Your Next Beach Vacation
+      </h2>
+      <p class="fs-5">
+        We're a family-run business offering two distinct pet-friendly vacation
+        homes in beautiful Oak Island, North Carolina. Our goal is to provide a
+        comfortable, memorable, and stress-free beach experience for your entire
+        family—including the furry members! Perfect for families looking for
+        kid-friendly beach rentals with fenced yards, beach equipment, and full
+        kitchens. By booking directly with us, you're guaranteed the best price
+        and personalized service.
+      </p>
+    </section>
 
-		<!-- Properties Section -->
-		<section id="properties" class="mb-5">
-			<div class="row g-4">
-				<PropertyCard
-					image="/111_main.jpg"
-					title="Steps to the Sea"
-					description="Classic 3-bed, 2-bath pet-friendly beach house located less than a 10-minute walk from Oak Island beach. Perfect for families with kids and dogs, featuring an open living space, welcoming front porch, and fenced yard. Beach equipment included."
-					bedrooms={3}
-					baths={2}
-					sleeps={6}
-					bookingLink="/properties/steps-to-the-sea#book-your-stay"
-					detailsLink="/properties/steps-to-the-sea"
-				/>
+    <!-- Properties Section -->
+    <section id="properties" class="mb-5">
+      <div class="row g-4">
+        <PropertyCard
+          image="/111_main.jpg"
+          title="Steps to the Sea"
+          description="Classic 3-bed, 2-bath pet-friendly beach house located less than a 10-minute walk from Oak Island beach. Perfect for families with kids and dogs, featuring an open living space, welcoming front porch, and fenced yard. Beach equipment included."
+          bedrooms={3}
+          baths={2}
+          sleeps={6}
+          bookingLink="/properties/steps-to-the-sea#book-your-stay"
+          detailsLink="/properties/steps-to-the-sea"
+        />
 
-				<PropertyCard
-					image="/properties/down-by-the-sea/down_by_the_sea_001.jpg"
-					title="Down by the Sea"
-					description="Charming and cozy 3-bed, 2-bath pet-friendly home now available for long-term rental. A short golf cart ride or drive to beach access, this affordable coastal retreat is perfect for families. Fenced yard and beach gear included."
-					bedrooms={3}
-					baths={2}
-					sleeps={6}
-					bookingLink="/contact"
-					bookingLabel="Contact Us"
-					detailsLink="/properties/down-by-the-sea"
-					isRented={downByTheSeaData.isRented}
-				/>
-			</div>
-		</section>
+        <PropertyCard
+          image="/properties/down-by-the-sea/down_by_the_sea_001.jpg"
+          title="Down by the Sea"
+          description="Charming and cozy 3-bed, 2-bath pet-friendly home now available for long-term rental. A short golf cart ride or drive to beach access, this affordable coastal retreat is perfect for families. Fenced yard and beach gear included."
+          bedrooms={3}
+          baths={2}
+          sleeps={6}
+          bookingLink="/contact"
+          bookingLabel="Contact Us"
+          detailsLink="/properties/down-by-the-sea"
+          isRented={downByTheSeaData.isRented}
+        />
+      </div>
+    </section>
 
-		<!-- Why Book Direct Section -->
-		<section class="bg-white rounded p-5 shadow mb-5">
-			<div class="row g-4 text-center">
-				<div class="col-lg-4">
-					<h4 class="h5 fw-bold brand-text mb-3">
-						Best Price Guaranteed
-					</h4>
-					<p>
-						Booking on seaoki.com means you don't pay the extra
-						service fees charged by platforms like VRBO and Airbnb.
-						The best deal is always right here.
-					</p>
-				</div>
-				<div class="col-lg-4">
-					<h4 class="h5 fw-bold brand-text mb-3">
-						Personalized Service
-					</h4>
-					<p>
-						Communicate directly with us, the owners. We can answer
-						any specific questions about the properties or give you
-						our local's guide to Oak Island.
-					</p>
-				</div>
-				<div class="col-lg-4">
-					<h4 class="h5 fw-bold brand-text mb-3">Support Local</h4>
-					<p>
-						Your booking directly supports our family-owned
-						business, allowing us to continue investing in our
-						properties to make your stay perfect.
-					</p>
-				</div>
-			</div>
-		</section>
+    <!-- Why Book Direct Section -->
+    <section class="bg-white rounded p-5 shadow mb-5">
+      <div class="row g-4 text-center">
+        <div class="col-lg-4">
+          <h4 class="h5 fw-bold brand-text mb-3">Best Price Guaranteed</h4>
+          <p>
+            Booking on seaoki.com means you don't pay the extra service fees
+            charged by platforms like VRBO and Airbnb. The best deal is always
+            right here.
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <h4 class="h5 fw-bold brand-text mb-3">Personalized Service</h4>
+          <p>
+            Communicate directly with us, the owners. We can answer any specific
+            questions about the properties or give you our local's guide to Oak
+            Island.
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <h4 class="h5 fw-bold brand-text mb-3">Support Local</h4>
+          <p>
+            Your booking directly supports our family-owned business, allowing
+            us to continue investing in our properties to make your stay
+            perfect.
+          </p>
+        </div>
+      </div>
+    </section>
 
-		<!-- About Oak Island Section -->
-		<section
-			id="about"
-			class="text-center mx-auto"
-			style="max-width: 800px;"
-		>
-			<h2 class="display-5 fw-bold text-dark mb-4">
-				Experience Oak Island, North Carolina
-			</h2>
-			<p class="fs-5 mb-4">
-				With over 10 miles of uncrowded, south-facing beaches, Oak
-				Island is the perfect destination for a relaxing family vacation
-				in North Carolina. Enjoy breathtaking sunrises and sunsets,
-				search for seashells, fish from the Oak Island Pier, or explore
-				the local shops and restaurants in nearby Southport. It's a
-				place to slow down, reconnect, and make lasting memories with
-				your family and pets. Oak Island offers excellent fishing, golf
-				courses, nature trails, and water sports—all within minutes of
-				our vacation rentals.
-			</p>
-			<img
-				src="/oak-island-pier.jpg"
-				alt="Oak Island Pier at sunset - popular fishing spot and beach landmark in Oak Island NC"
-				class="img-fluid rounded shadow-lg"
-				loading="lazy"
-				width="1200"
-				height="600"
-			/>
-		</section>
-	</main>
+    <!-- About Oak Island Section -->
+    <section id="about" class="text-center mx-auto" style="max-width: 800px;">
+      <h2 class="display-5 fw-bold text-dark mb-4">
+        Experience Oak Island, North Carolina
+      </h2>
+      <p class="fs-5 mb-4">
+        With over 10 miles of uncrowded, south-facing beaches, Oak Island is the
+        perfect destination for a relaxing family vacation in North Carolina.
+        Enjoy breathtaking sunrises and sunsets, search for seashells, fish from
+        the Oak Island Pier, or explore the local shops and restaurants in
+        nearby Southport. It's a place to slow down, reconnect, and make lasting
+        memories with your family and pets. Oak Island offers excellent fishing,
+        golf courses, nature trails, and water sports—all within minutes of our
+        vacation rentals.
+      </p>
+      <img
+        src="/oak-island-pier.jpg"
+        alt="Oak Island Pier at sunset - popular fishing spot and beach landmark in Oak Island NC"
+        class="img-fluid rounded shadow-lg"
+        loading="lazy"
+        width="1200"
+        height="600"
+      />
+    </section>
+  </main>
 
-	<Footer />
+  <Footer />
 </Layout>
