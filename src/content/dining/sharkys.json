@@ -1,0 +1,11 @@
+{
+  "name": "Sharky's Restaurant",
+  "category": "American & Seafood",
+  "description": "Family-friendly beachfront restaurant with classic American fare and fresh seafood.",
+  "image": "/dining/sharkys.jpg",
+  "website": "https://www.sharkysrestaurant.com/",
+  "phone": "(910) 278-9901",
+  "address": "6904 E Beach Drive, Oak Island, NC",
+  "petFriendly": false,
+  "priceRange": "$$"
+}

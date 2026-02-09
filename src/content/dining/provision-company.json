@@ -1,0 +1,11 @@
+{
+  "name": "Provision Company",
+  "category": "Seafood & American",
+  "description": "Fresh seafood with waterfront dining. Known for their extensive raw bar and casual atmosphere.",
+  "image": "/dining/provision-company.jpg",
+  "website": "https://www.provisioncompany.com/",
+  "phone": "(910) 278-0500",
+  "address": "130 Yacht Drive, Southport, NC",
+  "petFriendly": true,
+  "priceRange": "$$"
+}

@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import RestaurantCard from '../components/RestaurantCard.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+// Fetch restaurant data from content collection
+const restaurants = await getCollection('dining');
+
+// Sort restaurants alphabetically by name
+const sortedRestaurants = [...restaurants].sort((a, b) => a.data.name.localeCompare(b.data.name));
+---
+
+<Layout
+    title="Oak Island Restaurants & Dining Guide - Sea OKI Collection"
+    description="Discover the best places to eat near Oak Island, NC. From fresh seafood to Southern cuisine, find pet-friendly restaurants and local favorites for your beach vacation."
+>
+    <Hero
+        title="Places to Eat"
+        subtitle="Discover the best dining experiences near Oak Island"
+        backgroundImage="/beach-sunset.jpg"
+    />
+
+    <Breadcrumb
+        items={[
+            { label: 'Home', href: '/' },
+            { label: 'Places to Eat', href: '/dining' },
+        ]}
+    />
+
+    <div class="container my-5">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="display-5 fw-bold mb-4">Oak Island Restaurants</h2>
+                <p class="lead">
+                    From fresh-caught seafood to Southern comfort food, the Oak Island area offers a diverse
+                    selection of dining options. Whether you're looking for casual beachside eats or upscale
+                    waterfront dining, you'll find something for every taste and occasion.
+                </p>
+                <p class="text-muted">
+                    <small>
+                        🐾 Look for the pet-friendly indicator to bring your furry friends along!
+                    </small>
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            {sortedRestaurants.map((restaurant) => (
+                <RestaurantCard
+                    name={restaurant.data.name}
+                    category={restaurant.data.category}
+                    description={restaurant.data.description}
+                    image={restaurant.data.image}
+                    website={restaurant.data.website}
+                    phone={restaurant.data.phone}
+                    address={restaurant.data.address}
+                    petFriendly={restaurant.data.petFriendly}
+                    priceRange={restaurant.data.priceRange}
+                />
+            ))}
+        </div>
+
+        {sortedRestaurants.length === 0 && (
+            <div class="row">
+                <div class="col-12 text-center py-5">
+                    <p class="lead text-muted">
+                        Restaurant directory coming soon. Check back later!
+                    </p>
+                </div>
+            </div>
+        )}
+
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="h5 fw-bold mb-3">Dining Tips for Oak Island Visitors</h3>
+                        <ul class="mb-0">
+                            <li class="mb-2">
+                                <strong>Peak Season:</strong> Make reservations during summer months,
+                                especially on weekends.
+                            </li>
+                            <li class="mb-2">
+                                <strong>Local Favorites:</strong> Ask locals for their recommendations -
+                                they know the hidden gems!
+                            </li>
+                            <li class="mb-2">
+                                <strong>Fresh Seafood:</strong> Most restaurants source from local fishermen,
+                                so the catch of the day is always worth trying.
+                            </li>
+                            <li class="mb-2">
+                                <strong>Pet-Friendly Options:</strong> Many restaurants with outdoor seating
+                                welcome well-behaved pets.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

@@ -1,0 +1,11 @@
+{
+  "name": "Mint Julep",
+  "category": "Southern & Fine Dining",
+  "description": "Upscale Southern cuisine with coastal influences. Perfect for special occasions.",
+  "image": "/dining/mint-julep.jpg",
+  "website": "https://www.mintjuleprestaurant.com/",
+  "phone": "(910) 454-0114",
+  "address": "101 E Moore St, Southport, NC",
+  "petFriendly": false,
+  "priceRange": "$$$"
+}

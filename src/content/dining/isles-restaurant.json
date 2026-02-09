@@ -1,0 +1,11 @@
+{
+  "name": "Isles Restaurant & Tiki Bar",
+  "category": "American & Tiki Bar",
+  "description": "Island-inspired cuisine with a tropical tiki bar atmosphere. Great for families and groups.",
+  "image": "/dining/isles-restaurant.jpg",
+  "website": "https://www.islesrestaurant.com/",
+  "phone": "(910) 278-6588",
+  "address": "6747 Beach Drive SW, Ocean Isle Beach, NC",
+  "petFriendly": true,
+  "priceRange": "$$"
+}
