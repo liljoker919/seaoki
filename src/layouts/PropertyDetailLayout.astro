@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import PropertySchema from "../components/PropertySchema.astro";
 import FAQ from "../components/FAQ.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
+import PhotoGallery from "../components/PhotoGallery.astro";
 
 interface PropertyAddress {
     name: string;
@@ -221,34 +222,11 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
         </div>
 
         <!-- Photo Gallery -->
-        {(property.houfyGalleryId || (property.photoGallery && property.photoGallery.length > 0)) && (
+        {property.photoGallery && property.photoGallery.length > 0 && (
         <div class="row mb-5">
             <div class="col-12">
                 <h3 class="fw-bold mb-4">Photo Gallery</h3>
-                {property.houfyGalleryId ? (
-                    <!-- Houfy Photo Gallery Widget -->
-                    <div class="p-3">
-                        <div
-                            class="houfy_widget"
-                            data-widgettype="gallery"
-                            data-listingid={property.houfyListingId}
-                            data-galleryid={property.houfyGalleryId}
-                        >
-                        </div>
-                    </div>
-                ) : property.photoGallery ? (
-                    <div class="row g-3">
-                        {property.photoGallery.map((photo: PhotoGalleryItem, index: number) => (
-                            <div class={index < 2 ? "col-md-6" : "col-md-4"}>
-                                <img
-                                    src={photo.src}
-                                    class="img-fluid rounded shadow"
-                                    alt={photo.alt}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                ) : null}
+                <PhotoGallery photos={property.photoGallery} propertyName={property.name} />
             </div>
         </div>
         )}
