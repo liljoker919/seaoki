@@ -28,15 +28,16 @@ const placeholderImage = 'https://placehold.co/600x250/4a90e2/ffffff?text=' + en
 
 <div class="col-lg-6">
     <div class="card h-100 shadow-lg border-0">
-        <img
-            src={image}
-            class="card-img-top"
-            alt={name}
-            style="height: 250px; object-fit: cover;"
-            loading="lazy"
-            width="600"
-            height="250"
-        />
+        <div class="image-container">
+            <img
+                src={image}
+                class="card-img-top restaurant-logo"
+                alt={name}
+                loading="lazy"
+                width="600"
+                height="250"
+            />
+        </div>
         <div class="card-body d-flex flex-column">
             <h3 class="card-title h4 fw-bold">{name}</h3>
             <p class="text-muted mb-2">
@@ -80,8 +81,32 @@ const placeholderImage = 'https://placehold.co/600x250/4a90e2/ffffff?text=' + en
     </div>
 </div>
 
+<style>
+    .image-container {
+        height: 250px;
+        background-color: #f8f9fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .restaurant-logo {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+</style>
+
 <script define:vars={{ image, placeholderImage }}>
-    document.currentScript.previousElementSibling.querySelector('img').addEventListener('error', function() {
-        this.src = placeholderImage;
-    });
+    // Find the image within the current component
+    const container = document.currentScript.closest('.col-lg-6');
+    const img = container?.querySelector('.restaurant-logo');
+    if (img) {
+        img.addEventListener('error', function() {
+            this.src = placeholderImage;
+        });
+    }
 </script>
