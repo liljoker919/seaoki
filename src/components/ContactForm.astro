@@ -19,23 +19,24 @@
         
         <div class="row g-3 mb-4">
             <div class="col-md-6">
-                <label for="checkIn" class="form-label">Check-in Date</label>
+                <label for="checkIn" class="form-label">Check-In Date</label>
                 <input 
                     type="date" 
                     class="form-control" 
                     id="checkIn" 
                     name="checkIn" 
-                    required 
+                    required
+                    min={new Date().toISOString().split('T')[0]}
                 />
             </div>
             <div class="col-md-6">
-                <label for="checkOut" class="form-label">Check-out Date</label>
+                <label for="checkOut" class="form-label">Check-Out Date</label>
                 <input 
                     type="date" 
                     class="form-control" 
                     id="checkOut" 
                     name="checkOut" 
-                    required 
+                    required
                 />
             </div>
         </div>
@@ -80,6 +81,27 @@
         </button>
     </form>
 </div>
+
+<script>
+    // Client-side form validation for date fields
+    const checkInInput = document.getElementById('checkIn') as HTMLInputElement;
+    const checkOutInput = document.getElementById('checkOut') as HTMLInputElement;
+
+    if (checkInInput && checkOutInput) {
+        // Update check-out minimum date when check-in changes
+        checkInInput.addEventListener('change', () => {
+            const checkInDate = new Date(checkInInput.value);
+            const nextDay = new Date(checkInDate);
+            nextDay.setDate(nextDay.getDate() + 1);
+            checkOutInput.min = nextDay.toISOString().split('T')[0];
+            
+            // Reset check-out if it's before the new minimum
+            if (checkOutInput.value && new Date(checkOutInput.value) <= checkInDate) {
+                checkOutInput.value = '';
+            }
+        });
+    }
+</script>
 
 <style>
     .contact-form-wrapper {
