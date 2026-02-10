@@ -2,278 +2,291 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
 ---
 
-<Layout title="Contact | Sea OKI Collection">
+<Layout title="Contact | Sea OKI Collection" description="Contact Sea OKI Collection for your Oak Island vacation rental. Multiple ways to reach us - website form, Facebook, Houfy, or direct contact.">
     <Navigation />
 
-    <div class="container py-5">
+    <div class="contact-page">
         <!-- Page Header -->
-        <div class="text-center mb-5">
-            <h1 class="display-3 fw-bold brand-text">Contact Us</h1>
-            <p class="lead">
-                We're here to help plan your perfect Oak Island getaway
-            </p>
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h1 class="page-title">Get in Touch</h1>
+                <p class="page-subtitle">
+                    Choose your preferred way to contact us about your Oak Island getaway
+                </p>
+            </div>
         </div>
 
-        <div class="row">
-            <!-- Contact Information -->
-            <div class="col-lg-6 mb-5">
-                <h2 class="h4 fw-bold mb-4">Get in Touch</h2>
-                <p class="fs-5 mb-4">
-                    Have questions about our properties or Oak Island? We'd love
-                    to help! As the owners, we're personally involved in every
-                    aspect of your stay and can provide insider recommendations
-                    to make your vacation unforgettable.
-                </p>
-
-                <div class="row g-4">
-                    <div class="col-12">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="brand-text fs-3 me-3">💬</div>
-                            <div>
-                                <h5 class="mb-1">Send a Message</h5>
-                                <p class="mb-0">
-                                    Use the message buttons on the right to contact us through Houfy
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="brand-text fs-3 me-3">⏰</div>
-                            <div>
-                                <h5 class="mb-1">Response Time</h5>
-                                <p class="mb-0">
-                                    We typically respond within 2-4 hours during
-                                    business hours
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Social Media -->
-                <div class="mt-4">
-                    <h5 class="fw-bold mb-3">Follow Us</h5>
-                    <div class="d-flex gap-3">
-                        <a
-                            href="https://facebook.com/totheseaoki/"
-                            target="_blank"
-                            class="btn btn-outline-primary btn-sm"
-                        >
-                            <i class="fab fa-facebook me-2"></i>Facebook
-                        </a>
-                        <a
-                            href="https://www.instagram.com/bytheseaoki/"
-                            target="_blank"
-                            class="btn btn-outline-primary btn-sm"
-                        >
-                            <i class="fab fa-instagram me-2"></i>Instagram
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Message Host Buttons -->
-            <div class="col-lg-6">
-                <div class="card shadow border-0">
-                    <div class="card-header bg-brand text-white">
-                        <h4 class="mb-0">Message Your Host</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="fs-5 mb-4">
-                            Send us a message through Houfy to inquire about availability, 
-                            ask questions, or discuss your upcoming stay. We typically respond 
-                            within 2-4 hours during business hours.
+        <!-- Main Content Section -->
+        <div class="container pb-5">
+            <div class="row g-5">
+                <!-- Left Column: Contact Information & Choose Your Channel -->
+                <div class="col-lg-5">
+                    <div class="info-section">
+                        <h2 class="section-heading">We're Here to Help</h2>
+                        <p class="section-text">
+                            Have questions about our properties or Oak Island? We'd love
+                            to help! As the owners, we're personally involved in every
+                            aspect of your stay and can provide insider recommendations
+                            to make your vacation unforgettable.
                         </p>
-                        
-                        <div class="d-grid gap-3">
+
+                        <!-- Contact Info Cards -->
+                        <div class="contact-info-cards">
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h5 class="info-title">Response Time</h5>
+                                    <p class="info-detail">
+                                        We typically respond within 2-4 hours during business hours
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <i class="far fa-envelope"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h5 class="info-title">Email</h5>
+                                    <p class="info-detail">
+                                        <a href="mailto:seaokicollection@gmail.com">seaokicollection@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h5 class="info-title">Phone</h5>
+                                    <p class="info-detail">
+                                        <a href="tel:+19105550123">(910) 555-0123</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Choose Your Channel Section -->
+                        <div class="channel-options mt-5">
+                            <h3 class="channel-heading">Choose Your Channel</h3>
+                            <p class="channel-text">
+                                Select the communication method that works best for you
+                            </p>
+                            
+                            <!-- Houfy Button -->
                             <a
                                 href="https://www.houfy.com/lodging/steps-to-the-sea-walk-to-the-beach-oak-island/79833?guests=1&adults=1&children=0"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="btn btn-brand btn-lg py-3"
+                                class="btn-channel btn-channel-houfy mb-3"
                             >
-                                <div class="d-flex flex-column align-items-center">
-                                    <strong class="fs-5">Message Host: Steps to the Sea</strong>
-                                    <small class="mt-1">3BR • Sleeps 6 • Walk to Beach</small>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <div class="channel-title">Message Host on Houfy</div>
+                                        <div class="channel-subtitle">Secure booking platform</div>
+                                    </div>
+                                    <i class="fas fa-arrow-right"></i>
                                 </div>
                             </a>
-                            
-                            <div class="alert alert-info mb-0">
-                                <h6 class="fw-bold mb-2">🏠 Down by the Sea</h6>
-                                <p class="mb-0 small">
-                                    Down by the Sea is currently occupied under a long-term lease 
-                                    and is not accepting inquiries at this time.
-                                </p>
+
+                            <!-- Facebook Button -->
+                            <a
+                                href="https://www.facebook.com/messages/t/totheseaoki"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn-channel btn-channel-facebook mb-3"
+                            >
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <div class="channel-title">Message on Facebook</div>
+                                        <div class="channel-subtitle">Fast response via Messenger</div>
+                                    </div>
+                                    <i class="fab fa-facebook-messenger"></i>
+                                </div>
+                            </a>
+
+                            <!-- Social Media -->
+                            <div class="social-follow mt-4">
+                                <p class="social-label">Follow our journey:</p>
+                                <div class="social-links">
+                                    <a
+                                        href="https://facebook.com/totheseaoki/"
+                                        target="_blank"
+                                        class="social-link"
+                                        aria-label="Facebook"
+                                    >
+                                        <i class="fab fa-facebook"></i>
+                                    </a>
+                                    <a
+                                        href="https://www.instagram.com/bytheseaoki/"
+                                        target="_blank"
+                                        class="social-link"
+                                        aria-label="Instagram"
+                                    >
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        
-                        <p class="small text-muted mt-4 mb-0">
-                            💡 <strong>Tip:</strong> Click the button above to go directly to 
-                            the property listing on Houfy, then click "Contact Owner" to send 
-                            us a message. You can also book directly through Houfy.
+                    </div>
+                </div>
+
+                <!-- Right Column: Contact Form -->
+                <div class="col-lg-7">
+                    <div class="form-section">
+                        <h2 class="section-heading mb-2">Send Us a Message</h2>
+                        <p class="form-intro">
+                            Fill out the form below and we'll get back to you shortly
                         </p>
+                        <ContactForm />
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Quick Booking -->
-        <div class="text-center mt-5">
-            <div class="bg-light p-5 rounded">
-                <h3 class="fw-bold mb-3">Ready to Book?</h3>
-                <p class="fs-5 mb-4">
-                    Check availability and book directly for Steps to the Sea
-                </p>
-                <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <a href="/properties/steps-to-the-sea#book-your-stay" class="btn btn-brand btn-lg"
-                        >Steps to the Sea - Check Availability</a
-                    >
-                </div>
-                <p class="small text-muted mt-3 mb-0">
-                    <em>Down by the Sea is currently rented and not available for booking</em>
-                </p>
-            </div>
-        </div>
-
         <!-- FAQ Section -->
-        <div class="mt-5">
-            <h3 class="fw-bold text-center mb-5">Frequently Asked Questions</h3>
+        <div class="faq-section py-5">
+            <div class="container">
+                <h3 class="faq-heading text-center mb-5">Frequently Asked Questions</h3>
 
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button
-                                    class="accordion-button collapsed"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#faq1"
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button
+                                        class="accordion-button collapsed"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#faq1"
+                                    >
+                                        What's included with my stay?
+                                    </button>
+                                </h2>
+                                <div
+                                    id="faq1"
+                                    class="accordion-collapse collapse"
+                                    data-bs-parent="#faqAccordion"
                                 >
-                                    What's included with my stay?
-                                </button>
-                            </h2>
-                            <div
-                                id="faq1"
-                                class="accordion-collapse collapse"
-                                data-bs-parent="#faqAccordion"
-                            >
-                                <div class="accordion-body">
-                                    Both properties include linens, towels,
-                                    fully equipped kitchens, WiFi, beach chairs,
-                                    umbrella, beach wagon, and outdoor grill. We
-                                    also provide basic toiletries, paper
-                                    products, and cleaning supplies.
+                                    <div class="accordion-body">
+                                        Both properties include linens, towels,
+                                        fully equipped kitchens, WiFi, beach chairs,
+                                        umbrella, beach wagon, and outdoor grill. We
+                                        also provide basic toiletries, paper
+                                        products, and cleaning supplies.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button
-                                    class="accordion-button collapsed"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#faq2"
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button
+                                        class="accordion-button collapsed"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#faq2"
+                                    >
+                                        What's your pet policy?
+                                    </button>
+                                </h2>
+                                <div
+                                    id="faq2"
+                                    class="accordion-collapse collapse"
+                                    data-bs-parent="#faqAccordion"
                                 >
-                                    What's your pet policy?
-                                </button>
-                            </h2>
-                            <div
-                                id="faq2"
-                                class="accordion-collapse collapse"
-                                data-bs-parent="#faqAccordion"
-                            >
-                                <div class="accordion-body">
-                                    We welcome up to 2 pets per property with a
-                                    $50 pet fee. Both properties have fenced
-                                    yards. Pets must be kept off furniture and
-                                    owners are responsible for cleanup. Oak
-                                    Island beaches allow leashed dogs
-                                    year-round.
+                                    <div class="accordion-body">
+                                        We welcome up to 2 pets per property with a
+                                        $50 pet fee. Both properties have fenced
+                                        yards. Pets must be kept off furniture and
+                                        owners are responsible for cleanup. Oak
+                                        Island beaches allow leashed dogs
+                                        year-round.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button
-                                    class="accordion-button collapsed"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#faq3"
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button
+                                        class="accordion-button collapsed"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#faq3"
+                                    >
+                                        How far are the properties from the beach?
+                                    </button>
+                                </h2>
+                                <div
+                                    id="faq3"
+                                    class="accordion-collapse collapse"
+                                    data-bs-parent="#faqAccordion"
                                 >
-                                    How far are the properties from the beach?
-                                </button>
-                            </h2>
-                            <div
-                                id="faq3"
-                                class="accordion-collapse collapse"
-                                data-bs-parent="#faqAccordion"
-                            >
-                                <div class="accordion-body">
-                                    "Steps to the Sea" is about a 10-minute walk
-                                    to the beach. "Down by the Sea" is a short
-                                    drive or golf cart ride (about 5 minutes) to
-                                    public beach access. Both offer easy beach
-                                    access with provided equipment.
+                                    <div class="accordion-body">
+                                        "Steps to the Sea" is about a 10-minute walk
+                                        to the beach. "Down by the Sea" is a short
+                                        drive or golf cart ride (about 5 minutes) to
+                                        public beach access. Both offer easy beach
+                                        access with provided equipment.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button
-                                    class="accordion-button collapsed"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#faq4"
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button
+                                        class="accordion-button collapsed"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#faq4"
+                                    >
+                                        What's your cancellation policy?
+                                    </button>
+                                </h2>
+                                <div
+                                    id="faq4"
+                                    class="accordion-collapse collapse"
+                                    data-bs-parent="#faqAccordion"
                                 >
-                                    What's your cancellation policy?
-                                </button>
-                            </h2>
-                            <div
-                                id="faq4"
-                                class="accordion-collapse collapse"
-                                data-bs-parent="#faqAccordion"
-                            >
-                                <div class="accordion-body">
-                                    We offer flexible cancellation up to 14 days
-                                    before your stay for a full refund.
-                                    Cancellations within 14 days may be eligible
-                                    for partial refunds depending on our ability
-                                    to rebook. We understand plans change and
-                                    work with guests when possible.
+                                    <div class="accordion-body">
+                                        We offer flexible cancellation up to 14 days
+                                        before your stay for a full refund.
+                                        Cancellations within 14 days may be eligible
+                                        for partial refunds depending on our ability
+                                        to rebook. We understand plans change and
+                                        work with guests when possible.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button
-                                    class="accordion-button collapsed"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#faq5"
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button
+                                        class="accordion-button collapsed"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#faq5"
+                                    >
+                                        Do you provide local recommendations?
+                                    </button>
+                                </h2>
+                                <div
+                                    id="faq5"
+                                    class="accordion-collapse collapse"
+                                    data-bs-parent="#faqAccordion"
                                 >
-                                    Do you provide local recommendations?
-                                </button>
-                            </h2>
-                            <div
-                                id="faq5"
-                                class="accordion-collapse collapse"
-                                data-bs-parent="#faqAccordion"
-                            >
-                                <div class="accordion-body">
-                                    Absolutely! As locals, we love sharing our
-                                    favorite restaurants, activities, and hidden
-                                    gems. We provide a comprehensive local guide
-                                    with every booking and are always available
-                                    for personalized recommendations.
+                                    <div class="accordion-body">
+                                        Absolutely! As locals, we love sharing our
+                                        favorite restaurants, activities, and hidden
+                                        gems. We provide a comprehensive local guide
+                                        with every booking and are always available
+                                        for personalized recommendations.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -285,3 +298,310 @@ import Footer from "../components/Footer.astro";
 
     <Footer />
 </Layout>
+
+<style>
+    /* Contact Page Styling using Sea OKI Design System */
+    .contact-page {
+        background-color: #f8f9fa;
+    }
+
+    /* Page Header */
+    .page-title {
+        font-family: var(--font-header);
+        font-size: 3.5rem;
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+    }
+
+    .page-subtitle {
+        font-family: var(--font-body);
+        font-size: 1.25rem;
+        color: var(--color-primary);
+        opacity: 0.8;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Section Headings */
+    .section-heading {
+        font-family: var(--font-subheader);
+        font-size: 2rem;
+        color: var(--color-primary);
+        margin-bottom: 1.5rem;
+    }
+
+    .section-text {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--color-primary);
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+
+    /* Info Section */
+    .info-section {
+        padding: 2rem;
+    }
+
+    /* Contact Info Cards */
+    .contact-info-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .info-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.25rem;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(23, 35, 56, 0.06);
+        transition: all 0.3s ease;
+    }
+
+    .info-card:hover {
+        box-shadow: 0 4px 16px rgba(23, 35, 56, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .info-icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+        border-radius: 12px;
+        font-size: 1.5rem;
+        color: white;
+        flex-shrink: 0;
+    }
+
+    .info-content {
+        flex: 1;
+    }
+
+    .info-title {
+        font-family: var(--font-subheader);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .info-detail {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        color: var(--color-primary);
+        opacity: 0.85;
+        margin-bottom: 0;
+    }
+
+    .info-detail a {
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .info-detail a:hover {
+        color: var(--color-accent);
+    }
+
+    /* Channel Options */
+    .channel-options {
+        padding: 2rem;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(23, 35, 56, 0.08);
+    }
+
+    .channel-heading {
+        font-family: var(--font-subheader);
+        font-size: 1.5rem;
+        color: var(--color-primary);
+        margin-bottom: 0.75rem;
+    }
+
+    .channel-text {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        color: var(--color-primary);
+        opacity: 0.8;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Channel Buttons */
+    .btn-channel {
+        display: block;
+        width: 100%;
+        padding: 1.25rem 1.5rem;
+        background-color: var(--color-accent);
+        border: none;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(240, 153, 121, 0.2);
+    }
+
+    .btn-channel:hover {
+        background-color: var(--color-primary);
+        box-shadow: 0 4px 16px rgba(23, 35, 56, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .channel-title {
+        font-family: var(--font-subheader);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 0.25rem;
+    }
+
+    .channel-subtitle {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .btn-channel i {
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    /* Social Follow */
+    .social-follow {
+        padding-top: 1.5rem;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .social-label {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        color: var(--color-primary);
+        opacity: 0.7;
+        margin-bottom: 1rem;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .social-link {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-secondary);
+        border-radius: 50%;
+        color: white;
+        font-size: 1.25rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+        background: var(--color-accent);
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(240, 153, 121, 0.3);
+    }
+
+    /* Form Section */
+    .form-section {
+        padding: 2rem 0;
+    }
+
+    .form-intro {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        color: var(--color-primary);
+        opacity: 0.8;
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+        background: white;
+    }
+
+    .faq-heading {
+        font-family: var(--font-subheader);
+        font-size: 2rem;
+        color: var(--color-primary);
+    }
+
+    .accordion-item {
+        border: 1px solid #e2e8f0;
+        border-radius: 8px !important;
+        margin-bottom: 1rem;
+        overflow: hidden;
+    }
+
+    .accordion-button {
+        font-family: var(--font-body);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--color-primary);
+        background: white;
+        padding: 1.25rem 1.5rem;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: #f8f9fa;
+        color: var(--color-primary);
+        box-shadow: none;
+    }
+
+    .accordion-button:focus {
+        box-shadow: 0 0 0 3px rgba(240, 153, 121, 0.1);
+        border-color: var(--color-accent);
+    }
+
+    .accordion-body {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--color-primary);
+        padding: 1.5rem;
+        text-align: left;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 991.98px) {
+        .page-title {
+            font-size: 2.5rem;
+        }
+
+        .info-section {
+            padding: 0;
+        }
+
+        .channel-options {
+            margin-top: 2rem;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .page-title {
+            font-size: 2rem;
+        }
+
+        .section-heading {
+            font-size: 1.5rem;
+        }
+
+        .info-card {
+            padding: 1.25rem;
+        }
+
+        .channel-options {
+            padding: 1.5rem;
+        }
+    }
+</style>
