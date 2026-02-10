@@ -1,0 +1,11 @@
+{
+  "name": "Tranquil Harbour Restaurant & Bar",
+  "category": "Seafood",
+  "description": "Locally sourced seafood, steaks, burgers & other American fare from a cozy place with a bar & patio.",
+  "image": "/dining/tranquil-harbour.jpg",
+  "website": "https://www.tranquilharbouroakisland.com/",
+  "phone": "(910) 250-1294",
+  "address": "5908 E Oak Island Dr, Oak Island, NC 28465",
+  "petFriendly": true,
+  "priceRange": "$$"
+}

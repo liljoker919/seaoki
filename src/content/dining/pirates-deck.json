@@ -1,0 +1,11 @@
+{
+  "name": "Pirates Deck",
+  "category": "Seafood",
+  "description": "Casual seafood eatery with pizza, burgers, and outdoor seating.",
+  "image": "/dining/pirates-deck.jpg",
+  "website": "https://www.facebook.com/piratesdeck/",
+  "phone": "(910) 933-1010",
+  "address": "5827 E Oak Island Dr, Oak Island, NC 28465",
+  "petFriendly": false,
+  "priceRange": "$$"
+}

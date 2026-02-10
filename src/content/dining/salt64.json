@@ -1,0 +1,10 @@
+{
+  "name": "Salt64",
+  "category": "New American",
+  "description": "Upscale eatery offering New American grub such as crab cakes and crab toast, plus seafood entrees.",
+  "image": "/dining/salt64.jpg",
+  "website": "https://www.salt64.com/",
+  "address": "6404 E Oak Island Dr, Oak Island, NC 28465",
+  "petFriendly": false,
+  "priceRange": "$$$"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Pepperoni Grill at the Beach",
+  "category": "Pizza",
+  "description": "Beachside pizza spot with specialty pies, wings, subs, and calzones.",
+  "image": "/dining/pepperoni-grill.jpg",
+  "website": "https://pepperonigrillnc.com/",
+  "phone": "(910) 250-1190",
+  "address": "4320 E Beach Dr, Oak Island, NC 28465",
+  "petFriendly": false,
+  "priceRange": "$$"
+}
