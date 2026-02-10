@@ -1,0 +1,11 @@
+{
+  "name": "Island Way",
+  "category": "Fine Dining",
+  "description": "An upscale-casual beachfront stop for high-end steaks & seafood.",
+  "image": "/dining/island-way.jpg",
+  "website": "https://islandwayres.com/",
+  "phone": "(910) 278-7770",
+  "address": "1407 E Beach Dr, Oak Island, NC 28465",
+  "petFriendly": false,
+  "priceRange": "$$$"
+}

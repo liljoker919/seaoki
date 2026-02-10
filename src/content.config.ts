@@ -16,4 +16,21 @@ const blog = defineCollection({
 		}),
 });
 
-export const collections = { blog };
+const dining = defineCollection({
+	// Load JSON files with restaurant data
+	loader: glob({ base: './src/content/dining', pattern: '*.json' }),
+	// Type-check restaurant data using a schema
+	schema: z.object({
+		name: z.string(),
+		category: z.string(),
+		description: z.string(),
+		image: z.string(),
+		website: z.string().url(),
+		phone: z.string().optional(),
+		address: z.string().optional(),
+		petFriendly: z.boolean().default(false),
+		priceRange: z.enum(['$', '$$', '$$$', '$$$$']).optional(),
+	}),
+});
+
+export const collections = { blog, dining };

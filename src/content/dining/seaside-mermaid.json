@@ -1,0 +1,11 @@
+{
+  "name": "Seaside Mermaid",
+  "category": "Coffee Shop",
+  "description": "Cozy coffee shop serving donuts, ice cream, and desserts along with coffee drinks.",
+  "image": "/dining/seaside-mermaid.jpg",
+  "website": "https://theseasidemermaid.com/",
+  "phone": "(910) 250-1783",
+  "address": "6102 E Oak Island Dr Suite 2, Oak Island, NC 28465",
+  "petFriendly": false,
+  "priceRange": "$"
+}
