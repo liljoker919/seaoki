@@ -1,0 +1,172 @@
+---
+// ContactForm component for Sea OKI Collection
+// Captures essential guest information: Name, Dates, and Message
+---
+
+<div class="contact-form-wrapper">
+    <form class="contact-form" id="contactForm" method="POST" action="https://formspree.io/f/xdkojvgl">
+        <div class="form-group mb-4">
+            <label for="name" class="form-label">Your Name</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                id="name" 
+                name="name" 
+                required 
+                placeholder="John Smith"
+            />
+        </div>
+        
+        <div class="row g-3 mb-4">
+            <div class="col-md-6">
+                <label for="checkIn" class="form-label">Check-In Date</label>
+                <input 
+                    type="date" 
+                    class="form-control" 
+                    id="checkIn" 
+                    name="checkIn" 
+                    required
+                    min={new Date().toISOString().split('T')[0]}
+                />
+            </div>
+            <div class="col-md-6">
+                <label for="checkOut" class="form-label">Check-Out Date</label>
+                <input 
+                    type="date" 
+                    class="form-control" 
+                    id="checkOut" 
+                    name="checkOut" 
+                    required
+                />
+            </div>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="email" class="form-label">Email Address</label>
+            <input 
+                type="email" 
+                class="form-control" 
+                id="email" 
+                name="email" 
+                required 
+                placeholder="john@example.com"
+            />
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="phone" class="form-label">Phone Number (Optional)</label>
+            <input 
+                type="tel" 
+                class="form-control" 
+                id="phone" 
+                name="phone" 
+                placeholder="(910) 555-0123"
+            />
+        </div>
+        
+        <div class="form-group mb-4">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea 
+                class="form-control" 
+                id="message" 
+                name="message" 
+                rows="5" 
+                required
+                placeholder="Tell us about your upcoming stay, any questions, or special requests..."
+            ></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-contact-submit w-100">
+            Send Message
+        </button>
+    </form>
+</div>
+
+<script>
+    // Client-side form validation for date fields
+    const checkInInput = document.getElementById('checkIn') as HTMLInputElement;
+    const checkOutInput = document.getElementById('checkOut') as HTMLInputElement;
+
+    if (checkInInput && checkOutInput) {
+        // Update check-out minimum date when check-in changes
+        checkInInput.addEventListener('change', () => {
+            const checkInDate = new Date(checkInInput.value);
+            const nextDay = new Date(checkInDate);
+            nextDay.setDate(nextDay.getDate() + 1);
+            checkOutInput.min = nextDay.toISOString().split('T')[0];
+            
+            // Reset check-out if it's before the new minimum
+            if (checkOutInput.value && new Date(checkOutInput.value) <= checkInDate) {
+                checkOutInput.value = '';
+            }
+        });
+    }
+</script>
+
+<style>
+    .contact-form-wrapper {
+        padding: 2rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(23, 35, 56, 0.08);
+    }
+
+    .form-label {
+        font-family: var(--font-body);
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+        font-size: 1.05rem;
+    }
+
+    .form-control {
+        font-family: var(--font-body);
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        border-color: var(--color-accent);
+        box-shadow: 0 0 0 3px rgba(240, 153, 121, 0.1);
+        outline: none;
+    }
+
+    .form-control::placeholder {
+        color: #94a3b8;
+    }
+
+    textarea.form-control {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .btn-contact-submit {
+        font-family: var(--font-subheader);
+        font-size: 1.1rem;
+        font-weight: 500;
+        background-color: var(--color-accent);
+        border: none;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+    }
+
+    .btn-contact-submit:hover {
+        background-color: var(--color-primary);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(23, 35, 56, 0.15);
+    }
+
+    @media (max-width: 767.98px) {
+        .contact-form-wrapper {
+            padding: 1.5rem;
+        }
+    }
+</style>
