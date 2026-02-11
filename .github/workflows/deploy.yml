@@ -38,6 +38,7 @@ jobs:
 
       - name: Sync files to S3
         run: |
+          # Sync non-HTML files with longer cache
           aws s3 sync dist/ s3://${{ secrets.S3_BUCKET }} \
             --delete \
             --cache-control "public, max-age=3600" \
@@ -45,12 +46,16 @@ jobs:
             --exclude "*.xml"
           
           # Upload HTML files with shorter cache for faster updates
+          # IMPORTANT: Ensure S3 bucket has public read permissions configured
+          # All HTML files (including privacy/index.html and terms/index.html) 
+          # must be publicly readable for SEO and compliance requirements
           aws s3 sync dist/ s3://${{ secrets.S3_BUCKET }} \
             --delete \
             --cache-control "public, max-age=300, must-revalidate" \
             --exclude "*" \
             --include "*.html" \
-            --include "*.xml"
+            --include "*.xml" \
+            --acl public-read
 
       - name: Create CloudFront invalidation
         run: |
