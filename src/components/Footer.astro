@@ -2,7 +2,7 @@
 // Footer component for Sea OKI Collection
 ---
 
-<footer class="bg-dark text-light py-5 mt-5">
+<footer class="footer-custom py-5 mt-5">
   <div class="container">
     <div class="row">
       <div class="col-lg-4 mb-4">
@@ -14,17 +14,17 @@
         <div class="d-flex gap-3">
           <a
             href="https://www.facebook.com/totheseaoki/"
-            class="text-light"
+            class="footer-link"
             aria-label="Facebook"
           >
-            <i class="fab fa-facebook fa-lg"></i>
+            <i class="fab fa-facebook-square fa-lg"></i>
           </a>
           <a
             href="https://www.instagram.com/bytheseaoki/"
-            class="text-light"
+            class="footer-link"
             aria-label="Instagram"
           >
-            <i class="fab fa-instagram fa-lg"></i>
+            <i class="fab fa-instagram-square fa-lg"></i>
           </a>
         </div>
       </div>
@@ -35,7 +35,7 @@
           <li>
             <a
               href="/properties/steps-to-the-sea"
-              class="text-light text-decoration-none">Steps to the Sea</a
+              class="footer-link">Steps to the Sea</a
             >
           </li>
         </ul>
@@ -45,21 +45,21 @@
         <h6>Quick Links</h6>
         <ul class="list-unstyled">
           <li>
-            <a href="/about" class="text-light text-decoration-none">About</a>
+            <a href="/about" class="footer-link">About</a>
           </li>
           <li>
-            <a href="/blog" class="text-light text-decoration-none">Blog</a>
+            <a href="/blog" class="footer-link">Blog</a>
           </li>
           <li>
-            <a href="/contact" class="text-light text-decoration-none"
+            <a href="/contact" class="footer-link"
               >Contact</a
             >
           </li>
           <li>
-            <a href="/book" class="text-light text-decoration-none">Book Now</a>
+            <a href="/book" class="footer-link">Book Now</a>
           </li>
           <li>
-            <a href="/policies" class="text-light text-decoration-none"
+            <a href="/policies" class="footer-link"
               >Policies</a
             >
           </li>
@@ -69,29 +69,30 @@
       <div class="col-lg-4 mb-4">
         <h6>Contact Info</h6>
         <address class="mb-0">
-          <p class="mb-1">Oak Island, NC</p>
-          <p class="mb-1">
-            <a href="/contact" class="text-light text-decoration-none">Contact Us</a>
+          <p class="mb-2">Oak Island, NC</p>
+          <p class="mb-0">
+            <a href="/contact" class="footer-link footer-cta">
+              <i class="fas fa-envelope me-2"></i>Email the Hosts
+            </a>
           </p>
-          <p class="mb-0">Phone: (910) 555-0123</p>
         </address>
       </div>
     </div>
 
-    <hr class="my-4" />
+    <hr class="my-4 footer-divider" />
 
     <div class="row align-items-center">
       <div class="col-md-6">
-        <p class="mb-0">
+        <p class="mb-0 footer-copyright">
           &copy; {new Date().getFullYear()} Sea OKI Collection. All rights reserved.
         </p>
       </div>
       <div class="col-md-6 text-md-end">
-        <small class="text-muted">
-          <a href="/privacy" class="text-light text-decoration-none"
+        <small class="footer-legal">
+          <a href="/privacy" class="footer-link"
             >Privacy Policy</a
           > |
-          <a href="/terms" class="text-light text-decoration-none"
+          <a href="/terms" class="footer-link"
             >Terms of Service</a
           >
         </small>
@@ -101,23 +102,88 @@
 </footer>
 
 <style>
-  footer {
-    padding: 2em 1em 6em 1em;
-    background: linear-gradient(var(--gray-gradient)) no-repeat;
-    color: rgb(var(--gray));
-    text-align: center;
+  .footer-custom {
+    background-color: var(--color-primary);
+    color: #f8f9fa;
+    font-family: var(--font-body);
+    padding: 3rem 1rem;
   }
-  .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-    margin-top: 1em;
+
+  .footer-custom h5,
+  .footer-custom h6 {
+    font-family: var(--font-body);
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 1rem;
   }
-  .social-links a {
+
+  .footer-custom h5 {
+    font-size: 1.25rem;
+  }
+
+  .footer-custom h6 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-custom p,
+  .footer-custom address {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .footer-link {
+    color: #f8f9fa;
     text-decoration: none;
-    color: rgb(var(--gray));
+    transition: color 0.3s ease;
+    display: inline-block;
   }
-  .social-links a:hover {
-    color: rgb(var(--gray-dark));
+
+  .footer-link:hover {
+    color: var(--color-secondary);
+  }
+
+  .footer-cta {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .footer-cta:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-divider {
+    border-color: rgba(255, 255, 255, 0.2);
+    margin: 2rem 0;
+  }
+
+  .footer-copyright,
+  .footer-legal {
+    font-size: 0.875rem;
+    opacity: 0.9;
+  }
+
+  .footer-legal a {
+    margin: 0 0.25rem;
+  }
+
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-custom {
+      text-align: center;
+    }
+
+    .footer-custom .d-flex {
+      justify-content: center;
+    }
+
+    .footer-custom .text-md-end {
+      text-align: center !important;
+      margin-top: 1rem;
+    }
   }
 </style>
