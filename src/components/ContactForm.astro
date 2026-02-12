@@ -4,7 +4,19 @@
 ---
 
 <div class="contact-form-wrapper">
-    <form class="contact-form" id="contactForm" method="POST" action="https://formspree.io/f/xdkojvgl">
+    <!-- Success Alert -->
+    <div id="successAlert" class="alert alert-success alert-dismissible fade" role="alert" style="display: none;">
+        <strong>10/10!</strong> Your message has been sent successfully. We'll get back to you shortly!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- Error Alert -->
+    <div id="errorAlert" class="alert alert-danger alert-dismissible fade" role="alert" style="display: none;">
+        <strong>Oops!</strong> There was an error sending your message. Please try reaching out via <a href="https://www.facebook.com/messages/t/totheseaoki" target="_blank" class="alert-link">Facebook Messenger</a> instead.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <form class="contact-form" id="contactForm">
         <div class="form-group mb-4">
             <label for="name" class="form-label">Your Name</label>
             <input 
@@ -76,17 +88,34 @@
             ></textarea>
         </div>
         
-        <button type="submit" class="btn btn-contact-submit w-100">
-            Send Message
+        <button type="submit" class="btn btn-contact-submit w-100" id="submitButton">
+            <span id="submitText">Send Message</span>
+            <span id="loadingSpinner" class="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true" style="display: none;"></span>
         </button>
     </form>
 </div>
 
 <script>
-    // Client-side form validation for date fields
+    // API endpoint configuration
+    const API_ENDPOINT = 'https://38acdbh19e.execute-api.us-east-1.amazonaws.com/default';
+
+    // Get form elements
+    const form = document.getElementById('contactForm') as HTMLFormElement;
+    const submitButton = document.getElementById('submitButton') as HTMLButtonElement;
+    const submitText = document.getElementById('submitText') as HTMLSpanElement;
+    const loadingSpinner = document.getElementById('loadingSpinner') as HTMLSpanElement;
+    const successAlert = document.getElementById('successAlert') as HTMLDivElement;
+    const errorAlert = document.getElementById('errorAlert') as HTMLDivElement;
+    
+    // Form inputs
     const checkInInput = document.getElementById('checkIn') as HTMLInputElement;
     const checkOutInput = document.getElementById('checkOut') as HTMLInputElement;
+    const nameInput = document.getElementById('name') as HTMLInputElement;
+    const emailInput = document.getElementById('email') as HTMLInputElement;
+    const phoneInput = document.getElementById('phone') as HTMLInputElement;
+    const messageInput = document.getElementById('message') as HTMLTextAreaElement;
 
+    // Client-side form validation for date fields
     if (checkInInput && checkOutInput) {
         // Update check-out minimum date when check-in changes
         checkInInput.addEventListener('change', () => {
@@ -98,6 +127,82 @@
             // Reset check-out if it's before the new minimum
             if (checkOutInput.value && new Date(checkOutInput.value) <= checkInDate) {
                 checkOutInput.value = '';
+            }
+        });
+    }
+
+    // Form submission handler
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Native browser validation will prevent submission if email is invalid
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            // Show loading state
+            submitButton.disabled = true;
+            submitText.textContent = 'Sending...';
+            loadingSpinner.style.display = 'inline-block';
+
+            // Hide any previous alerts
+            successAlert.style.display = 'none';
+            errorAlert.style.display = 'none';
+            successAlert.classList.remove('show');
+            errorAlert.classList.remove('show');
+
+            // Prepare payload
+            const payload = {
+                name: nameInput.value.trim(),
+                email: emailInput.value.trim(),
+                phone: phoneInput.value.trim() || '',
+                checkIn: checkInInput.value,
+                checkOut: checkOutInput.value,
+                message: messageInput.value.trim()
+            };
+
+            try {
+                // Call AWS Lambda API
+                const response = await fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                // Show success message
+                successAlert.style.display = 'block';
+                successAlert.classList.add('show');
+                
+                // Reset form
+                form.reset();
+                
+                // Scroll to success message
+                successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                
+                // Show error message
+                errorAlert.style.display = 'block';
+                errorAlert.classList.add('show');
+                
+                // Scroll to error message
+                errorAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } finally {
+                // Reset button state
+                submitButton.disabled = false;
+                submitText.textContent = 'Send Message';
+                loadingSpinner.style.display = 'none';
             }
         });
     }
@@ -162,6 +267,34 @@
         background-color: var(--color-primary);
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(23, 35, 56, 0.15);
+    }
+
+    .btn-contact-submit:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .alert {
+        margin-bottom: 1.5rem;
+        border-radius: 8px;
+        border: none;
+    }
+
+    .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+    }
+
+    .alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+
+    .alert-link {
+        color: inherit;
+        font-weight: 600;
+        text-decoration: underline;
     }
 
     @media (max-width: 767.98px) {
