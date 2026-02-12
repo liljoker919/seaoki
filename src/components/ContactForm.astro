@@ -177,8 +177,6 @@
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
 
-                const data = await response.json();
-
                 // Show success message
                 successAlert.style.display = 'block';
                 successAlert.classList.add('show');
