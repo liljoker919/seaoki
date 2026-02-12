@@ -54,8 +54,7 @@ jobs:
             --cache-control "public, max-age=300, must-revalidate" \
             --exclude "*" \
             --include "*.html" \
-            --include "*.xml" \
-            --acl public-read
+            --include "*.xml"
 
       - name: Create CloudFront invalidation
         run: |
