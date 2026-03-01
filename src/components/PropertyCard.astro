@@ -32,7 +32,7 @@ const {
     <div class="card h-100 shadow-lg border-0">
         {isRented && (
             <div class="position-absolute top-0 start-0 m-3 badge bg-danger fs-6 px-3 py-2" style="z-index: 10;">
-                🏠 Currently Rented
+                <i class="fas fa-house me-1"></i> Currently Rented
             </div>
         )}
         <img
@@ -62,7 +62,7 @@ const {
                     <small>Sleeps</small>
                 </div>
                 <div class="col-3">
-                    <div class="fw-bold fs-4">{petFriendly ? "🐾" : "❌"}</div>
+                    <div class="fw-bold fs-4">{petFriendly ? <i class="fas fa-paw text-success"></i> : <i class="fas fa-times text-danger"></i>}</div>
                     <small>Pet Friendly</small>
                 </div>
             </div>
@@ -74,12 +74,12 @@ const {
                             href={detailsLink}
                             class="btn btn-outline-primary mb-2 w-100"
                         >
-                            View Details
+                            <i class="fas fa-info-circle me-2"></i>View Details
                         </a>
                     )
                 }
                 <a href={bookingLink} class="btn btn-brand btn-lg w-100"
-                    >{bookingLabel}</a
+                    ><i class="fas fa-calendar-check me-2"></i>{bookingLabel}</a
                 >
             </div>
         </div>
