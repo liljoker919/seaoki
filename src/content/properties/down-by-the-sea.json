@@ -132,17 +132,17 @@
   },
   "valueProposition": [
     {
-      "icon": "💰",
+      "icon": "fas fa-tag",
       "title": "Exceptional Value",
       "description": "Get more space and amenities for your budget without compromising on comfort or quality."
     },
     {
-      "icon": "🏠",
+      "icon": "fas fa-house",
       "title": "Peaceful Setting",
       "description": "Enjoy a quieter location while still being just minutes away from beach access and attractions."
     },
     {
-      "icon": "👨‍👩‍👧‍👦",
+      "icon": "fas fa-users",
       "title": "Family Perfect",
       "description": "Ideal layout for families with the fenced yard providing safe outdoor space for kids and pets."
     }
@@ -193,13 +193,13 @@
   "importantInfo": [
     {
       "type": "info",
-      "icon": "🐾",
+      "icon": "fas fa-paw",
       "title": "Pet Policy",
       "description": "We welcome your pets! The fenced backyard provides a safe space for dogs to play. Please keep pets off furniture and always clean up after them."
     },
     {
       "type": "success",
-      "icon": "🚗",
+      "icon": "fas fa-car",
       "title": "Transportation Tip",
       "description": "Consider renting a golf cart for easy beach access and exploring Oak Island! Many guests find this adds to the fun island experience."
     }

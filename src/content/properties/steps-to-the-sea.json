@@ -178,13 +178,13 @@
   "importantInfo": [
     {
       "type": "info",
-      "icon": "🐾",
+      "icon": "fas fa-paw",
       "title": "Pet Policy",
       "description": "We love your furry family members! Please keep pets off furniture and clean up after them. The fenced backyard is perfect for letting dogs play safely."
     },
     {
       "type": "warning",
-      "icon": "🏖️",
+      "icon": "fas fa-umbrella-beach",
       "title": "Beach Safety",
       "description": "Always supervise children near water. Check tide schedules and weather conditions. Beach equipment is provided but use at your own risk."
     }
