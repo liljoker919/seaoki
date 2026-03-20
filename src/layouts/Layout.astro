@@ -12,6 +12,7 @@ const {
 } = Astro.props;
 
 const googleAnalyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -28,6 +29,7 @@ const googleAnalyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
             name="google-site-verification"
             content="Olnn-USH2gid9950dCd5GN8jhsAcqC-Ph6lc5fXgWaM"
         />
+        <link rel="canonical" href={canonicalURL} />
 
         {
             googleAnalyticsId && (

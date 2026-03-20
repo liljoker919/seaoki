@@ -30,8 +30,8 @@ const sortedRestaurants = [...restaurants].sort((a, b) =>
 
   <Breadcrumb
     items={[
-      { label: "Home", href: "/" },
-      { label: "Places to Eat", href: "/dining" },
+      { name: "Home", url: "/" },
+      { name: "Places to Eat", url: "/dining" },
     ]}
   />
 
@@ -112,6 +112,29 @@ const sortedRestaurants = [...restaurants].sort((a, b) =>
                 seating welcome well-behaved pets.
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-lg-8 mx-auto">
+        <div class="card border-0 bg-light">
+          <div class="card-body p-4 text-center">
+            <h3 class="h5 fw-bold mb-3">Need a Pet-Friendly Place to Stay?</h3>
+            <p class="mb-3">
+              Planning your meals is easier when your lodging is already set.
+              Explore our Oak Island vacation rentals and book direct for the
+              best rates.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+              <a href="/properties/steps-to-the-sea" class="btn btn-brand">
+                View Steps to the Sea
+              </a>
+              <a href="/properties" class="btn btn-outline-primary">
+                Compare All Properties
+              </a>
+            </div>
           </div>
         </div>
       </div>
