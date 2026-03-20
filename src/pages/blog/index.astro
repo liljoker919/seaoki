@@ -6,7 +6,7 @@ import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 function formatDate(date: Date) {
@@ -98,7 +98,9 @@ function formatDate(date: Date) {
         <div class="col-lg-8 mx-auto">
           <div class="card border-0 bg-light">
             <div class="card-body p-4 text-center">
-              <h2 class="h4 fw-bold mb-3">Turn Ideas Into Your Oak Island Trip</h2>
+              <h2 class="h4 fw-bold mb-3">
+                Turn Ideas Into Your Oak Island Trip
+              </h2>
               <p class="mb-3">
                 After exploring our local guides, book a pet-friendly stay with
                 direct-owner pricing.
