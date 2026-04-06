@@ -40,7 +40,7 @@ All concerts are held at the **Middleton Park Complex, 4610 E Dolphin Dr, Oak Is
 
 ## 🍽️ Dine Before the Show – Oak Island NC Restaurants Near Middleton Park
 
-A concert night calls for a great dinner first! Here are three fantastic restaurants within easy reach of Middleton Park that are perfect for a pre-show meal. These local favorites are beloved by Oak Island vacationers and residents alike.
+A concert night calls for a great dinner first! Here are three fantastic restaurants within easy reach of Middleton Park that are perfect for a pre-show meal. These local favorites are beloved by Oak Island vacationers and residents alike. For a deeper dive into Oak Island's dining scene, check out our full guide to the [Top 5 Restaurants on Oak Island](/blog/top-5-restaurants-oak-island/).
 
 ### 1. Kai-Joe's – 4722 E Oak Island Dr
 **Rating:** ⭐ 4.4 (1,400+ reviews) · $10–$20 · Tacos & Mexican
@@ -67,13 +67,13 @@ For a taste of the best **Oak Island NC restaurants on the water**, Provision Co
 
 Why drive home after the show? Stay the whole weekend — or the whole week — and experience Oak Island the way it was meant to be enjoyed: slow mornings on the beach, afternoons exploring the island, and Friday evenings at Middleton Park with live music under the open sky.
 
-The **Sea OKI Collection** offers two beautiful, pet-friendly beach houses just minutes from Middleton Park. Your family — and your four-legged friends — are always welcome.
+The **Sea OKI Collection** offers two beautiful, pet-friendly beach houses just minutes from Middleton Park. Your family — and your four-legged friends — are always welcome. Bringing a dog? Read our [Complete Pet-Friendly Guide to Oak Island](/blog/pet-friendly-guide-oak-island/) for everything you need to know about dog-friendly beaches, restaurants, and activities.
 
 <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem 0;">
-  <a href="/properties/steps-to-the-sea" style="flex: 1; min-width: 200px; background-color: #0d6efd; color: white; text-align: center; padding: 1rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: bold; font-size: 1.1rem;">
+  <a href="/properties/steps-to-the-sea/" style="flex: 1; min-width: 200px; background-color: #0d6efd; color: white; text-align: center; padding: 1rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: bold; font-size: 1.1rem;">
     🏠 Book Steps to the Sea
   </a>
-  <a href="/properties/down-by-the-sea" style="flex: 1; min-width: 200px; background-color: #0d6efd; color: white; text-align: center; padding: 1rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: bold; font-size: 1.1rem;">
+  <a href="/properties/down-by-the-sea/" style="flex: 1; min-width: 200px; background-color: #0d6efd; color: white; text-align: center; padding: 1rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: bold; font-size: 1.1rem;">
     🏠 Book Down by the Sea
   </a>
 </div>
@@ -93,3 +93,11 @@ Both properties are fully equipped with everything you need for a comfortable st
 ---
 
 Summer 2026 on Oak Island is shaping up to be incredible. Between free live music at **Middleton Park Events**, fresh food at the island's best restaurants, and miles of stunning Atlantic coastline, there's no better place to be. We'd love to host you — see you on the island! 🌊
+
+---
+
+<div style="background-color:#e8f1fb;border:2px solid #0d6efd;border-radius:0.75rem;padding:1.5rem;margin:2rem 0;text-align:center;">
+  <h3 style="color:#0d6efd;font-weight:700;margin-bottom:0.5rem;">Stay within walking distance of the music.</h3>
+  <p style="margin-bottom:1rem;">View our Middleton Park rental and book your summer stay before dates fill up.</p>
+  <a href="/properties/steps-to-the-sea/" style="background-color:#0d6efd;color:#fff;text-decoration:none;font-weight:700;font-size:1.1rem;padding:0.85rem 2rem;border-radius:0.5rem;display:inline-block;">View Steps to the Sea</a>
+</div>

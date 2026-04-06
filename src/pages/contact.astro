@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
+import PostCTA from "../components/PostCTA.astro";
 ---
 
 <Layout title="Contact | Sea OKI Collection" description="Contact Sea OKI Collection for your Oak Island vacation rental. Multiple ways to reach us - website form, Facebook, Houfy, or direct contact.">
@@ -295,6 +296,15 @@ import ContactForm from "../components/ContactForm.astro";
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="container pb-5">
+        <PostCTA
+            title="Ready to Book Your Oak Island Getaway?"
+            description="Browse our pet-friendly beach houses and check availability. Direct booking saves you money — no third-party fees."
+            buttonLink="/properties/"
+            buttonText="View Our Properties"
+        />
     </div>
 
     <Footer />

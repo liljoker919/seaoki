@@ -9,6 +9,8 @@ heroImage: "../../assets/provision_company.jpg"
 
 Oak Island is more than just miles of gorgeous, uncrowded beaches—it's also home to some fantastic dining that locals swear by and visitors quickly fall in love with. Whether you're looking for a laid-back waterfront spot or a cozy family dinner after a day in the sun, these five restaurants are must-visits during your stay.
 
+Planning a full evening out? [Check out the 2026 Summer Concert Schedule at Middleton Park](/blog/oak-island-summer-concerts-2026/) and pair a great meal with free live music every Friday night all summer long.
+
 ## 1. Provision Company
 
 A true Oak Island icon. Provision Company sits right on the Intracoastal Waterway and serves up incredibly fresh seafood in a casual, no-frills atmosphere. Order at the counter, grab a picnic table outside, and watch the boats go by while you dig into a steaming bowl of clam chowder or a perfectly fried shrimp basket.
@@ -28,6 +30,12 @@ Craving craft beer alongside your meal? Lonerider Brewing Co. has a taproom on O
 **Tip:** Check their social media for food truck schedules and live music events.
 
 ---
+
+<div style="background-color:#e8f1fb;border:2px solid #0d6efd;border-radius:0.75rem;padding:1.5rem;margin:2rem 0;text-align:center;">
+  <h3 style="color:#0d6efd;font-weight:700;margin-bottom:0.5rem;">Make it a foodie weekend.</h3>
+  <p style="margin-bottom:1rem;">Book your 2026 beach house today and explore all of Oak Island's best dining—just minutes from our pet-friendly rentals.</p>
+  <a href="/properties/" style="background-color:#0d6efd;color:#fff;text-decoration:none;font-weight:700;font-size:1.1rem;padding:0.85rem 2rem;border-radius:0.5rem;display:inline-block;">Book Your 2026 Beach House</a>
+</div>
 
 ## 3. Salt 64
 
