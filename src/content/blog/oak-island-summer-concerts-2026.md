@@ -8,6 +8,8 @@ pubDate: 2026-04-06
 
 Summer in Oak Island means sun, sand, and free live music every Friday night. The **Oak Island Summer Concert Series 2026** is back at the **Middleton Park Complex** — and the lineup is better than ever. Whether you're a first-time visitor or a longtime local, this is one of the best free events on the Carolina coast. Pack a chair, grab a drink from a nearby restaurant, and enjoy an evening of "Bands By The Beach!"
 
+![Hundreds of concert-goers sit in lawn chairs on the grassy field at Middleton Park as the sun sets over Oak Island during the Summer Concert Series](https://github.com/user-attachments/assets/036d7bec-e034-44c9-b002-ec1b70968440)
+
 ---
 
 ## 🎵 2026 Concert Schedule – Middleton Park Events
@@ -35,6 +37,8 @@ All concerts are held at the **Middleton Park Complex, 4610 E Dolphin Dr, Oak Is
 | Friday, August 28 | The Conspiracy |
 
 > **Note:** Schedule subject to change. Follow official updates at [OakIslandNC.gov/EVENTS](https://www.oakislandnc.gov/EVENTS) or download the OKI Connection mobile app.
+
+![A band performs on the covered Middleton Park stage during an Oak Island Summer Concert, with a young fan joining the lead singer at the microphone](https://github.com/user-attachments/assets/f229e524-6f24-49e3-9276-1fe9c52a1451)
 
 ---
 
@@ -64,6 +68,8 @@ For a taste of the best **Oak Island NC restaurants on the water**, Provision Co
 ---
 
 ## 🌊 Make It a Weekend – Concerts + a Beach Vacation
+
+![A packed crowd fills the lawn at Middleton Park Pavilion for an Oak Island Summer Concert, with palm trees and the stage visible in the background](https://github.com/user-attachments/assets/8674933c-7c8a-40fb-85cb-eb0ff84cda2b)
 
 Why drive home after the show? Stay the whole weekend — or the whole week — and experience Oak Island the way it was meant to be enjoyed: slow mornings on the beach, afternoons exploring the island, and Friday evenings at Middleton Park with live music under the open sky.
 
