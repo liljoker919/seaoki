@@ -18,23 +18,23 @@ All concerts are held at the **Middleton Park Complex, 4610 E Dolphin Dr, Oak Is
 **Regular shows:** Every Friday, **6:30 PM – 8:30 PM**  
 **Admission:** Free
 
-| Date | Band |
-|---|---|
-| Friday, May 22 | Band of Oz |
-| Friday, May 29 | The Salty Dawgs |
-| Friday, June 5 | Christine Martinez Band |
-| Friday, June 12 | Catalinas |
-| Friday, June 19 | Julio & The Saltines |
-| Friday, June 26 | Too Much Sylvia |
-| **Wednesday, July 1** *(Beach Day – Special!)* | **The Extraordinaires** *(6:00 PM – 9:00 PM)* |
-| Friday, July 10 | The Entertainers |
-| Friday, July 17 | Chocolate Chip & Company Band |
-| Friday, July 24 | Rivermist |
-| Friday, July 31 | Crystal & Aria |
-| Friday, August 7 | I-42 Band |
-| Friday, August 14 | 52nd Street Band |
-| Friday, August 21 | Hoods Creek |
-| Friday, August 28 | The Conspiracy |
+| Date                                           | Band                                          |
+| ---------------------------------------------- | --------------------------------------------- |
+| Friday, May 22                                 | Band of Oz                                    |
+| Friday, May 29                                 | The Salty Dawgs                               |
+| Friday, June 5                                 | Christine Martinez Band                       |
+| Friday, June 12                                | Catalinas                                     |
+| Friday, June 19                                | Julio & The Saltines                          |
+| Friday, June 26                                | Too Much Sylvia                               |
+| **Wednesday, July 1** _(Beach Day – Special!)_ | **The Extraordinaires** _(6:00 PM – 9:00 PM)_ |
+| Friday, July 10                                | The Entertainers                              |
+| Friday, July 17                                | Chocolate Chip & Company Band                 |
+| Friday, July 24                                | Rivermist                                     |
+| Friday, July 31                                | Crystal & Aria                                |
+| Friday, August 7                               | I-42 Band                                     |
+| Friday, August 14                              | 52nd Street Band                              |
+| Friday, August 21                              | Hoods Creek                                   |
+| Friday, August 28                              | The Conspiracy                                |
 
 > **Note:** Schedule subject to change. Follow official updates at [OakIslandNC.gov/EVENTS](https://www.oakislandnc.gov/EVENTS) or download the OKI Connection mobile app.
 
@@ -47,20 +47,23 @@ All concerts are held at the **Middleton Park Complex, 4610 E Dolphin Dr, Oak Is
 A concert night calls for a great dinner first! Here are three fantastic restaurants within easy reach of Middleton Park that are perfect for a pre-show meal. These local favorites are beloved by Oak Island vacationers and residents alike. For a deeper dive into Oak Island's dining scene, check out our full guide to the [Top 5 Restaurants on Oak Island](/blog/top-5-restaurants-oak-island/).
 
 ### 1. Kai-Joe's – 4722 E Oak Island Dr
+
 **Rating:** ⭐ 4.4 (1,400+ reviews) · $10–$20 · Tacos & Mexican
 
-Kai-Joe's is a local staple with a loyal following and seriously good tacos. Guests rave: *"Always dine here when on Oak Island for lunch and or dinner!"* With its casual beachside vibe and generous portions, it's the perfect way to fuel up before a night of live music. Arrive early — it fills up fast on concert nights.
+Kai-Joe's is a local staple with a loyal following and seriously good tacos. Guests rave: _"Always dine here when on Oak Island for lunch and or dinner!"_ With its casual beachside vibe and generous portions, it's the perfect way to fuel up before a night of live music. Arrive early — it fills up fast on concert nights.
 
 ---
 
 ### 2. Pepperoni Grill at the Beach – 4320 E Beach Dr
+
 **Rating:** ⭐ 4.5 (1,700+ reviews) · $10–$20 · Pizza
 
-A fan favorite for good reason: Pepperoni Grill at the Beach consistently earns rave reviews from Oak Island visitors. One guest put it perfectly: *"This is always our first place to eat when we visit Oak Island!"* Grab a wood-fired pizza, enjoy the coastal atmosphere, and make it to Middleton Park in time for the opening act.
+A fan favorite for good reason: Pepperoni Grill at the Beach consistently earns rave reviews from Oak Island visitors. One guest put it perfectly: _"This is always our first place to eat when we visit Oak Island!"_ Grab a wood-fired pizza, enjoy the coastal atmosphere, and make it to Middleton Park in time for the opening act.
 
 ---
 
 ### 3. Provision Company – On the Intracoastal Waterway
+
 **Rating:** ⭐ Local Icon · Fresh Seafood · Waterfront Dining
 
 For a taste of the best **Oak Island NC restaurants on the water**, Provision Company is the undisputed classic. Order at the counter, find a picnic table overlooking the Intracoastal Waterway, and watch the boats drift by as the sun dips toward the horizon. Their fried shrimp basket and hush puppies are legendary — the ideal pre-concert feast with a true Oak Island spirit.
@@ -103,7 +106,7 @@ Summer 2026 on Oak Island is shaping up to be incredible. Between free live musi
 ---
 
 <div style="background-color:#e8f1fb;border:2px solid #0d6efd;border-radius:0.75rem;padding:1.5rem;margin:2rem 0;text-align:center;">
-  <h3 style="color:#0d6efd;font-weight:700;margin-bottom:0.5rem;">Stay within walking distance of the music.</h3>
-  <p style="margin-bottom:1rem;">View our Middleton Park rental and book your summer stay before dates fill up.</p>
+  <h3 style="color:#0d6efd;font-weight:700;margin-bottom:0.5rem;">Stay just minutes from the music.</h3>
+  <p style="margin-bottom:1rem;">View our rentals near Middleton Park and book your summer stay before dates fill up.</p>
   <a href="/properties/steps-to-the-sea/" style="background-color:#0d6efd;color:#fff;text-decoration:none;font-weight:700;font-size:1.1rem;padding:0.85rem 2rem;border-radius:0.5rem;display:inline-block;">View Steps to the Sea</a>
 </div>
