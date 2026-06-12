@@ -1,4 +1,24 @@
 ---
+import { SITE_EMAIL, SITE_PHONE, SITE_FACEBOOK, SITE_INSTAGRAM } from '../consts';
+
+// ─── Sub-type interfaces (exported so PropertyDetailLayout can reuse them) ────
+
+export interface AggregateRating {
+  ratingValue: number;
+  reviewCount: number;
+  bestRating?: number;
+  worstRating?: number;
+}
+
+export interface PropertyReview {
+  author: string;
+  datePublished: string; // ISO 8601: "2024-07-04"
+  reviewBody: string;
+  ratingValue: number;
+}
+
+// ─── Component props ──────────────────────────────────────────────────────────
+
 export interface Props {
   name: string;
   description: string;
@@ -15,6 +35,14 @@ export interface Props {
   amenities?: string[];
   image?: string;
   priceRange?: string;
+  // Property-specific GPS coordinates — falls back to Oak Island city centre
+  // if omitted. Always pass precise values from the property JSON to get the
+  // most accurate local ranking signals.
+  latitude?: string;
+  longitude?: string;
+  // Optional rich-result fields — populate from real Houfy review metrics.
+  aggregateRating?: AggregateRating;
+  reviews?: PropertyReview[];
 }
 
 const {
@@ -28,13 +56,25 @@ const {
   amenities = [],
   image,
   priceRange,
+  latitude  = "33.9157",
+  longitude = "-78.1103",
+  aggregateRating,
+  reviews = [],
 } = Astro.props;
 
-const schema = {
+// ─── Property-level schema ────────────────────────────────────────────────────
+// "@type" is a multi-type array: LodgingBusiness satisfies Google's rich-result
+// eligibility for lodging, while Accommodation provides the specific sub-class
+// context (numberOfBedrooms, occupancy, petsAllowed, etc.).
+
+const propertySchema = {
   "@context": "https://schema.org",
-  "@type": "VacationRental",
-  name: name,
-  description: description,
+  "@type": ["LodgingBusiness", "Accommodation"],
+  name,
+  description,
+  telephone: SITE_PHONE,
+  email: SITE_EMAIL,
+  url: Astro.url.href,
   address: {
     "@type": "PostalAddress",
     streetAddress: address.streetAddress,
@@ -45,8 +85,8 @@ const schema = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: address.city === "Oak Island" ? "33.9157" : "33.9157",
-    longitude: address.city === "Oak Island" ? "-78.1103" : "-78.1103",
+    latitude,
+    longitude,
   },
   numberOfRooms: bedrooms,
   numberOfBedrooms: bedrooms,
@@ -59,56 +99,89 @@ const schema = {
   amenityFeature: amenities.map((amenity) => ({
     "@type": "LocationFeatureSpecification",
     name: amenity,
+    value: true,
   })),
-  ...(image && { image: image }),
-  ...(priceRange && { priceRange: priceRange }),
-  provider: {
-    "@type": "Organization",
-    name: "Sea OKI Collection",
-    url: "https://seaoki.com",
-  },
-  url: Astro.url.href,
+  ...(image      && { image }),
+  ...(priceRange && { priceRange }),
+  // AggregateRating — unlocks gold star snippets in SERPs.
+  // Populate ratingValue and reviewCount from your live Houfy metrics.
+  ...(aggregateRating && {
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue:  aggregateRating.ratingValue,
+      reviewCount:  aggregateRating.reviewCount,
+      bestRating:   aggregateRating.bestRating  ?? 5,
+      worstRating:  aggregateRating.worstRating ?? 1,
+    },
+  }),
+  // Individual Review objects — use real guest reviews from Houfy.
+  // Fake or incentivised reviews violate Google's policies; replace
+  // any placeholder text before deploying to production.
+  ...(reviews.length > 0 && {
+    review: reviews.map((r) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: r.author },
+      datePublished: r.datePublished,
+      reviewBody: r.reviewBody,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue:  r.ratingValue,
+        bestRating:   5,
+        worstRating:  1,
+      },
+    })),
+  }),
 };
 
-const localBusinessSchema = {
+// ─── Organisation-level schema ────────────────────────────────────────────────
+// Represents Sea OKI Collection as a business entity.
+// Provides NAP signals (Name / Address / Phone) for local-pack eligibility.
+// The street address is the property's own address because each property page
+// is the physical location Google evaluates for map-pack ranking.
+
+const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
   name: "Sea OKI Collection",
   description:
     "Pet-friendly vacation rental homes in Oak Island, NC. Two beautiful beach houses perfect for family vacations.",
+  telephone: SITE_PHONE,
+  email: SITE_EMAIL,
+  url: "https://seaoki.com",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Oak Island",
-    addressRegion: "NC",
+    streetAddress: address.streetAddress,
+    addressLocality: address.city,
+    addressRegion: address.state,
+    postalCode: address.postalCode,
     addressCountry: "US",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: "33.9157",
-    longitude: "-78.1103",
+    latitude,
+    longitude,
   },
-  url: "https://seaoki.com",
   priceRange: "$$",
   paymentAccepted: "Credit Card, Debit Card",
   amenityFeature: [
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "Pet Friendly",
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "Beach Access",
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      name: "WiFi",
-    },
+    { "@type": "LocationFeatureSpecification", name: "Pet Friendly",  value: true },
+    { "@type": "LocationFeatureSpecification", name: "Beach Access",  value: true },
+    { "@type": "LocationFeatureSpecification", name: "WiFi",          value: true },
   ],
+  sameAs: [SITE_FACEBOOK, SITE_INSTAGRAM],
+  // Mirror the property's AggregateRating on the org schema so Google can
+  // associate the star rating with the business entity as well.
+  ...(aggregateRating && {
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue:  aggregateRating.ratingValue,
+      reviewCount:  aggregateRating.reviewCount,
+      bestRating:   aggregateRating.bestRating  ?? 5,
+      worstRating:  aggregateRating.worstRating ?? 1,
+    },
+  }),
 };
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(schema)} />
-<script
-  type="application/ld+json"
-  set:html={JSON.stringify(localBusinessSchema)}
-/>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(propertySchema)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />

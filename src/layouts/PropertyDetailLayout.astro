@@ -51,6 +51,23 @@ interface PropertyDataSchema {
     petsAllowed: boolean;
     amenities: string[];
     priceRange: string;
+    // Street-level GPS coordinates — passed through to PropertySchema for
+    // precise GeoCoordinates markup. Verify against Google Maps before deploy.
+    latitude?: string;
+    longitude?: string;
+    // Rich-result fields — populate from live Houfy review metrics.
+    aggregateRating?: {
+        ratingValue: number;
+        reviewCount: number;
+        bestRating?: number;
+        worstRating?: number;
+    };
+    reviews?: Array<{
+        author: string;
+        datePublished: string;
+        reviewBody: string;
+        ratingValue: number;
+    }>;
 }
 
 interface FAQItem {

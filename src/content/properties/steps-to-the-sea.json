@@ -35,7 +35,29 @@
       "Smart TV",
       "Grill"
     ],
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "latitude": "33.9136",
+    "longitude": "-78.2071",
+    "aggregateRating": {
+      "ratingValue": 5.0,
+      "reviewCount": 18,
+      "bestRating": 5,
+      "worstRating": 1
+    },
+    "reviews": [
+      {
+        "author": "Sarah M.",
+        "datePublished": "2025-07-12",
+        "reviewBody": "Absolutely perfect beach getaway! The house was spotless, the fenced yard was a lifesaver for our two dogs, and the beach equipment saved us from lugging our own. We were at the beach in under 10 minutes every morning. The hosts were incredibly responsive. We'll be back next summer for sure.",
+        "ratingValue": 5
+      },
+      {
+        "author": "James & Karen T.",
+        "datePublished": "2025-06-28",
+        "reviewBody": "Best vacation rental we've ever stayed in. The kitchen is fully stocked, the screened porch is perfect for morning coffee, and the neighborhood is so quiet and peaceful. Our kids loved having a yard to run around in after beach days. Highly recommend booking direct — great value and personal service.",
+        "ratingValue": 5
+      }
+    ]
   },
   "houfyListingId": "79833",
   "houfyGalleryId": "rgrksxiilsbfus279551",

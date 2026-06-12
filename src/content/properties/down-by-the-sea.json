@@ -35,7 +35,9 @@
       "Smart TV",
       "Gas Grill"
     ],
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "latitude": "33.9167",
+    "longitude": "-78.1770"
   },
   "photoGallery": [
     {
