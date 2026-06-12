@@ -1,0 +1,99 @@
+---
+import {
+  SITE_DESCRIPTION,
+  SITE_EMAIL,
+  SITE_FACEBOOK,
+  SITE_HOUFY,
+  SITE_INSTAGRAM,
+  SITE_PHONE,
+} from '../consts';
+
+// Canonical site root — avoids repeating the string throughout the object.
+const SITE_URL = "https://seaoki.com";
+
+// ─── Organization + LodgingBusiness dual-type schema ─────────────────────────
+//
+// @type array: "Organization" establishes the brand as a named entity in
+// Google's Knowledge Graph. "LodgingBusiness" layers in the lodging-specific
+// vocabulary (priceRange, amenityFeature, areaServed) that Google uses for
+// local-pack ranking signals — without duplicating the individual property
+// schemas already emitted on /properties/* pages.
+//
+// @id: the canonical IRI for this entity. Other schema blocks (e.g.
+// ArticleSchema publisher, BreadcrumbList) can reference this IRI to
+// explicitly connect page-level schemas back to the brand entity.
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LodgingBusiness"],
+  "@id": `${SITE_URL}/#organization`,
+  name: "Sea OKI Collection",
+  alternateName: "Sea OKI",
+  description: SITE_DESCRIPTION,
+  url: SITE_URL,
+
+  // Logo — replace favicon.svg with a dedicated 512×512 (or wider) PNG/WebP
+  // brand logo for maximum Knowledge Panel eligibility.
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/favicon.svg`,
+    caption: "Sea OKI Collection logo",
+  },
+
+  // Hero image used as the primary brand image in rich results.
+  image: `${SITE_URL}/hero-bg.jpg`,
+
+  // ── NAP signals ─────────────────────────────────────────────────────────────
+  telephone: SITE_PHONE,
+  email: SITE_EMAIL,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Oak Island",
+    addressRegion: "NC",
+    postalCode: "28465",
+    addressCountry: "US",
+  },
+
+  // ── Service area ─────────────────────────────────────────────────────────────
+  areaServed: {
+    "@type": "City",
+    name: "Oak Island",
+    sameAs: "https://en.wikipedia.org/wiki/Oak_Island,_North_Carolina",
+  },
+
+  // ── Business details ─────────────────────────────────────────────────────────
+  priceRange: "$$",
+  paymentAccepted: "Credit Card, Debit Card",
+  currenciesAccepted: "USD",
+
+  // Reservations contact point — gives Google a typed entry for the booking
+  // channel, surfaced in Knowledge Panel "Call" / "Email" actions.
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: SITE_PHONE,
+    email: SITE_EMAIL,
+    contactType: "reservations",
+    availableLanguage: "English",
+  },
+
+  // ── Key amenity signals ───────────────────────────────────────────────────────
+  amenityFeature: [
+    { "@type": "LocationFeatureSpecification", name: "Pet Friendly",   value: true },
+    { "@type": "LocationFeatureSpecification", name: "Beach Access",   value: true },
+    { "@type": "LocationFeatureSpecification", name: "Direct Booking", value: true },
+    { "@type": "LocationFeatureSpecification", name: "WiFi",           value: true },
+    { "@type": "LocationFeatureSpecification", name: "Fenced Yard",    value: true },
+  ],
+
+  // ── sameAs: links the brand entity to every authoritative external profile ───
+  // Google uses these to merge signals across platforms into a single Knowledge
+  // Graph node. Add or remove entries as profiles are created or removed.
+  sameAs: [
+    SITE_FACEBOOK,
+    SITE_INSTAGRAM,
+    SITE_HOUFY,
+  ],
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -12,3 +12,6 @@ export const SITE_EMAIL = 'hello@seaoki.com';   // TODO: replace with real addre
 // Social profile URLs — used in schema sameAs and Footer.astro
 export const SITE_FACEBOOK  = 'https://www.facebook.com/totheseaoki/';
 export const SITE_INSTAGRAM = 'https://www.instagram.com/bytheseaoki/';
+
+// Houfy direct-booking listing — primary external booking profile
+export const SITE_HOUFY = 'https://www.houfy.com/lodging/steps-to-the-sea-walk-to-the-beach-oak-island/79833';
