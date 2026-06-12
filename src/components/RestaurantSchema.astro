@@ -1,0 +1,106 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  restaurants: CollectionEntry<'dining'>[];
+}
+
+const { restaurants } = Astro.props;
+
+const SITE_URL = "https://seaoki.com";
+
+// ─── Address parser ───────────────────────────────────────────────────────────
+// Handles two free-form formats present in the dining JSON files:
+//   "Street, City, STATE"          (e.g. "130 Yacht Basin Drive, Southport, NC")
+//   "Street, City, STATE ZIP"      (e.g. "8300 E Oak Island Dr, Oak Island, NC 28465")
+function parseAddress(raw: string) {
+  const parts = raw.split(',').map((p) => p.trim());
+
+  if (parts.length < 2) {
+    return {
+      "@type": "PostalAddress",
+      streetAddress: raw,
+      addressLocality: "Oak Island",
+      addressRegion: "NC",
+      addressCountry: "US",
+    };
+  }
+
+  // Last segment is "STATE" or "STATE ZIP"
+  const stateZip  = parts[parts.length - 1].trim().split(/\s+/);
+  const addressRegion = stateZip[0];          // "NC"
+  const postalCode    = stateZip[1];          // "28465" | undefined
+
+  // City is the segment immediately before the state/zip segment
+  const addressLocality =
+    parts.length >= 3 ? parts[parts.length - 2].trim() : parts[1].trim();
+
+  return {
+    "@type": "PostalAddress",
+    streetAddress: parts[0],
+    addressLocality,
+    addressRegion,
+    addressCountry: "US",
+    ...(postalCode && { postalCode }),
+  };
+}
+
+// ─── Cuisine parser ───────────────────────────────────────────────────────────
+// "Seafood & American"  →  ["Seafood", "American"]
+// "Brewpub"             →  "Brewpub"   (single string, not array)
+function parseCuisine(category: string): string | string[] {
+  const parts = category
+    .split(/[&,]/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+  return parts.length === 1 ? parts[0] : parts;
+}
+
+// ─── ItemList schema ──────────────────────────────────────────────────────────
+// A single ItemList wrapping Restaurant nodes is the correct pattern for a
+// multi-item directory page. Google reads both the list-level context and each
+// individual Restaurant entity, making all 12 restaurants eligible for
+// Restaurant rich results independently.
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Oak Island Area Restaurants & Dining Guide",
+  description:
+    "The best places to eat near Oak Island, NC — fresh seafood, Southern comfort food, brewpubs, and waterfront dining for families and beach vacations.",
+  numberOfItems: restaurants.length,
+  itemListElement: restaurants.map((restaurant, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "Restaurant",
+      name: restaurant.data.name,
+      description: restaurant.data.description,
+      // image must be an absolute URL for Google's Rich Results Test
+      image: `${SITE_URL}${restaurant.data.image}`,
+      url: restaurant.data.website,
+      servesCuisine: parseCuisine(restaurant.data.category),
+      // Optional fields — only emitted when the JSON entry has the value
+      ...(restaurant.data.phone && {
+        telephone: restaurant.data.phone,
+      }),
+      ...(restaurant.data.priceRange && {
+        priceRange: restaurant.data.priceRange,
+      }),
+      ...(restaurant.data.address && {
+        address: parseAddress(restaurant.data.address),
+      }),
+      // petFriendly mapped to LocationFeatureSpecification — included for
+      // both true and false so the signal is explicit in either direction.
+      amenityFeature: [
+        {
+          "@type": "LocationFeatureSpecification",
+          name: "Pet Friendly",
+          value: restaurant.data.petFriendly,
+        },
+      ],
+    },
+  })),
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

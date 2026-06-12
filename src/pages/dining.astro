@@ -5,6 +5,7 @@ import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import RestaurantCard from "../components/RestaurantCard.astro";
+import RestaurantSchema from "../components/RestaurantSchema.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 
 // Fetch restaurant data from content collection
@@ -20,6 +21,7 @@ const sortedRestaurants = [...restaurants].sort((a, b) =>
   title="Oak Island Restaurants & Dining Guide - Sea OKI Collection"
   description="Discover the best places to eat near Oak Island, NC and surrounding coastal areas. From fresh seafood to Southern cuisine, find pet-friendly restaurants and local favorites for your beach vacation."
 >
+  <RestaurantSchema restaurants={sortedRestaurants} />
   <Navigation />
 
   <Hero
