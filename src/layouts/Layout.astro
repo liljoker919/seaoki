@@ -4,16 +4,21 @@ import '../styles/theme.css';
 export interface Props {
     title: string;
     description?: string;
+    image?: string;
 }
 
 const {
     title,
     description = "Discover the Sea OKI Collection - two beautiful, pet-friendly vacation homes in Oak Island, NC. Book directly and save!",
+    image = "/hero-bg.jpg",
 } = Astro.props;
 
 const googleAnalyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
 const pathname = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
 const canonicalURL = new URL(pathname, Astro.site);
+// new URL() ignores the base when the first arg is already absolute,
+// so both "/hero-bg.jpg" and "https://…/foo.jpg" resolve correctly.
+const ogImage = new URL(image, Astro.site).href;
 ---
 
 <!doctype html>
@@ -32,11 +37,30 @@ const canonicalURL = new URL(pathname, Astro.site);
         />
         <link rel="canonical" href={canonicalURL} />
 
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="Sea OKI Collection" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalURL} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+
         {
             googleAnalyticsId && (
                 <>
                     <!-- Google tag (gtag.js) -->
                     <script
+                        is:inline
                         async
                         src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
                     ></script>
@@ -163,6 +187,7 @@ const canonicalURL = new URL(pathname, Astro.site);
 
         <!-- Bootstrap JavaScript -->
         <script
+            is:inline
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
