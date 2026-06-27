@@ -498,7 +498,7 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
     </div>
 
     <!-- Houfy Widget Script - loads once for all widgets on the page -->
-    <script src="https://widgets.houfy.com/js/main.js" defer crossorigin="anonymous"></script>
+    <script is:inline src="https://widgets.houfy.com/js/main.js" defer crossorigin="anonymous"></script>
 
     <Footer />
 </Layout>
@@ -588,11 +588,23 @@ const houfyAccessToken = import.meta.env.PUBLIC_HOUFY_ACCESS_TOKEN;
         .bedrooms-grid {
             grid-template-columns: 1fr;
         }
+
+        .bedroom-card {
+            min-height: auto;
+        }
     }
 
     @media (min-width: 769px) and (max-width: 1024px) {
         .bedrooms-grid {
             grid-template-columns: 1fr;
+        }
+    }
+
+    /* Prevent horizontal overflow on all screen sizes */
+    @media (max-width: 576px) {
+        .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
     }
 </style>

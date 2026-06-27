@@ -125,7 +125,7 @@
     },
     {
       "name": "Guest Bedroom 2",
-      "description": "Two twin beds, shared bathroom access"
+      "description": "Two full size beds, shared bathroom access"
     },
     {
       "name": "Living Room",
@@ -143,16 +143,16 @@
     "description": "Located on Oak Island's West Beach, offering easy beach access and proximity to local attractions, restaurants, and shopping. Perfect location for a relaxing family beach vacation in Oak Island, North Carolina.",
     "locationDescription": "Steps to the Sea is perfectly positioned for easy beach access and exploring Oak Island.",
     "walkingDistance": [
-      "Beach: 10 minutes",
-      "Grocery store: 15 minutes",
-      "Restaurants: 5-10 minutes"
+      "Beach: 10 minutes"
     ],
     "shortDrive": [
       "Oak Island Pier: 5 minutes",
       "Southport: 10 minutes",
-      "Golf course: 8 minutes"
+      "Golf course: 8 minutes",
+      "Restaurants: 5-10 minutes",
+      "Grocery store: 15 minutes"
     ],
-    "parking": "Driveway parking for 2 cars plus additional street parking available."
+    "parking": "Driveway parking for 2 cars plus street parking, with room for up to 3 vehicles total."
   },
   "faqs": [
     {
@@ -161,7 +161,7 @@
     },
     {
       "question": "Is this vacation rental pet-friendly?",
-      "answer": "Yes! We welcome up to 2 pets with a $50 pet fee per stay. The property features a fenced backyard that's perfect for dogs to play safely. Pets must be kept off furniture and cleaned up after."
+      "answer": "Yes! We welcome up to 2 pets with a small pet fee per stay. The property features a fenced backyard that's perfect for dogs to play safely. Pets must be kept off furniture and cleaned up after."
     },
     {
       "question": "What amenities are included at this Oak Island rental?",
@@ -169,7 +169,7 @@
     },
     {
       "question": "How many people can stay at Steps to the Sea?",
-      "answer": "This vacation rental sleeps up to 6 guests comfortably with 3 bedrooms (king, queen, and two twins)."
+      "answer": "This vacation rental sleeps up to 6 guests comfortably with 3 bedrooms (king, queen, and two full size beds)."
     },
     {
       "question": "What are the check-in and check-out times?",
@@ -177,11 +177,11 @@
     },
     {
       "question": "Is there parking available?",
-      "answer": "Yes, the property has driveway parking for 2 cars, plus additional street parking is available for guests with extra vehicles."
+      "answer": "Yes, the property has driveway parking for 2 cars plus additional street parking, with room for up to 3 vehicles total."
     },
     {
       "question": "What attractions are near Steps to the Sea?",
-      "answer": "You're close to Oak Island Pier (5 min drive), the charming town of Southport (10 min), golf courses (8 min), restaurants (5-10 min walk), and grocery stores (15 min walk)."
+      "answer": "You're close to Oak Island Pier (5 min drive), the charming town of Southport (10 min), golf courses (8 min), restaurants (5-10 min drive), and grocery stores (15 min drive)."
     },
     {
       "question": "Why should I book direct instead of using Airbnb or VRBO?",
